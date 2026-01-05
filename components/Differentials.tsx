@@ -5,14 +5,6 @@ import { DIFFERENTIALS } from '../constants';
 import ScrollReveal from './ScrollReveal';
 import { GoogleGenAI, Modality } from "@google/genai";
 
-// Garante que o process seja reconhecido mesmo se os tipos demorarem a carregar
-declare var process: {
-  env: {
-    API_KEY: string;
-    [key: string]: string | undefined;
-  }
-};
-
 // Auxiliares de decodificação de áudio
 function decodeBase64(base64: string) {
   try {
@@ -63,7 +55,7 @@ const Differentials: React.FC = () => {
 
     setIsLoadingAudio(true);
     try {
-      // Cria nova instância seguindo as diretrizes da API
+      // process.env.API_KEY é injetado pelo Vite (configurado em vite.config.ts)
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const prompt = `Narração profissional e acolhedora: No Colégio Reação, nossa jornada de excelência é construída sobre diferenciais sólidos. Oferecemos ${DIFFERENTIALS.join(', ')}. Tudo isso em um ambiente que respira inovação e valores.`;
 
