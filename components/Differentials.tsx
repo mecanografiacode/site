@@ -48,9 +48,15 @@ const Differentials: React.FC = () => {
       return;
     }
 
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      console.error("API Key não configurada.");
+      return;
+    }
+
     setIsLoadingAudio(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey });
       const prompt = `Narração profissional e acolhedora: No Colégio Reação, nossa jornada de excelência é construída sobre diferenciais sólidos. Oferecemos ${DIFFERENTIALS.join(', ')}. Tudo isso em um ambiente que respira inovação e valores.`;
 
       const response = await ai.models.generateContent({
@@ -73,6 +79,10 @@ const Differentials: React.FC = () => {
         }
         
         const ctx = audioContextRef.current;
+        if (ctx.state === 'suspended') {
+          await ctx.resume();
+        }
+
         const audioBuffer = await decodeAudioData(
           decodeBase64(base64Audio),
           ctx,
