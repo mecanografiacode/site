@@ -145,7 +145,12 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center text-white/30 text-sm gap-8">
-          <p>© 2026 Colégio Reação. A jornada de excelência começa aqui.</p>
+          <div className="flex flex-col gap-2">
+            <p>© 2026 Colégio Reação. A jornada de excelência começa aqui.</p>
+            <p className="text-white/20 text-xs tracking-wider">
+              desenvolvido por <a href="https://wa.me/5561981535040?text=Vim%20pelo%20site%20do%20col%C3%A9gio%20rea%C3%A7%C3%A3o%20e%20queria%20um%20or%C3%A7amento%20para%20meu%20site" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
+            </p>
+          </div>
           <div className="flex space-x-12">
             <a href="#" className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold">Privacidade</a>
             <a href="#" className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold">Termos</a>
