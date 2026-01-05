@@ -1,12 +1,8 @@
 
+import './polyfills';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
-
-// Polyfill básico para evitar ReferenceError: process is not defined em ambientes de produção
-if (typeof (window as any).process === 'undefined') {
-  (window as any).process = { env: {} };
-}
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {

@@ -7,13 +7,18 @@ import { GoogleGenAI, Modality } from "@google/genai";
 
 // Audio decoding helpers
 function decodeBase64(base64: string) {
-  const binaryString = atob(base64);
-  const len = binaryString.length;
-  const bytes = new Uint8Array(len);
-  for (let i = 0; i < len; i++) {
-    bytes[i] = binaryString.charCodeAt(i);
+  try {
+    const binaryString = atob(base64);
+    const len = binaryString.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) {
+      bytes[i] = binaryString.charCodeAt(i);
+    }
+    return bytes;
+  } catch (e) {
+    console.error("Erro no decode base64:", e);
+    return new Uint8Array(0);
   }
-  return bytes;
 }
 
 async function decodeAudioData(
@@ -48,9 +53,11 @@ const Differentials: React.FC = () => {
       return;
     }
 
-    const apiKey = process.env.API_KEY;
+    // Acesso seguro à chave de API
+    const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
+    
     if (!apiKey) {
-      console.error("API Key não configurada.");
+      alert("Para ouvir a narração, a chave de API precisa estar configurada.");
       return;
     }
 
@@ -101,6 +108,7 @@ const Differentials: React.FC = () => {
       }
     } catch (error) {
       console.error("Erro ao gerar narração:", error);
+      setIsNarrating(false);
     } finally {
       setIsLoadingAudio(false);
     }
