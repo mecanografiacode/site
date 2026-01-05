@@ -57,7 +57,7 @@ const Testimonials: React.FC = () => {
               className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl border border-slate-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all shadow-sm active:scale-90"
               aria-label="Anterior"
             >
-              <ChevronLeft size={20} md:size={24} />
+              <ChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
             </button>
             
             <div className="flex gap-2 md:gap-3">
@@ -76,7 +76,7 @@ const Testimonials: React.FC = () => {
               className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl border border-slate-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all shadow-sm active:scale-90"
               aria-label="Próximo"
             >
-              <ChevronRight size={20} md:size={24} />
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6" />
             </button>
           </div>
         </div>

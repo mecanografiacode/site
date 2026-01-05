@@ -24,7 +24,7 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                 <div className="h-60 sm:h-80 overflow-hidden relative">
                   <img 
                     src={unit.image} 
-                    alt={`Fachada da ${unit.name} do Colégio Reação - Unidade com infraestrutura moderna`} 
+                    alt={`Fachada da ${unit.name} do Colégio Reação`} 
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover/card:scale-110" 
                     width="600"
                     height="400"
@@ -39,13 +39,13 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                 <div className="p-6 md:p-10 flex flex-col flex-grow">
                   <div className="flex items-start gap-4 md:gap-6 mb-6 md:mb-8 group/item">
                     <div className="bg-brand-navy/5 p-2.5 md:p-3 rounded-xl md:rounded-2xl transition-colors group-hover/item:bg-brand-blue group-hover/item:text-white shrink-0">
-                      <MapPin size={22} md:size={28} />
+                      <MapPin className="w-6 h-6 md:w-7 md:h-7" />
                     </div>
                     <p className="text-slate-600 text-base md:text-lg leading-relaxed pt-0.5">{unit.address}</p>
                   </div>
                   <div className="flex items-center gap-4 md:gap-6 mb-8 md:mb-10 group/item">
                     <div className="bg-brand-navy/5 p-2.5 md:p-3 rounded-xl md:rounded-2xl transition-colors group-hover/item:bg-brand-red group-hover/item:text-white shrink-0">
-                      <Phone size={22} md:size={28} />
+                      <Phone className="w-6 h-6 md:w-7 md:h-7" />
                     </div>
                     <a 
                       href={`tel:${unit.phone.replace(/\D/g, '')}`} 
@@ -60,7 +60,7 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                     <div className="flex flex-wrap gap-2 md:gap-3">
                       {unit.levels.map(level => (
                         <span key={level} className="flex items-center gap-1.5 md:gap-2 bg-brand-navy/5 text-brand-navy px-3 md:px-5 py-1.5 md:py-2 rounded-xl md:rounded-2xl text-[10px] md:text-xs font-bold tracking-wide transition-all hover:bg-brand-navy hover:text-white">
-                          <CheckCircle size={12} md:size={14} className="text-brand-red" />
+                          <CheckCircle className="w-3 h-3 md:w-3.5 md:h-3.5 text-brand-red" />
                           {level}
                         </span>
                       ))}

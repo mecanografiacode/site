@@ -5,7 +5,15 @@ import { DIFFERENTIALS } from '../constants';
 import ScrollReveal from './ScrollReveal';
 import { GoogleGenAI, Modality } from "@google/genai";
 
-// Audio decoding helpers
+// Garante que o process seja reconhecido mesmo se os tipos demorarem a carregar
+declare var process: {
+  env: {
+    API_KEY: string;
+    [key: string]: string | undefined;
+  }
+};
+
+// Auxiliares de decodificação de áudio
 function decodeBase64(base64: string) {
   try {
     const binaryString = atob(base64);
@@ -53,17 +61,10 @@ const Differentials: React.FC = () => {
       return;
     }
 
-    // Acesso seguro à chave de API
-    const apiKey = typeof process !== 'undefined' ? process.env.API_KEY : undefined;
-    
-    if (!apiKey) {
-      alert("Para ouvir a narração, a chave de API precisa estar configurada.");
-      return;
-    }
-
     setIsLoadingAudio(true);
     try {
-      const ai = new GoogleGenAI({ apiKey });
+      // Cria nova instância seguindo as diretrizes da API
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const prompt = `Narração profissional e acolhedora: No Colégio Reação, nossa jornada de excelência é construída sobre diferenciais sólidos. Oferecemos ${DIFFERENTIALS.join(', ')}. Tudo isso em um ambiente que respira inovação e valores.`;
 
       const response = await ai.models.generateContent({
@@ -116,7 +117,6 @@ const Differentials: React.FC = () => {
 
   return (
     <section className="py-32 bg-brand-navy text-white overflow-hidden relative">
-      {/* Background Orbs */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand-red/10 rounded-full blur-[150px] -mr-[300px] -mt-[300px]"></div>
       <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-brand-blue/10 rounded-full blur-[120px] -ml-[200px] -mb-[200px]"></div>
       

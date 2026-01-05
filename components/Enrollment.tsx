@@ -27,7 +27,7 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
             <div className="grid lg:grid-cols-2 gap-16 md:gap-32 items-start">
               <ScrollReveal>
                 <h4 className="text-xl md:text-2xl font-black mb-10 md:mb-16 flex items-center gap-3 md:gap-4 text-brand-red tracking-tight uppercase">
-                  <CalendarCheck size={24} md:size={28} /> Etapas de Admissão
+                  <CalendarCheck className="w-6 h-6 md:w-7 md:h-7" /> Etapas de Admissão
                 </h4>
                 <div className="space-y-10 md:space-y-12">
                   {ENROLLMENT_STEPS.map((step, idx) => (
@@ -52,13 +52,13 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
               <ScrollReveal delay={300} className="lg:sticky lg:top-40 mt-12 lg:mt-0">
                 <div className="bg-white/5 backdrop-blur-3xl rounded-[2.5rem] md:rounded-[4rem] p-8 md:p-16 border border-white/10 shadow-3xl transform transition-transform duration-500 hover:scale-[1.02]">
                   <h4 className="text-xl md:text-2xl font-black mb-8 md:mb-12 flex items-center gap-3 md:gap-4 text-brand-red tracking-tight uppercase">
-                    <ClipboardList size={24} md:size={28} /> Documentação
+                    <ClipboardList className="w-6 h-6 md:w-7 md:h-7" /> Documentação
                   </h4>
                   <div className="grid gap-4 md:gap-6 mb-12 md:mb-20">
                     {DOCUMENTATION.map((doc, idx) => (
                       <div key={idx} className="flex items-center gap-3 md:gap-5 text-white/60 group cursor-default">
                         <div className="bg-brand-red/20 p-1.5 rounded-full shrink-0 group-hover:bg-brand-red group-hover:scale-125 transition-all">
-                          <Check size={12} md:size={14} className="text-brand-red group-hover:text-white" />
+                          <Check className="w-3 h-3 md:w-3.5 md:h-3.5 text-brand-red group-hover:text-white" />
                         </div>
                         <span className="text-base md:text-lg font-medium tracking-wide group-hover:text-white transition-colors">{doc}</span>
                       </div>
