@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -22,9 +21,46 @@ const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao'>('home');
   const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
 
-  // Scroll to top when changing pages
+  // Scroll to top and SEO Metadata Update
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // SEO: Dynamic Title and Meta Description Management
+    const baseTitle = "Colégio Reação";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    
+    const pageMetadata: Record<string, { title: string, desc: string }> = {
+      home: { 
+        title: `${baseTitle} | A jornada de excelência começa aqui`, 
+        desc: "O Colégio Reação oferece Educação Infantil, Fundamental e Médio com infraestrutura premium no Recanto das Emas, Brasília. Matrículas 2026 abertas." 
+      },
+      infantil: { 
+        title: `Educação Infantil | ${baseTitle}`, 
+        desc: "O início da jornada escolar com carinho e inovação pedagógica. Conheça o Reação Kids para crianças de 3 a 5 anos." 
+      },
+      fundamental: { 
+        title: `Ensino Fundamental | ${baseTitle}`, 
+        desc: "Do 1º ao 9º ano: excelência acadêmica e formação humana. Uma base sólida para o futuro do seu filho no Recanto das Emas." 
+      },
+      highschool: { 
+        title: `Ensino Médio | ${baseTitle}`, 
+        desc: "Preparação intensiva para ENEM, PAS e vestibulares. Formação crítica e intelectual de alta performance." 
+      },
+      unidades: { 
+        title: `Nossas Unidades | ${baseTitle}`, 
+        desc: "Conheça nossas unidades I e II no Recanto das Emas. Infraestrutura moderna, laboratórios e espaços de convivência." 
+      },
+      'seja-reacao': { 
+        title: `Matrículas 2026 | ${baseTitle}`, 
+        desc: "Garanta o futuro do seu filho. Processo de matrícula 2026 aberto para todos os segmentos. Inicie o agendamento agora." 
+      }
+    };
+
+    const currentMeta = pageMetadata[currentPage] || pageMetadata.home;
+    document.title = currentMeta.title;
+    if (metaDescription) {
+      metaDescription.setAttribute('content', currentMeta.desc);
+    }
   }, [currentPage]);
 
   const navigateTo = (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao') => {
