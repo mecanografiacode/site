@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
 
@@ -7,14 +6,14 @@ const slides = [
     title: "Ambientes modernos preparados para o aprendizado",
     subtitle: "Infraestrutura premium com laboratórios de ponta e espaços integrados à natureza.",
     cta: "Conhecer nossas unidades",
-    image: "https://images.unsplash.com/photo-1523050337458-5bd55f95f938?q=80&w=2000&auto=format&fit=crop", 
+    image: "https://i.imgur.com/faarQOT.png", 
     alt: "Estudantes em ambiente moderno, amplo e tecnológico de aprendizado no Colégio Reação"
   },
   {
     title: "Matrículas 2026: A jornada de excelência começa aqui",
     subtitle: "O colégio que une excelência acadêmica e formação humana integral em um campus de prestígio.",
     cta: "Garantir minha vaga",
-    image: "https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2000&auto=format&fit=crop",
+    image: "https://i.imgur.com/jc4po2M.jpeg",
     alt: "Arquitetura imponente e tradicional do Colégio Reação, simbolizando excelência e história"
   }
 ];
