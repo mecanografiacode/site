@@ -1,7 +1,9 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Pillars from './components/Pillars';
+import Stats from './components/Stats';
 import About from './components/About';
 import Differentials from './components/Differentials';
 import Units from './components/Units';
@@ -77,6 +79,7 @@ const App: React.FC = () => {
           <>
             <Hero onOpenUnitSelector={openUnitSelector} />
             <Pillars />
+            <Stats />
             <About />
             <Differentials />
             <Units onOpenUnitSelector={openUnitSelector} />
