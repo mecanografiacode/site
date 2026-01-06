@@ -1,79 +1,155 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { Music, VolumeX, Volume2 } from 'lucide-react';
+import { Music, VolumeX, Volume2, Music2, Music3, Music4 } from 'lucide-react';
 
 const MusicPlayer: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [showTooltip, setShowTooltip] = useState(true);
+  const [currentSourceIndex, setCurrentSourceIndex] = useState(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  // Melodia Kids - Royalty Free (Happy & Playful)
-  const musicUrl = "https://cdn.pixabay.com/audio/2022/01/12/audio_447385618b.mp3"; 
+  // Lista de fontes de áudio estáveis (Happy & Kids)
+  // Usando URLs de alta disponibilidade para evitar "No supported source found"
+  const audioSources = [
+    "https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3", // Happy Ukelele
+    "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Fallback padrão
+    "https://cdn.pixabay.com/audio/2024/02/08/audio_403c4040a6.mp3"  // Outra opção kids
+  ];
 
   useEffect(() => {
     if (audioRef.current) {
-      audioRef.current.volume = 0.15; // Volume baixo para ser agradável
+      audioRef.current.volume = 0.2; 
       audioRef.current.loop = true;
     }
     
-    // Esconde o tooltip após 8 segundos
     const timer = setTimeout(() => setShowTooltip(false), 8000);
     return () => clearTimeout(timer);
   }, []);
+
+  const handleAudioError = () => {
+    console.warn(`Fonte de áudio ${currentSourceIndex} falhou. Tentando próxima...`);
+    
+    if (currentSourceIndex < audioSources.length - 1) {
+      setCurrentSourceIndex(prev => prev + 1);
+      // O useEffect ou a renderização cuidará de atualizar o src
+    } else {
+      console.error("Todas as fontes de áudio falharam.");
+      setIsPlaying(false);
+    }
+  };
 
   const toggleMusic = () => {
     if (!audioRef.current) return;
 
     if (isPlaying) {
       audioRef.current.pause();
+      setIsPlaying(false);
     } else {
-      audioRef.current.play().catch(err => console.log("User interaction required"));
+      // Garantir carregamento
+      audioRef.current.load();
+      
+      const playPromise = audioRef.current.play();
+      
+      if (playPromise !== undefined) {
+        playPromise
+          .then(() => {
+            setIsPlaying(true);
+            setShowTooltip(false);
+          })
+          .catch(err => {
+            console.error("Interação necessária ou erro de carregamento:", err);
+            setIsPlaying(false);
+          });
+      }
     }
-    setIsPlaying(!isPlaying);
-    setShowTooltip(false);
   };
 
   return (
-    <div className="fixed bottom-10 left-10 z-[100] flex items-center gap-4">
-      <audio ref={audioRef} src={musicUrl} />
+    <div className="fixed bottom-10 left-10 z-[110] flex items-center gap-4">
+      {/* Elemento de áudio com src dinâmico baseado no índice de sucesso */}
+      <audio 
+        ref={audioRef} 
+        src={audioSources[currentSourceIndex]}
+        preload="auto"
+        onError={handleAudioError}
+      />
       
       {showTooltip && (
-        <div className="bg-white px-4 py-2 rounded-2xl shadow-xl border border-slate-100 animate-bounce-slow text-brand-navy text-[10px] font-black uppercase tracking-widest pointer-events-none">
-          Ouvir Melodia Kids 🎵
+        <div className="bg-white px-5 py-3 rounded-2xl shadow-2xl border-2 border-brand-red/10 animate-bounce-slow text-brand-navy text-[11px] font-black uppercase tracking-widest pointer-events-none flex items-center gap-2">
+          <span className="text-xl">🎒</span> Ativar Melodia Alegre
         </div>
       )}
 
-      <button
-        onClick={toggleMusic}
-        className={`group relative p-5 rounded-[2rem] shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 flex items-center justify-center overflow-hidden
-          ${isPlaying ? 'bg-brand-red text-white' : 'bg-white text-brand-navy border border-slate-100'}
-        `}
-        aria-label={isPlaying ? "Desativar música" : "Ativar música"}
-      >
-        {/* Efeito de pulsação quando tocando */}
+      <div className="relative">
+        {/* Notas Musicais Flutuantes quando tocando */}
         {isPlaying && (
-          <span className="absolute inset-0 bg-white/20 animate-ping rounded-full"></span>
+          <>
+            <div className="absolute -top-12 left-2 animate-float-note-1 text-brand-red opacity-0">
+              <Music2 size={20} />
+            </div>
+            <div className="absolute -top-16 left-8 animate-float-note-2 text-brand-blue opacity-0">
+              <Music3 size={18} />
+            </div>
+            <div className="absolute -top-14 right-2 animate-yellow-500 opacity-0">
+              <Music4 size={22} />
+            </div>
+          </>
         )}
-        
-        <div className="relative z-10">
-          {isPlaying ? <Volume2 size={24} /> : <Music size={24} />}
-        </div>
 
-        {/* Indicador de Som Visual */}
-        {isPlaying && (
-          <div className="absolute -top-1 -right-1 flex gap-0.5">
-            <span className="w-1 h-3 bg-white rounded-full animate-[music-bar_0.8s_infinite_alternate]"></span>
-            <span className="w-1 h-5 bg-white rounded-full animate-[music-bar_1.2s_infinite_alternate]"></span>
-            <span className="w-1 h-2 bg-white rounded-full animate-[music-bar_0.5s_infinite_alternate]"></span>
+        <button
+          onClick={toggleMusic}
+          className={`group relative p-6 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 flex items-center justify-center overflow-hidden
+            ${isPlaying ? 'bg-brand-red text-white' : 'bg-white text-brand-navy border-2 border-slate-100'}
+          `}
+          aria-label={isPlaying ? "Desativar música" : "Ativar música"}
+        >
+          {/* Efeito de Ondas Sonoras */}
+          {isPlaying && (
+            <div className="absolute inset-0 flex items-center justify-center">
+              <span className="absolute w-full h-full bg-white/30 animate-ping rounded-full"></span>
+              <span className="absolute w-3/4 h-3/4 bg-white/20 animate-ping rounded-full" style={{ animationDelay: '0.4s' }}></span>
+            </div>
+          )}
+          
+          <div className="relative z-10 flex items-center justify-center">
+            {isPlaying ? (
+              <div className="flex gap-1 items-end h-6">
+                <span className="w-1.5 bg-white rounded-full animate-music-bar-fast"></span>
+                <span className="w-1.5 bg-white rounded-full animate-music-bar-slow"></span>
+                <span className="w-1.5 bg-white rounded-full animate-music-bar-mid"></span>
+              </div>
+            ) : (
+              <Music size={28} className="group-hover:rotate-12 transition-transform" />
+            )}
           </div>
-        )}
-      </button>
+        </button>
+      </div>
 
       <style dangerouslySetInnerHTML={{ __html: `
-        @keyframes music-bar {
-          from { transform: scaleY(0.5); }
-          to { transform: scaleY(1.5); }
+        @keyframes music-bar-fast {
+          0%, 100% { height: 8px; }
+          50% { height: 24px; }
         }
+        @keyframes music-bar-slow {
+          0%, 100% { height: 16px; }
+          50% { height: 8px; }
+        }
+        @keyframes music-bar-mid {
+          0%, 100% { height: 12px; }
+          50% { height: 20px; }
+        }
+        .animate-music-bar-fast { animation: music-bar-fast 0.6s infinite ease-in-out; }
+        .animate-music-bar-slow { animation: music-bar-slow 0.9s infinite ease-in-out; }
+        .animate-music-bar-mid { animation: music-bar-mid 0.7s infinite ease-in-out; }
+
+        @keyframes float-note {
+          0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+          20% { opacity: 1; }
+          100% { transform: translateY(-60px) rotate(20deg); opacity: 0; }
+        }
+        .animate-float-note-1 { animation: float-note 2s infinite ease-out; }
+        .animate-float-note-2 { animation: float-note 2.5s infinite ease-out 0.5s; }
+        .animate-float-note-3 { animation: float-note 2.2s infinite ease-out 0.8s; }
       `}} />
     </div>
   );

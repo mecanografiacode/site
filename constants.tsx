@@ -56,7 +56,7 @@ export const UNITS: Unit[] = [
     levels: ['Educação Infantil', 'Anos Iniciais', 'Anos Finais'],
     whatsapp: 'https://wa.me/5561996410987',
     image: 'https://i.imgur.com/aWkKa1hl.png',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.4764836067086!2d-48.0776269!3d-15.9100918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cda11269d0f%3A0xa1c5b52543482ca9!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1739818800000!5m2!1spt-BR!2sbr',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.4764836067086!2d-48.0776269!3d-15.9100918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cda11269d0f%3A0xa1c5b52543482ca9!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1715818800000',
   },
   {
     id: 2,
@@ -66,7 +66,7 @@ export const UNITS: Unit[] = [
     levels: ['Educação Infantil', 'Anos Iniciais', 'Anos Finais', 'Ensino Médio'],
     whatsapp: 'https://wa.me/5561999498886',
     image: 'https://i.imgur.com/LUEmeOdl.png',
-    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.4984536287313!2d-48.0724395!3d-15.9089793!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2ce7021f85bb%3A0x5bc8f50757d27e60!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1739818800000!5m2!1spt-BR!2sbr',
+    mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.498!2d-48.0724!3d-15.9089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2ce7021f85bb%3A0x5bc8f50757d27e60!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1715818800000',
   },
 ];
 
