@@ -46,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-6'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">

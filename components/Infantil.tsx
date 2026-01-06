@@ -16,7 +16,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section Infantil - Mais colorido com gradiente lúdico */}
-      <section className="relative h-[95vh] min-h-[750px] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative h-[95vh] min-h-[650px] flex items-center overflow-hidden bg-brand-navy">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.imgur.com/bNLzGFF.jpeg" 
@@ -31,7 +31,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
 
         <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full pt-20">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-6 md:mb-8">
               <span className="bg-yellow-400 text-brand-navy px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] inline-block shadow-lg">
                 Reação Kids
               </span>
@@ -41,23 +41,23 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
                 <Star size={14} className="text-purple-400 fill-purple-400" />
               </div>
             </div>
-            <h1 className="text-6xl md:text-[7rem] font-black text-white mb-8 tracking-tighter leading-[0.9]">
+            <h1 className="text-5xl md:text-7xl lg:text-[7rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9]">
               O início de uma <br />
               <span className="text-yellow-400 italic underline decoration-white/10">grande jornada.</span>
             </h1>
-            <p className="text-white/80 text-xl md:text-2xl max-w-2xl font-light mb-12 leading-relaxed">
+            <p className="text-white/80 text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-8 md:mb-12 leading-relaxed">
               Cuidamos com carinho e profissionalismo dos primeiros anos de aprendizado, respeitando a individualidade e estimulando o desenvolvimento integral.
             </p>
-            <div className="flex flex-wrap gap-5">
+            <div className="flex flex-wrap gap-4 md:gap-5">
               <button 
                 onClick={onOpenUnitSelector}
-                className="bg-brand-red text-white px-12 py-6 rounded-full font-black text-lg hover:scale-110 transition-all shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] flex items-center gap-3 btn-shimmer"
+                className="bg-brand-red text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-black text-base md:text-lg hover:scale-110 transition-all shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] flex items-center gap-3 btn-shimmer"
               >
                 Matricular Agora <ArrowRight />
               </button>
               <button 
                 onClick={onOpenUnitSelector}
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-12 py-6 rounded-full font-bold text-lg hover:bg-white hover:text-brand-navy transition-all"
+                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-brand-navy transition-all"
               >
                 Conhecer Unidades
               </button>
@@ -75,7 +75,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-brand-navy text-3xl md:text-4xl font-black mb-8 leading-tight">
-              Acreditamos que os primeiros anos são fundamentais para a formação da <span className="text-purple-600">personalidade</span> e <span className="text-green-600">valores</span>.
+              Acreditamos que os primeiros anos são fundamentais para a formation da <span className="text-purple-600">personalidade</span> e <span className="text-green-600">valores</span>.
             </h2>
             <div className="w-20 h-1.5 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
             <p className="text-slate-500 text-xl leading-[1.8] font-light">
@@ -183,9 +183,9 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
                 <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mb-8 text-white group-hover:scale-110 transition-transform">
                   <item.icon size={32} className={item.textColor} />
                 </div>
-                <h4 className={`text-3xl font-black mb-2 ${item.textColor}`}>{item.age}</h4>
-                <p className={`${item.textColor} opacity-60 font-bold text-xs uppercase tracking-widest mb-6`}>{item.range}</p>
-                <p className={`${item.textColor} opacity-90 leading-relaxed font-medium`}>{item.focus}</p>
+                <h4 className="text-3xl font-black mb-2">{item.age}</h4>
+                <p className="opacity-60 font-bold text-xs uppercase tracking-widest mb-6">{item.range}</p>
+                <p className="opacity-90 leading-relaxed font-medium">{item.focus}</p>
               </ScrollReveal>
             ))}
           </div>
