@@ -104,7 +104,7 @@ const Stats: React.FC = () => {
                 {/* Ícone Flutuante */}
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl shadow-sm border border-slate-50 flex items-center justify-center group-hover:bg-brand-navy group-hover:scale-110 transition-all duration-500 transform group-hover:-rotate-6">
-                    {React.cloneElement(stat.icon as React.ReactElement, { 
+                    {React.cloneElement(stat.icon as React.ReactElement<any>, { 
                       className: "w-10 h-10 md:w-12 md:h-12 text-brand-red group-hover:text-white transition-colors duration-500" 
                     })}
                   </div>
