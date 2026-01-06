@@ -11,6 +11,7 @@ import Enrollment from './components/Enrollment';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import MusicPlayer from './components/MusicPlayer';
 import ScrollReveal from './components/ScrollReveal';
 import Infantil from './components/Infantil';
 import Fundamental from './components/Fundamental';
@@ -134,6 +135,7 @@ const App: React.FC = () => {
       </main>
       <Footer onNavigate={navigateTo} />
       <FloatingWhatsApp />
+      <MusicPlayer />
       <UnitSelectorModal 
         isOpen={isUnitModalOpen} 
         onClose={() => setIsUnitModalOpen(false)} 
