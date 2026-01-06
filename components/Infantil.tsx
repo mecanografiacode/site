@@ -75,7 +75,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
         <div className="max-w-4xl mx-auto px-6 text-center">
           <ScrollReveal>
             <h2 className="text-brand-navy text-3xl md:text-4xl font-black mb-8 leading-tight">
-              Acreditamos que os primeiros anos são fundamentais para a formation da <span className="text-purple-600">personalidade</span> e <span className="text-green-600">valores</span>.
+              Acreditamos que os primeiros anos são fundamentais para a formação da <span className="text-purple-600">personalidade</span> e <span className="text-green-600">valores</span>.
             </h2>
             <div className="w-20 h-1.5 bg-yellow-400 mx-auto mb-8 rounded-full"></div>
             <p className="text-slate-500 text-xl leading-[1.8] font-light">
