@@ -90,7 +90,7 @@ const App: React.FC = () => {
                   <h3 className="text-3xl md:text-5xl font-extrabold text-brand-navy mb-12 md:mb-20 leading-tight">Canais de Relacionamento</h3>
                 </ScrollReveal>
                 
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 max-w-4xl mx-auto">
                   <ScrollReveal delay={100}>
                     <div className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] card-elevation border border-slate-100 group h-full">
                       <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-navy text-brand-red rounded-2xl md:rounded-[2rem] flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-xl shadow-blue-900/10 group-hover:rotate-6 transition-transform shrink-0">
@@ -105,22 +105,12 @@ const App: React.FC = () => {
                   </ScrollReveal>
                   
                   <ScrollReveal delay={200}>
-                    <div className="bg-brand-navy p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] card-elevation lg:scale-110 relative z-10 border-4 border-white shadow-3xl group h-full">
+                    <div className="bg-brand-navy p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] card-elevation relative z-10 border-4 border-white shadow-3xl group h-full">
                       <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-red text-white rounded-2xl md:rounded-[2rem] flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-2xl shadow-brand-red/20 group-hover:-rotate-6 transition-transform shrink-0">
                         <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                       </div>
                       <h4 className="font-bold text-xl md:text-2xl text-white mb-4">Secretaria</h4>
                       <p className="text-white/60 text-base md:text-lg leading-relaxed">Segunda a Sexta<br/><span className="text-brand-red font-bold">07:30 às 18:00</span></p>
-                    </div>
-                  </ScrollReveal>
-
-                  <ScrollReveal delay={300}>
-                    <div className="bg-white p-8 md:p-12 rounded-[2.5rem] md:rounded-[3rem] card-elevation border border-slate-100 group h-full">
-                      <div className="w-16 h-16 md:w-20 md:h-20 bg-brand-navy text-brand-red rounded-2xl md:rounded-[2rem] flex items-center justify-center mx-auto mb-6 md:mb-8 shadow-xl shadow-blue-900/10 group-hover:rotate-6 transition-transform shrink-0">
-                        <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                      </div>
-                      <h4 className="font-bold text-xl md:text-2xl text-brand-navy mb-4">E-mail</h4>
-                      <a href="mailto:contato@colegioreacao.com.br" className="text-slate-500 text-base md:text-lg leading-relaxed font-medium hover:text-brand-red transition-colors break-all">contato@colegioreacao.com.br</a>
                     </div>
                   </ScrollReveal>
                 </div>

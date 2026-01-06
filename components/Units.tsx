@@ -67,15 +67,14 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                     </div>
                   </div>
 
-                  <div className="mb-8 md:mb-10 w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-slate-100 h-40 md:h-48 relative shadow-inner">
+                  <div className="mb-8 md:mb-10 w-full rounded-[1.5rem] md:rounded-[2rem] overflow-hidden border border-slate-100 h-40 md:h-48 relative shadow-inner bg-slate-100">
                     <iframe
                       src={unit.mapUrl}
                       width="100%"
                       height="100%"
                       style={{ border: 0 }}
-                      allowFullScreen={false}
+                      allowFullScreen={true}
                       loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
                       title={`Mapa de localização da ${unit.name}`}
                       className="grayscale-[0.5] hover:grayscale-0 transition-all duration-700"
                     ></iframe>
