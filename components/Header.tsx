@@ -4,8 +4,8 @@ import { Menu, X } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 interface HeaderProps {
-  onNavigate?: (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao') => void;
-  currentPage?: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao';
+  onNavigate?: (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos') => void;
+  currentPage?: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos';
 }
 
 const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
