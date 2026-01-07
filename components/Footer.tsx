@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { Instagram, Facebook, Youtube, Send, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Youtube, ArrowUp } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 interface FooterProps {
-  onNavigate?: (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao') => void;
+  onNavigate?: (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos') => void;
 }
 
 const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
@@ -55,7 +55,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
       
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-16 mb-24">
           <div className="space-y-8">
             <button 
               onClick={() => onNavigate?.('home')} 
@@ -121,27 +121,6 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               ))}
             </nav>
           </div>
-
-          <div>
-            <h4 className="text-xl font-bold mb-10 text-brand-red">Newsletter</h4>
-            <p className="text-white/50 text-lg mb-8 font-light">Assine e receba nosso calendário acadêmico mensal.</p>
-            <form className="relative group" onSubmit={(e) => e.preventDefault()}>
-              <label htmlFor="newsletter-email" className="sr-only">Seu melhor e-mail</label>
-              <input 
-                id="newsletter-email"
-                type="email" 
-                placeholder="Seu melhor e-mail" 
-                className="w-full bg-white/5 border border-white/10 rounded-[1.5rem] px-6 py-5 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red transition-all"
-              />
-              <button 
-                className="absolute right-2 top-2 bg-brand-red text-white p-3 rounded-[1.2rem] hover:bg-brand-navy transition-colors" 
-                type="button"
-                aria-label="Assinar newsletter"
-              >
-                <Send size={20} />
-              </button>
-            </form>
-          </div>
         </div>
 
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center text-white/30 text-sm gap-8">
@@ -152,8 +131,18 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             </p>
           </div>
           <div className="flex space-x-12">
-            <a href="#" className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold">Privacidade</a>
-            <a href="#" className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold">Termos</a>
+            <button 
+              onClick={() => onNavigate?.('privacidade')}
+              className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold"
+            >
+              Privacidade
+            </button>
+            <button 
+              onClick={() => onNavigate?.('termos')}
+              className="hover:text-white transition-colors tracking-widest uppercase text-xs font-bold"
+            >
+              Termos
+            </button>
             <button 
               onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} 
               className="flex items-center gap-2 hover:text-brand-red transition-colors tracking-widest uppercase text-xs font-bold"

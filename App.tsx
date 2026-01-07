@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -19,9 +18,11 @@ import HighSchool from './components/HighSchool';
 import UnitsPage from './components/UnitsPage';
 import SejaReacao2026 from './components/SejaReacao2026';
 import UnitSelectorModal from './components/UnitSelectorModal';
+import PrivacyPolicy from './components/PrivacyPolicy';
+import TermsOfUse from './components/TermsOfUse';
 
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao'>('home');
+  const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos'>('home');
   const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
 
   // Scroll to top and SEO Metadata Update
@@ -56,6 +57,14 @@ const App: React.FC = () => {
       'seja-reacao': { 
         title: `Matrículas 2026 | ${baseTitle}`, 
         desc: "Garanta o futuro do seu filho. Processo de matrícula 2026 aberto para todos os segmentos. Inicie o agendamento agora." 
+      },
+      privacidade: {
+        title: `Política de Privacidade | ${baseTitle}`,
+        desc: "Saiba como o Colégio Reação protege seus dados e respeita a LGPD."
+      },
+      termos: {
+        title: `Termos de Uso | ${baseTitle}`,
+        desc: "Regras e condições de uso do portal institucional do Colégio Reação."
       }
     };
 
@@ -66,7 +75,7 @@ const App: React.FC = () => {
     }
   }, [currentPage]);
 
-  const navigateTo = (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao') => {
+  const navigateTo = (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos') => {
     setCurrentPage(page);
   };
 
@@ -129,6 +138,10 @@ const App: React.FC = () => {
           <UnitsPage onOpenUnitSelector={openUnitSelector} />
         ) : currentPage === 'seja-reacao' ? (
           <SejaReacao2026 />
+        ) : currentPage === 'privacidade' ? (
+          <PrivacyPolicy />
+        ) : currentPage === 'termos' ? (
+          <TermsOfUse />
         ) : (
           <HighSchool onOpenUnitSelector={openUnitSelector} />
         )}
