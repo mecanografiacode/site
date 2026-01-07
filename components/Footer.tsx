@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       onNavigate('highschool');
     } else if (label === 'Unidades' && onNavigate) {
       onNavigate('unidades');
-    } else if (label === 'Seja Reação 2026' && onNavigate) {
+    } else if (label === 'Matrículas 2026' && onNavigate) {
       onNavigate('seja-reacao');
     } else if (onNavigate) {
       onNavigate('home');

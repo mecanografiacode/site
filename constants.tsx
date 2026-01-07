@@ -16,7 +16,7 @@ export const NAV_ITEMS: NavItem[] = [
   { label: 'Anos Iniciais e Finais', href: '#ensino' },
   { label: 'Ensino Médio', href: '#ensino' },
   { label: 'Unidades', href: '#unidades' },
-  { label: 'Seja Reação 2026', href: '#matriculas', isButton: true },
+  { label: 'Matrículas 2026', href: '#matriculas', isButton: true },
   { label: 'Trabalhe Conosco', href: 'https://docs.google.com/forms/d/e/1FAIpQLSe65z1xJpVgPCEnr0v7w74UipOOnwwuB1l3g4ha8E0xnbW6zQ/viewform' },
 ];
 

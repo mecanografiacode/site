@@ -36,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
       onNavigate('highschool');
     } else if (label === 'Unidades' && onNavigate) {
       onNavigate('unidades');
-    } else if (label === 'Seja Reação 2026' && onNavigate) {
+    } else if (label === 'Matrículas 2026' && onNavigate) {
       onNavigate('seja-reacao');
     } else if (onNavigate) {
       onNavigate('home');
@@ -80,7 +80,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                         (currentPage === 'fundamental' && item.label === 'Anos Iniciais e Finais') ||
                         (currentPage === 'highschool' && item.label === 'Ensino Médio') ||
                         (currentPage === 'unidades' && item.label === 'Unidades') ||
-                        (currentPage === 'seja-reacao' && item.label === 'Seja Reação 2026')
+                        (currentPage === 'seja-reacao' && item.label === 'Matrículas 2026')
                         ? 'text-brand-red underline underline-offset-8 decoration-2' 
                         : ''
                       }`
