@@ -47,6 +47,8 @@ export const DIFFERENTIALS = [
   'Formação de valores éticos',
 ];
 
+const WHATSAPP_MESSAGE = encodeURIComponent("Olá vim pelo site do Colégio Reação, e quero mais informações.");
+
 export const UNITS: Unit[] = [
   {
     id: 1,
@@ -54,7 +56,7 @@ export const UNITS: Unit[] = [
     address: 'Quadra 206 - Recanto das Emas, Brasília - DF',
     phone: '(61) 3333-1434',
     levels: ['Educação Infantil', 'Anos Iniciais', 'Anos Finais'],
-    whatsapp: 'https://wa.me/5561996410987',
+    whatsapp: `https://wa.me/5561996410987?text=${WHATSAPP_MESSAGE}`,
     image: 'https://i.imgur.com/aWkKa1hl.png',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.4764836067086!2d-48.0776269!3d-15.9100918!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2cda11269d0f%3A0xa1c5b52543482ca9!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1715818800000',
   },
@@ -64,7 +66,7 @@ export const UNITS: Unit[] = [
     address: 'Quadra 201, Lote 07, Av. Buriti - Recanto das Emas, Brasília - DF',
     phone: '(61) 3333-3332',
     levels: ['Educação Infantil', 'Anos Iniciais', 'Anos Finais', 'Ensino Médio'],
-    whatsapp: 'https://wa.me/5561999498886',
+    whatsapp: `https://wa.me/5561999498886?text=${WHATSAPP_MESSAGE}`,
     image: 'https://i.imgur.com/LUEmeOdl.png',
     mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3837.498!2d-48.0724!3d-15.9089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a2ce7021f85bb%3A0x5bc8f50757d27e60!2zQ29sw6lnaW8gUmVhw6fDo28!5e0!3m2!1spt-BR!2sbr!4v1715818800000',
   },
