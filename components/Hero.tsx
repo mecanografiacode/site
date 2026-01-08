@@ -8,7 +8,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
   return (
-    <section className="relative h-[95vh] min-h-[750px] flex items-center overflow-hidden bg-brand-navy">
+    <section className="relative min-h-screen flex items-start md:items-center overflow-hidden bg-brand-navy">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent z-10"></div>
         <img 
@@ -18,13 +18,13 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
         />
       </div>
       
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full pt-20 pb-32">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full pt-44 md:pt-60 pb-32">
         <div className="max-w-4xl">
           <div className="flex items-center gap-2 mb-6 animate-fade-in-up">
             <div className="flex text-yellow-400">
               {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
             </div>
-            <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em]">Referência em Brasília desde 1997</span>
+            <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">Referência em Brasília desde 1997</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-black text-white mb-8 leading-[0.9] tracking-tighter animate-fade-in-up" style={{ animationDelay: '0.2s' }}>

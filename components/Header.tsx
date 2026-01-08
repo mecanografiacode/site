@@ -46,20 +46,20 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-4 md:py-6'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-4'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <button 
               onClick={() => onNavigate?.('home')} 
-              className={`block h-12 md:h-16 transition-all duration-500 hover:scale-105 ${!scrolled ? 'bg-white/90 p-2 rounded-xl shadow-lg' : ''}`}
+              className="block h-10 md:h-14 transition-all duration-500 hover:scale-105"
             >
               <img 
                 src="https://i.imgur.com/LESvkxT.png" 
                 alt="Logotipo oficial do Colégio Reação" 
-                className="h-full w-auto object-contain"
-                width="200"
-                height="80"
+                className="h-full w-auto object-contain transition-all duration-500"
+                width="180"
+                height="60"
               />
             </button>
           </div>
