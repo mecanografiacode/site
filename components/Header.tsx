@@ -46,20 +46,20 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-4'}`}>
+    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'glass-header shadow-sm py-2' : 'bg-transparent py-4 md:py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <button 
               onClick={() => onNavigate?.('home')} 
-              className="block h-10 md:h-14 transition-all duration-500 hover:scale-105"
+              className={`block h-12 md:h-16 transition-all duration-500 hover:scale-105 ${!scrolled ? 'bg-white/90 p-2 rounded-xl shadow-lg' : ''}`}
             >
               <img 
                 src="https://i.imgur.com/LESvkxT.png" 
                 alt="Logotipo oficial do Colégio Reação" 
-                className="h-full w-auto object-contain transition-all duration-500"
-                width="180"
-                height="60"
+                className="h-full w-auto object-contain"
+                width="200"
+                height="80"
               />
             </button>
           </div>
@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                 className={`text-sm font-semibold transition-all duration-300 relative group ${
                   item.isButton 
-                    ? 'bg-brand-red text-white px-8 py-3 rounded-full shadow-lg shadow-brand-red/20 hover:scale-105 hover:-translate-y-1 active:scale-90 btn-shimmer' 
+                    ? 'bg-brand-red text-white px-8 py-3 rounded-full shadow-lg shadow-brand-red/20 hover:scale-105 active:scale-95 btn-shimmer' 
                     : `${scrolled ? 'text-brand-navy' : 'text-white'} ${
                         (currentPage === 'infantil' && item.label === 'Infantil') || 
                         (currentPage === 'fundamental' && item.label === 'Anos Iniciais e Finais') ||
@@ -123,7 +123,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 isOpen ? 'translate-x-0' : '-translate-x-4'
               } ${
                 item.isButton 
-                  ? 'bg-brand-red text-white text-center mt-4 active:scale-90 hover:brightness-110' 
+                  ? 'bg-brand-red text-white text-center mt-4 active:scale-95' 
                   : 'text-slate-700 hover:bg-slate-50 hover:pl-6'
               }`}
             >

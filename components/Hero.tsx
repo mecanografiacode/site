@@ -1,63 +1,103 @@
 
-import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
+
+const slides = [
+  {
+    title: "Ambientes modernos preparados para o aprendizado",
+    subtitle: "Infraestrutura premium com laboratórios de ponta e espaços integrados à natureza.",
+    cta: "Conhecer nossas unidades",
+    image: "https://i.imgur.com/faarQOT.png", 
+    alt: "Estudantes em ambiente moderno, amplo e tecnológico de aprendizado no Colégio Reação"
+  },
+  {
+    title: "Matrículas 2026: A jornada de excelência começa aqui",
+    subtitle: "O colégio que une excelência acadêmica e formação humana integral em um campus de prestígio.",
+    cta: "Garantir minha vaga",
+    image: "https://i.imgur.com/jc4po2M.jpeg",
+    alt: "Arquitetura imponente e tradicional do Colégio Reação, simbolizando excelência e história"
+  }
+];
 
 interface HeroProps {
   onOpenUnitSelector?: () => void;
 }
 
 const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
+    }, 8000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-start md:items-center overflow-hidden bg-brand-navy">
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent z-10"></div>
-        <img 
-          src="https://i.imgur.com/jc4po2M.jpeg" 
-          className="w-full h-full object-cover" 
-          alt="Ambiente de excelência Colégio Reação"
-        />
-      </div>
-      
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-20 w-full pt-44 md:pt-60 pb-32">
-        <div className="max-w-4xl">
-          <div className="flex items-center gap-2 mb-6 animate-fade-in-up">
-            <div className="flex text-yellow-400">
-              {[...Array(5)].map((_, i) => <Star key={i} size={16} fill="currentColor" />)}
-            </div>
-            <span className="text-white/60 text-[10px] md:text-xs font-bold uppercase tracking-[0.3em]">Referência em Brasília desde 1997</span>
+    <section className="relative h-screen min-h-[550px] md:min-h-[600px] overflow-hidden bg-brand-navy">
+      {slides.map((slide, index) => (
+        <div
+          key={index}
+          className={`absolute inset-0 transition-all duration-[2000ms] ease-in-out ${index === current ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/40 to-transparent z-10"></div>
+          
+          {/* Background Image with Ken Burns Effect */}
+          <div className={`w-full h-full transition-transform duration-[10000ms] ease-linear ${index === current ? 'scale-110' : 'scale-100'}`}>
+            <img 
+              src={slide.image} 
+              className="w-full h-full object-cover" 
+              alt={slide.alt}
+              width="1920"
+              height="1080"
+              loading={index === 0 ? "eager" : "lazy"}
+              // @ts-ignore
+              fetchpriority={index === 0 ? "high" : "low"}
+              decoding={index === 0 ? "sync" : "async"}
+            />
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-black text-white mb-8 leading-[0.9] tracking-tighter animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            A jornada de <span className="text-brand-red">excelência</span> começa aqui.
-          </h1>
-          
-          <p className="text-white/70 text-lg md:text-2xl mb-12 font-light leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-            Mais do que conteúdo acadêmico, formamos caráter, autonomia e a coragem necessária para conquistar o mundo.
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-5 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-            <button
-              onClick={onOpenUnitSelector}
-              className="group relative bg-brand-red text-white px-10 py-6 rounded-full font-black text-lg shadow-2xl hover:scale-105 transition-all btn-shimmer flex items-center justify-center gap-3"
-            >
-              Agendar Visita Guiada
-              <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-            </button>
-            <button
-              onClick={onOpenUnitSelector}
-              className="bg-white/5 backdrop-blur-xl text-white border border-white/20 px-10 py-6 rounded-full font-bold text-lg hover:bg-white hover:text-brand-navy transition-all"
-            >
-              Falar com a Coordenação
-            </button>
+          <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 sm:px-6 lg:px-32 max-w-7xl mx-auto">
+            <div className="max-w-4xl mt-12 md:mt-10">
+              <h1 className={`text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-[5.5rem] font-black text-white mb-4 md:mb-6 leading-[1.1] md:leading-[1] tracking-tighter transition-all duration-1000 delay-300 break-words text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                {slide.title}
+              </h1>
+              <p className={`text-sm sm:text-lg md:text-xl lg:text-xl xl:text-2xl text-white/70 mb-6 md:mb-10 font-light leading-relaxed max-w-2xl transition-all duration-1000 delay-500 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                {slide.subtitle}
+              </p>
+              
+              <div className={`flex flex-col sm:flex-row gap-4 sm:gap-5 transition-all duration-1000 delay-700 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                <button
+                  onClick={onOpenUnitSelector}
+                  className="group relative bg-brand-red text-white px-6 md:px-10 py-3.5 md:py-4 lg:py-5 rounded-full font-black text-sm md:text-lg shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] transition-all hover:scale-105 md:hover:scale-110 hover:-translate-y-1 active:scale-95 btn-shimmer flex items-center justify-center gap-3"
+                >
+                  <span className="relative z-10 flex items-center gap-3">
+                    {slide.cta}
+                    <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" />
+                  </span>
+                </button>
+                <button
+                  onClick={onOpenUnitSelector}
+                  className="bg-white/5 backdrop-blur-xl text-white border border-white/20 px-6 md:px-10 py-3.5 md:py-4 lg:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 active:scale-95 text-center"
+                >
+                  Agendar Visita
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ))}
 
-      <div className="absolute bottom-8 left-12 hidden md:block z-20">
-        <div className="flex gap-12 text-white/30 text-[9px] font-black uppercase tracking-[0.4em]">
-          <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-brand-red rounded-full"></div> Disciplina & Acolhimento</span>
-          <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-brand-red rounded-full"></div> Alta Performance Acadêmica</span>
-          <span className="flex items-center gap-2"><div className="w-1.5 h-1.5 bg-brand-red rounded-full"></div> Valores Éticos e Morais</span>
+      <div className="absolute bottom-10 md:bottom-16 left-6 md:left-auto md:right-16 z-30 flex space-x-4 md:space-x-6 items-center">
+        <div className="flex space-x-2 md:space-x-3">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={`h-1.5 rounded-full transition-all duration-700 ${i === current ? 'bg-brand-red w-8 md:w-12' : 'bg-white/20 w-3 md:w-4 hover:bg-white/40'}`}
+              aria-label={`Ir para slide ${i + 1}`}
+            />
+          ))}
         </div>
       </div>
     </section>
