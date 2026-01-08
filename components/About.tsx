@@ -1,57 +1,47 @@
 
 import React from 'react';
-import { Target, Eye, ShieldCheck } from 'lucide-react';
+import { Quote } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-20 md:py-40 bg-brand-offwhite overflow-hidden">
+    <section id="sobre" className="py-24 md:py-48 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
-        <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-24">
-          <ScrollReveal className="lg:w-1/2">
-            <span className="text-brand-red text-xs font-black tracking-[0.4em] uppercase mb-4 md:mb-6 block">Legado Colégio Reação</span>
-            <h3 className="text-3xl sm:text-4xl md:text-7xl font-black text-brand-navy mb-8 md:mb-12 leading-[1.2] md:leading-[1.1] tracking-tighter">
-              Tradição que se <br className="hidden sm:block" /><span className="text-brand-red">reinventa</span> todo dia.
-            </h3>
-            <p className="text-slate-500 text-lg md:text-xl mb-10 md:mb-16 leading-[1.6] md:leading-[1.8] font-light">
-              Desde 1997, o Colégio Reação é protagonista na educação brasiliense, equilibrando o rigor acadêmico com a sensibilidade humana para formar as novas lideranças do país.
-            </p>
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          <ScrollReveal>
+            <span className="text-brand-red text-xs font-black tracking-[0.5em] uppercase mb-8 block">Nossa História</span>
+            <h2 className="text-4xl md:text-7xl font-black text-brand-navy mb-10 leading-[0.95] tracking-tighter">
+              Educação é uma jornada de <span className="text-brand-red">confiança</span> mútua.
+            </h2>
+            <div className="space-y-8 text-slate-500 text-lg md:text-xl font-light leading-relaxed">
+              <p>
+                O Colégio Reação não nasceu apenas para ensinar fórmulas e datas. Nasceu da inquietação de oferecer uma educação que fizesse o aluno **reagir** ao mundo, não apenas observá-lo.
+              </p>
+              <p>
+                Há 28 anos, cuidamos de cada estudante pelo nome. Aqui, a disciplina caminha de mãos dadas com o afeto, e o rigor acadêmico serve como ferramenta para a construção de cidadãos éticos, prontos para os desafios das melhores universidades e da vida.
+              </p>
+            </div>
             
-            <div className="grid gap-6 md:gap-8">
-              {[
-                { icon: <Target className="text-brand-red" size={20} />, title: 'Missão de Impacto', desc: 'Educação de alta performance integrando valores éticos e excelência científica.' },
-                { icon: <Eye className="text-brand-red" size={20} />, title: 'Visão Futurista', desc: 'Ser o epicentro da inovação educacional e formação integral no Centro-Oeste.' },
-              ].map((item, i) => (
-                <div key={i} className="flex gap-5 md:gap-8 group">
-                  <div className="bg-brand-navy p-4 md:p-5 rounded-2xl md:rounded-3xl h-fit shadow-xl transition-transform group-hover:rotate-6">
-                    {item.icon}
-                  </div>
-                  <div>
-                    <h4 className="font-extrabold text-brand-navy text-lg md:text-xl mb-1 md:mb-2 tracking-tight">{item.title}</h4>
-                    <p className="text-slate-400 text-sm md:text-base leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="mt-12 p-8 bg-brand-offwhite rounded-[2.5rem] border-l-8 border-brand-red relative">
+              <Quote className="absolute top-4 right-4 text-brand-red/10" size={48} />
+              <p className="text-brand-navy font-bold italic text-lg leading-relaxed">
+                "Não preparamos apenas para o vestibular, preparamos para o dia em que nossos alunos terão que tomar decisões que mudarão o mundo."
+              </p>
+              <p className="mt-4 text-slate-400 text-sm font-bold uppercase tracking-widest">— Fundadores do Colégio Reação</p>
             </div>
           </ScrollReveal>
-          
-          <ScrollReveal className="lg:w-1/2 relative mt-12 lg:mt-0" delay={200}>
-            <div className="relative rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(13,43,82,0.2)] border-[10px] md:border-[16px] border-white">
+
+          <ScrollReveal delay={200} className="relative">
+            <div className="rounded-[4rem] overflow-hidden shadow-3xl rotate-3 hover:rotate-0 transition-transform duration-700 border-[20px] border-brand-offwhite">
               <img 
-                src="https://i.imgur.com/ynCQi7jh.jpeg" // h suffix = 1024px
-                alt="Estudantes interagindo em ambiente de excelência educacional no Colégio Reação"
-                className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-1000"
-                width="800"
-                height="1000"
-                loading="lazy"
-                decoding="async"
+                src="https://i.imgur.com/ynCQi7jh.jpeg" 
+                alt="Legado e Tradição Reação" 
+                className="w-full h-full object-cover"
               />
             </div>
-            <div className="absolute -bottom-6 md:-bottom-12 -right-4 md:-right-6 bg-brand-navy p-6 md:p-12 rounded-[2rem] md:rounded-[3rem] shadow-3xl border-4 md:border-8 border-white">
-              <div className="text-center">
-                <span className="block text-4xl md:text-6xl font-black text-white tracking-tighter leading-none">28</span>
-                <span className="text-[8px] md:text-[10px] text-brand-red font-black tracking-[0.2em] md:tracking-[0.3em] uppercase mt-1 md:mt-2 block">Anos de Excelência</span>
-              </div>
+            <div className="absolute -bottom-10 -left-10 bg-brand-navy p-12 rounded-[3rem] text-white shadow-3xl">
+              <p className="text-5xl font-black tracking-tighter mb-1">28</p>
+              <p className="text-[10px] font-black uppercase tracking-widest text-brand-red">Anos de impacto</p>
             </div>
           </ScrollReveal>
         </div>
