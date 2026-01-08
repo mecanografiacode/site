@@ -54,7 +54,7 @@ const Transformation: React.FC = () => {
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 100} className="bg-white/5 backdrop-blur-xl p-12 rounded-[4rem] border border-white/10 group hover:bg-white hover:border-white transition-all duration-700">
               <div className="w-16 h-16 bg-brand-red rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform shadow-2xl shadow-brand-red/20 text-white">
-                {React.cloneElement(item.icon as React.ReactElement, { size: 28 })}
+                {React.cloneElement(item.icon as React.ReactElement<any>, { size: 28 })}
               </div>
               <h4 className="text-2xl font-black text-white group-hover:text-brand-navy mb-4 transition-colors">{item.title}</h4>
               <p className="text-white/40 group-hover:text-slate-500 font-medium leading-relaxed transition-colors">{item.text}</p>

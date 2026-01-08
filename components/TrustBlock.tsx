@@ -27,7 +27,7 @@ const TrustBlock: React.FC = () => {
           ].map((item, i) => (
             <ScrollReveal key={i} delay={i * 100} className="flex flex-col items-center text-center group">
               <div className="mb-6 p-6 bg-white rounded-3xl shadow-sm group-hover:bg-brand-navy transition-all duration-500">
-                {React.cloneElement(item.icon as React.ReactElement, { className: "group-hover:text-white transition-colors" })}
+                {React.cloneElement(item.icon as React.ReactElement<any>, { className: "group-hover:text-white transition-colors" })}
               </div>
               <h4 className="text-xl font-black text-brand-navy mb-3">{item.title}</h4>
               <p className="text-slate-500 font-medium leading-relaxed">{item.desc}</p>

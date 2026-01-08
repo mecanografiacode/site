@@ -74,7 +74,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 rel={item.href.startsWith('http') ? "noopener noreferrer" : undefined}
                 className={`text-sm font-semibold transition-all duration-300 relative group ${
                   item.isButton 
-                    ? 'bg-brand-red text-white px-8 py-3 rounded-full shadow-lg shadow-brand-red/20 hover:scale-105 active:scale-95 btn-shimmer' 
+                    ? 'bg-brand-red text-white px-8 py-3 rounded-full shadow-lg shadow-brand-red/20 hover:scale-105 hover:-translate-y-1 active:scale-90 btn-shimmer' 
                     : `${scrolled ? 'text-brand-navy' : 'text-white'} ${
                         (currentPage === 'infantil' && item.label === 'Infantil') || 
                         (currentPage === 'fundamental' && item.label === 'Anos Iniciais e Finais') ||
@@ -123,7 +123,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
                 isOpen ? 'translate-x-0' : '-translate-x-4'
               } ${
                 item.isButton 
-                  ? 'bg-brand-red text-white text-center mt-4 active:scale-95' 
+                  ? 'bg-brand-red text-white text-center mt-4 active:scale-90 hover:brightness-110' 
                   : 'text-slate-700 hover:bg-slate-50 hover:pl-6'
               }`}
             >

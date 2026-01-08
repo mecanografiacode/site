@@ -13,7 +13,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent z-10"></div>
         <img 
           src="https://i.imgur.com/jc4po2M.jpeg" 
-          className="w-full h-full object-cover scale-105 animate-soft-pulse" 
+          className="w-full h-full object-cover" 
           alt="Ambiente de excelência Colégio Reação"
         />
       </div>
@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
           </div>
           
           <h1 className="text-5xl md:text-7xl lg:text-[6.5rem] font-black text-white mb-8 leading-[0.9] tracking-tighter animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            A base sólida para quem vai <span className="text-brand-red">desenhar</span> o próprio futuro.
+            A jornada de <span className="text-brand-red">excelência</span> começa aqui.
           </h1>
           
           <p className="text-white/70 text-lg md:text-2xl mb-12 font-light leading-relaxed max-w-2xl animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
