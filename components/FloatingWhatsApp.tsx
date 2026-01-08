@@ -57,10 +57,17 @@ const FloatingWhatsApp: React.FC = () => {
 
       <button
         onClick={() => setOpen(!open)}
-        className="bg-green-500 text-white p-6 rounded-[2rem] shadow-2xl hover:scale-110 active:scale-95 transition-all shadow-green-500/20 group relative overflow-hidden"
+        className={`bg-green-500 text-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(34,197,94,0.4)] hover:scale-110 active:scale-95 transition-all group relative overflow-visible ${!open ? 'animate-vibrate' : ''}`}
       >
-        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500"></div>
+        <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-500 rounded-[2rem]"></div>
         <MessageCircle size={32} fill="white" className="relative z-10" />
+        
+        {/* Bolinha de Mensagem (Badge de Notificação) */}
+        {!open && (
+          <div className="absolute -top-2 -right-2 w-7 h-7 bg-red-600 text-white text-[11px] font-black rounded-full flex items-center justify-center border-2 border-white shadow-lg animate-bounce">
+            1
+          </div>
+        )}
       </button>
     </div>
   );

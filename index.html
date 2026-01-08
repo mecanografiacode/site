@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -86,6 +87,7 @@
               'soft-pulse': 'soft-pulse 2s infinite ease-in-out',
               'bounce-slow': 'bounce-slow 3s infinite ease-in-out',
               'fade-in-up': 'fade-in-up 0.8s ease-out forwards',
+              'vibrate': 'vibrate 2s infinite ease-in-out',
             },
             keyframes: {
               shimmer: {
@@ -103,6 +105,11 @@
               'fade-in-up': {
                 '0%': { opacity: '0', transform: 'translateY(20px)' },
                 '100%': { opacity: '1', transform: 'translateY(0)' }
+              },
+              'vibrate': {
+                '0%, 100%, 20%, 40%, 60%, 80%': { transform: 'translateX(0)' },
+                '10%, 30%, 50%, 70%, 90%': { transform: 'translateX(-3px) rotate(-2deg)' },
+                '15%, 35%, 55%, 75%, 95%': { transform: 'translateX(3px) rotate(2deg)' }
               }
             }
           }

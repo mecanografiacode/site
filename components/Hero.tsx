@@ -8,6 +8,7 @@ const slides = [
     subtitle: "Infraestrutura premium com laboratórios de ponta e espaços integrados à natureza.",
     cta: "Conhecer nossas unidades",
     image: "https://i.imgur.com/faarQOT.png", 
+    webp: "https://i.imgur.com/faarQOT.webp",
     alt: "Estudantes em ambiente moderno, amplo e tecnológico de aprendizado no Colégio Reação"
   },
   {
@@ -15,6 +16,7 @@ const slides = [
     subtitle: "O colégio que une excelência acadêmica e formação humana integral em um campus de prestígio.",
     cta: "Garantir minha vaga",
     image: "https://i.imgur.com/jc4po2M.jpeg",
+    webp: "https://i.imgur.com/jc4po2M.webp",
     alt: "Arquitetura imponente e tradicional do Colégio Reação, simbolizando excelência e história"
   }
 ];
@@ -42,19 +44,23 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/40 to-transparent z-10"></div>
           
-          {/* Background Image with Ken Burns Effect */}
+          {/* Background Image with Ken Burns Effect and WebP Optimization */}
           <div className={`w-full h-full transition-transform duration-[10000ms] ease-linear ${index === current ? 'scale-110' : 'scale-100'}`}>
-            <img 
-              src={slide.image} 
-              className="w-full h-full object-cover" 
-              alt={slide.alt}
-              width="1920"
-              height="1080"
-              loading={index === 0 ? "eager" : "lazy"}
-              // @ts-ignore
-              fetchpriority={index === 0 ? "high" : "low"}
-              decoding={index === 0 ? "sync" : "async"}
-            />
+            <picture>
+              <source srcSet={slide.webp} type="image/webp" />
+              <img 
+                src={slide.image} 
+                className="w-full h-full object-cover" 
+                alt={slide.alt}
+                width="1920"
+                height="1080"
+                // Otimização: O primeiro slide carrega com 'eager' para LCP, os demais com 'lazy'
+                loading={index === 0 ? "eager" : "lazy"}
+                // @ts-ignore
+                fetchpriority={index === 0 ? "high" : "low"}
+                decoding={index === 0 ? "sync" : "async"}
+              />
+            </picture>
           </div>
           
           <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 sm:px-6 lg:px-32 max-w-7xl mx-auto">
