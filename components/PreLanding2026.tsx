@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { ArrowRight, MapPin, Clock, Star, Sparkles, GraduationCap, BookOpen, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, MapPin, Star, GraduationCap, BookOpen, CheckCircle2 } from 'lucide-react';
 import { UNITS } from '../constants';
 
 interface PreLanding2026Props {
@@ -10,12 +10,12 @@ interface PreLanding2026Props {
 
 const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnrollment }) => {
   return (
-    <div className="fixed inset-0 z-[200] flex flex-col lg:flex-row overflow-y-auto bg-white">
-      {/* Lado Esquerdo - Chamada Institucional (Azul Dominante) */}
-      <div className="w-full lg:w-[45%] bg-brand-blue p-8 md:p-12 lg:p-20 flex flex-col justify-center relative overflow-hidden">
-        {/* Elementos de fundo */}
+    <div className="fixed inset-0 z-[200] flex flex-col lg:flex-row overflow-y-auto bg-white scrollbar-hide">
+      {/* Lado Esquerdo - Chamada Institucional - OCULTO NO MOBILE */}
+      <div className="hidden lg:flex lg:w-[45%] bg-brand-blue p-10 lg:p-20 flex-col justify-center relative overflow-hidden min-h-screen shrink-0">
+        {/* Elementos de fundo decorativos */}
         <div className="absolute top-0 right-0 w-full h-full opacity-10 pointer-events-none">
-          <div className="absolute top-10 right-5 rotate-12">
+          <div className="absolute top-10 -right-5 rotate-12">
             <GraduationCap size={140} className="text-white" />
           </div>
           <div className="absolute bottom-10 left-5 -rotate-12">
@@ -23,22 +23,22 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
           </div>
         </div>
         
-        <div className="relative z-10">
-          <div className="flex gap-2 mb-6 animate-bounce-slow">
-            <Star size={20} fill="#e63946" className="text-brand-red" />
-            <Star size={20} fill="#e63946" className="text-brand-red" />
-            <Star size={20} fill="#e63946" className="text-brand-red" />
+        <div className="relative z-10 flex flex-col items-start text-left">
+          <div className="flex gap-1.5 mb-8 animate-bounce-slow">
+            <Star size={16} fill="#e63946" className="text-brand-red" />
+            <Star size={16} fill="#e63946" className="text-brand-red" />
+            <Star size={16} fill="#e63946" className="text-brand-red" />
           </div>
           
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-6 tracking-tighter leading-[0.9]">
-            O futuro <br /> tem nome: <br /> <span className="text-brand-red drop-shadow-lg">Reação</span>
+          <h1 className="text-7xl font-black text-white mb-10 tracking-tighter leading-[0.85]">
+            O futuro <br /> tem nome: <br /> <span className="text-brand-red drop-shadow-2xl">Reação</span>
           </h1>
           
-          <div className="space-y-4 mb-10 max-w-sm border-l-4 border-brand-red pl-6">
-            <p className="text-white/90 text-base md:text-lg font-medium leading-relaxed">
+          <div className="space-y-4 mb-16 max-w-sm border-l-4 border-brand-red pl-8">
+            <p className="text-white/90 text-xl font-medium leading-relaxed">
               Tradição que prepara, inovação que transforma e valores que ficam para sempre.
             </p>
-            <div className="flex items-center gap-3 text-white/60 font-black text-[10px] uppercase tracking-[0.2em]">
+            <div className="flex items-center gap-3 text-white/50 font-black text-[12px] uppercase tracking-[0.3em]">
               <CheckCircle2 size={14} className="text-brand-red" />
               Matrículas 2026 Abertas
             </div>
@@ -46,87 +46,108 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
 
           <button 
             onClick={onOpenEnrollment}
-            className="group relative w-full md:w-fit bg-brand-red text-white px-8 md:px-12 py-5 md:py-6 rounded-2xl font-black text-lg md:text-2xl shadow-[0_15px_40px_rgba(230,57,70,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 btn-shimmer overflow-hidden"
+            className="group relative w-fit bg-brand-red text-white px-10 py-7 rounded-2xl font-black text-3xl shadow-[0_20px_50px_rgba(230,57,70,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center gap-4 btn-shimmer overflow-hidden"
           >
-            <span className="relative z-10 flex items-center gap-4">
-              GARANTIR VAGA
-              <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
+            <span className="relative z-10 flex items-center gap-4 uppercase tracking-tighter">
+              Garantir Vaga
+              <ArrowRight size={32} className="group-hover:translate-x-2 transition-transform" />
             </span>
           </button>
           
-          <p className="mt-8 text-white/40 font-black text-[9px] uppercase tracking-[0.4em] text-center md:text-left">
+          <p className="mt-10 text-white/30 font-black text-[11px] uppercase tracking-[0.4em]">
             Condições exclusivas para novos alunos
           </p>
         </div>
       </div>
 
-      {/* Lado Direito - Impacto Visual Sticker Style (Branco/Azul/Vermelho) */}
-      <div className="w-full lg:w-[55%] bg-brand-offwhite p-6 md:p-10 lg:p-16 flex flex-col items-center justify-center relative">
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/graphy-dark.png')] opacity-5"></div>
+      {/* Lado Direito - TELA INICIAL MOBILE - Impacto Visual Sticker Style com Fundo Azul Designer Refinado */}
+      <div className="w-full lg:w-[55%] bg-[#f0f4f8] p-6 sm:p-10 lg:p-16 flex flex-col items-center justify-center relative min-h-screen lg:min-h-screen shrink-0 overflow-hidden">
         
-        <div className="relative z-10 w-full max-w-lg">
-          {/* Sticker Texto Empilhado - Frase Atualizada e Dimensões Reduzidas */}
-          <div className="flex flex-col gap-4 mb-16 rotate-[-1deg]">
-             <div className="bg-brand-blue text-white px-6 py-3 rounded-xl md:rounded-2xl text-2xl md:text-4xl font-black w-fit shadow-[8px_8px_0px_#0d2b52] border-2 md:border-4 border-white self-start transform hover:rotate-1 transition-transform cursor-default uppercase">
+        {/* PREMIUM BLUE DESIGNER BACKGROUND */}
+        <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+          {/* Malha de Gradiente (Mesh Gradient Effect) */}
+          <div className="absolute top-[-10%] left-[-10%] w-[70%] h-[70%] bg-brand-blue/10 rounded-full blur-[120px] mix-blend-multiply animate-pulse"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-brand-blue/5 rounded-full blur-[100px] mix-blend-multiply"></div>
+          
+          {/* Linhas de Design Abstratas em Azul */}
+          <svg className="absolute inset-0 w-full h-full opacity-[0.05]" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0 20 Q 25 10 50 20 T 100 20" fill="none" stroke="#1b4a9a" strokeWidth="0.5" />
+            <path d="M0 50 Q 25 40 50 50 T 100 50" fill="none" stroke="#1b4a9a" strokeWidth="0.3" />
+            <path d="M0 80 Q 25 70 50 80 T 100 80" fill="none" stroke="#1b4a9a" strokeWidth="0.5" />
+          </svg>
+
+          {/* Padrão de Pontos Refinado */}
+          <div className="absolute inset-0 opacity-[0.08]" style={{ backgroundImage: 'radial-gradient(#1b4a9a 1px, transparent 1px)', backgroundSize: '32px 32px' }}></div>
+          
+          {/* Overlay de Textura 'Grain' */}
+          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/natural-paper.png')] opacity-[0.15] mix-blend-soft-light"></div>
+          
+          {/* Gradiente de Vinheta para focar no centro */}
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(13,43,82,0.05)_100%)]"></div>
+        </div>
+        
+        <div className="relative z-10 w-full max-w-md flex flex-col items-center">
+          {/* Stickers Section - Foco total no Mobile */}
+          <div className="flex flex-col gap-3 lg:gap-5 mb-10 lg:mb-16 rotate-[-1deg] w-full items-center">
+             <div className="bg-brand-blue text-white px-5 py-2.5 lg:px-8 lg:py-4 rounded-xl text-lg sm:text-2xl lg:text-4xl font-black w-fit shadow-[5px_5px_0px_#0d2b52] lg:shadow-[10px_10px_0px_#0d2b52] border-2 lg:border-4 border-white transform hover:rotate-1 transition-transform cursor-default uppercase">
                A jornada de
              </div>
-             <div className="bg-white text-brand-blue px-8 py-3 rounded-xl md:rounded-2xl text-3xl md:text-5xl font-black w-fit shadow-[8px_8px_0px_#e63946] border-2 md:border-4 border-brand-blue self-center -mt-3 italic transform hover:-rotate-2 transition-transform cursor-default uppercase">
+             <div className="bg-white text-brand-blue px-7 py-3 lg:px-10 lg:py-5 rounded-xl text-2xl sm:text-4xl lg:text-6xl font-black w-fit shadow-[5px_5px_0px_#e63946] lg:shadow-[10px_10px_0px_#e63946] border-2 lg:border-4 border-brand-blue -mt-2 lg:-mt-4 italic transform hover:-rotate-2 transition-transform cursor-default uppercase">
                EXCELÊNCIA
              </div>
-             <div className="bg-brand-red text-white px-6 py-3 rounded-xl md:rounded-2xl text-2xl md:text-4xl font-black w-fit shadow-[8px_8px_0px_#0d2b52] border-2 md:border-4 border-white self-start -mt-3 transform hover:rotate-2 transition-transform cursor-default uppercase">
+             <div className="bg-brand-red text-white px-5 py-2.5 lg:px-8 lg:py-4 rounded-xl text-lg sm:text-2xl lg:text-4xl font-black w-fit shadow-[5px_5px_0px_#0d2b52] lg:shadow-[10px_10px_0px_#0d2b52] border-2 lg:border-4 border-white -mt-2 lg:-mt-4 transform hover:rotate-2 transition-transform cursor-default uppercase">
                começa
              </div>
-             <div className="bg-brand-navy text-white px-8 py-6 rounded-[2rem] md:rounded-[2.5rem] text-5xl md:text-7xl font-black w-full text-center shadow-[15px_15px_0px_#e63946] border-4 border-white -mt-3 uppercase tracking-tighter transform hover:scale-[1.02] transition-transform cursor-default">
+             <div className="bg-brand-navy text-white px-8 py-5 lg:px-12 lg:py-10 rounded-[2rem] lg:rounded-[3rem] text-4xl sm:text-6xl lg:text-8xl font-black w-full text-center shadow-[10px_10px_0px_#e63946] lg:shadow-[20px_20px_0px_#e63946] border-2 lg:border-4 border-white -mt-2 uppercase tracking-tighter transform hover:scale-[1.02] transition-transform cursor-default">
                AQUI.
              </div>
           </div>
 
-          {/* Barra de Unidades - Mais Compacta com Links Diretos para WhatsApp */}
-          <div className="bg-brand-blue rounded-[2rem] p-4 md:p-6 border-4 border-white shadow-xl flex flex-col md:flex-row items-center gap-6 mb-10">
-            <div className="bg-white text-brand-blue p-3 rounded-2xl shadow-inner shrink-0">
-              <Clock size={28} strokeWidth={2.5} />
-            </div>
-            <div className="flex-grow text-center md:text-left">
-              <p className="text-white text-[10px] font-black uppercase tracking-[0.2em] mb-1.5 opacity-60">Matrículas Abertas em Ambas Unidades</p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-6">
+          {/* Unidades e Acesso ao Site */}
+          <div className="w-full space-y-4">
+            <div className="bg-brand-blue/95 backdrop-blur-md rounded-[1.8rem] lg:rounded-[2.5rem] p-5 lg:p-8 border-2 lg:border-4 border-white shadow-2xl flex flex-col items-center gap-4 w-full mb-2">
+              <p className="text-white text-[10px] lg:text-[12px] font-black uppercase tracking-[0.3em] opacity-60 text-center">Matrículas Abertas em Ambas Unidades</p>
+              <div className="flex justify-center gap-6 lg:gap-10 w-full">
                 <a 
                   href={UNITS[0].whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white text-base font-black hover:text-brand-red transition-all transform hover:scale-105"
+                  className="flex flex-col items-center gap-2 text-white group active:scale-95 transition-transform"
                 >
-                  <MapPin size={18} className="text-brand-red" /> Unidade I
+                  <div className="bg-brand-red p-3 rounded-2xl shadow-lg border border-white/10">
+                    <MapPin size={18} className="text-white" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Unidade I</span>
                 </a>
                 <a 
                   href={UNITS[1].whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white text-base font-black hover:text-brand-red transition-all transform hover:scale-105"
+                  className="flex flex-col items-center gap-2 text-white group active:scale-95 transition-transform"
                 >
-                  <MapPin size={18} className="text-brand-red" /> Unidade II
+                  <div className="bg-brand-red p-3 rounded-2xl shadow-lg border border-white/10">
+                    <MapPin size={18} className="text-white" />
+                  </div>
+                  <span className="text-[10px] font-black uppercase tracking-widest">Unidade II</span>
                 </a>
               </div>
             </div>
-          </div>
 
-          {/* Botão de Entrada - Agora com mais contraste */}
-          <button 
-            onClick={onEnterSite}
-            className="w-full bg-white text-brand-navy border-2 md:border-4 border-brand-blue py-5 md:py-6 rounded-[1.5rem] md:rounded-[2rem] font-black text-lg md:text-2xl shadow-[0_10px_30px_rgba(13,43,82,0.1)] hover:bg-brand-blue hover:text-white transition-all duration-500"
-          >
-            QUERO EXPLORAR O SITE
-          </button>
-          <p className="text-center mt-5 text-brand-navy/30 text-[9px] font-bold uppercase tracking-widest">
-            A jornada de excelência começa aqui
-          </p>
-        </div>
-        
-        {/* Decorações flutuantes menores */}
-        <div className="absolute bottom-5 left-5 animate-bounce-slow">
-          <Sparkles size={30} className="text-brand-red opacity-30" />
-        </div>
-        <div className="absolute top-5 right-5 animate-pulse">
-          <Star size={35} fill="#1b4a9a" className="text-brand-blue opacity-20" />
+            {/* BOTAO GARANTIR VAGA - Destaque em vermelho */}
+            <button 
+              onClick={onOpenEnrollment}
+              className="w-full bg-brand-red text-white py-5 lg:py-8 rounded-[1.5rem] lg:rounded-[2.5rem] font-black text-xl lg:text-3xl shadow-[0_15px_40px_rgba(230,57,70,0.3)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 btn-shimmer overflow-hidden uppercase tracking-tighter"
+            >
+              Garantir Vaga <ArrowRight size={24} />
+            </button>
+
+            <button 
+              onClick={onEnterSite}
+              className="w-full bg-white/80 backdrop-blur-sm text-brand-navy border-2 lg:border-4 border-brand-blue py-4 lg:py-6 rounded-[1.5rem] lg:rounded-[2.5rem] font-black text-lg lg:text-2xl shadow-[0_10px_30px_rgba(13,43,82,0.1)] hover:bg-brand-blue hover:text-white transition-all duration-500 active:scale-95 uppercase"
+            >
+              Explorar o Site
+            </button>
+          </div>
         </div>
       </div>
     </div>
