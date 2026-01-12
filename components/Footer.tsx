@@ -127,7 +127,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex flex-col gap-2">
             <p>© 2026 Colégio Reação. A jornada de excelência começa aqui.</p>
             <p className="text-white/20 text-xs tracking-wider">
-              desenvolvido por <a href="https://weskleygomes.site" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">NX Company</a>
+              desenvolvido por <a href="https://weskleygomes.site" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
             </p>
           </div>
           <div className="flex space-x-12">
