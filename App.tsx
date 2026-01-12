@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -20,10 +21,12 @@ import SejaReacao2026 from './components/SejaReacao2026';
 import UnitSelectorModal from './components/UnitSelectorModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
+import PreLanding2026 from './components/PreLanding2026';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos'>('home');
   const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
+  const [showPreLanding, setShowPreLanding] = useState(true);
 
   // Scroll to top and SEO Metadata Update
   useEffect(() => {
@@ -77,12 +80,29 @@ const App: React.FC = () => {
 
   const navigateTo = (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos') => {
     setCurrentPage(page);
+    setShowPreLanding(false);
   };
 
   const openUnitSelector = () => setIsUnitModalOpen(true);
 
+  const handleEnterSite = () => {
+    setShowPreLanding(false);
+  };
+
+  const handlePreLandingEnrollment = () => {
+    setCurrentPage('seja-reacao');
+    setShowPreLanding(false);
+  };
+
   return (
     <div className="min-h-screen">
+      {showPreLanding && (
+        <PreLanding2026 
+          onEnterSite={handleEnterSite} 
+          onOpenEnrollment={handlePreLandingEnrollment} 
+        />
+      )}
+      
       <Header onNavigate={navigateTo} currentPage={currentPage} />
       <main>
         {currentPage === 'home' ? (
