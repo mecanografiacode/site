@@ -50,6 +50,9 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const devWhatsappMsg = encodeURIComponent("Olá vim pelo site do Colégio Reação e quero mais informações sobre site que converte.");
+  const devWhatsappLink = `https://wa.me/5561981535040?text=${devWhatsappMsg}`;
+
   return (
     <footer className="bg-brand-navy text-white pt-32 pb-16 relative overflow-hidden">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
@@ -127,7 +130,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="flex flex-col gap-2">
             <p>© 2026 Colégio Reação. A jornada de excelência começa aqui.</p>
             <p className="text-white/20 text-xs tracking-wider">
-              desenvolvido por <a href="https://weskleygomes.site" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
+              desenvolvido por <a href={devWhatsappLink} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
             </p>
           </div>
           <div className="flex space-x-12">
