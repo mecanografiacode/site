@@ -3,6 +3,12 @@ import './polyfills';
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
+import { PostHogProvider } from 'posthog-js/react';
+
+const options = {
+  api_host: "https://us.i.posthog.com",
+  person_profiles: 'identified_only', // Configuração padrão recomendada
+};
 
 const rootElement = document.getElementById('root');
 if (!rootElement) {
@@ -12,6 +18,11 @@ if (!rootElement) {
 const root = createRoot(rootElement);
 root.render(
   <React.StrictMode>
-    <App />
+    <PostHogProvider 
+      apiKey="phc_9YaffLRWZ9WgcllQXnTiliNrxAADGea52GO5yQn0w2q"
+      options={options}
+    >
+      <App />
+    </PostHogProvider>
   </React.StrictMode>
 );
