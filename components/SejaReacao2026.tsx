@@ -170,7 +170,7 @@ const SejaReacao2026: React.FC = () => {
               </a>
             </div>
             <p className="mt-12 md:mt-24 text-slate-300 font-black text-[10px] md:text-sm uppercase tracking-[0.5em]">
-              Vagas limitadas • Início das aulas: Fevereiro/2026
+              Vagas limitadas • Início das aulas: 29/Janeiro/2026
             </p>
           </ScrollReveal>
         </div>

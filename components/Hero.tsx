@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft, ArrowRight, Share2, Check } from 'lucide-react';
+import { ChevronRight, ChevronLeft, ArrowRight } from 'lucide-react';
 
 const slides = [
   {
@@ -27,7 +27,6 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
   const [current, setCurrent] = useState(0);
-  const [isCopying, setIsCopying] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -35,57 +34,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
     }, 8000);
     return () => clearInterval(timer);
   }, []);
-
-  const handleShare = async () => {
-    const slide = slides[current];
-    const currentUrl = window.location.href;
-    
-    // Validação básica para evitar o erro "Invalid URL" em ambientes restritos ou locais
-    let validUrl = '';
-    try {
-      const urlObj = new URL(currentUrl);
-      if (urlObj.protocol === 'http:' || urlObj.protocol === 'https:') {
-        validUrl = currentUrl;
-      }
-    } catch (e) {
-      // Não é uma URL padrão (ex: about:srcdoc em sandboxes)
-    }
-
-    const shareData: ShareData = {
-      title: 'Colégio Reação',
-      text: `${slide.title}\n\n${slide.subtitle}`,
-    };
-    
-    if (validUrl) {
-      shareData.url = validUrl;
-    }
-
-    const fallbackToClipboard = async () => {
-      const textToCopy = `${slide.title}\n\n${slide.subtitle}${validUrl ? `\n\nSaiba mais em: ${validUrl}` : ''}`;
-      try {
-        await navigator.clipboard.writeText(textToCopy);
-        setIsCopying(true);
-        setTimeout(() => setIsCopying(false), 3000);
-      } catch (copyErr) {
-        console.error('Falha ao copiar para área de transferência:', copyErr);
-      }
-    };
-
-    try {
-      // Verifica se a API de compartilhamento está disponível e se os dados são compartilháveis
-      if (navigator.share && (typeof navigator.canShare !== 'function' || navigator.canShare(shareData))) {
-        await navigator.share(shareData);
-      } else {
-        await fallbackToClipboard();
-      }
-    } catch (err) {
-      // Captura erros como "Invalid URL" ou cancelamentos pelo usuário
-      if ((err as Error).name !== 'AbortError') {
-        console.warn('Navigator.share falhou, utilizando fallback:', err);
-        await fallbackToClipboard();
-      }
-    }
-  };
 
   return (
     <section className="relative h-screen min-h-[550px] md:min-h-[600px] overflow-hidden bg-brand-navy">
@@ -139,23 +87,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
                   className="bg-white/5 backdrop-blur-xl text-white border border-white/20 px-6 md:px-10 py-3.5 md:py-4 lg:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all duration-500 transform hover:scale-105 hover:-translate-y-1 active:scale-95 text-center"
                 >
                   Agendar Visita
-                </button>
-
-                <button
-                  onClick={handleShare}
-                  className={`group flex items-center justify-center gap-3 px-6 md:px-8 py-3.5 md:py-4 lg:py-5 rounded-full font-bold text-sm md:text-lg transition-all duration-500 transform hover:scale-105 active:scale-95 border ${isCopying ? 'bg-green-500 border-green-500 text-white' : 'bg-white/10 border-white/20 text-white hover:bg-brand-blue hover:border-brand-blue'}`}
-                >
-                  {isCopying ? (
-                    <>
-                      <Check className="w-4 h-4 md:w-5 md:h-5" />
-                      Link Copiado!
-                    </>
-                  ) : (
-                    <>
-                      <Share2 className="w-4 h-4 md:w-5 md:h-5 group-hover:rotate-12 transition-transform" />
-                      Compartilhar
-                    </>
-                  )}
                 </button>
               </div>
             </div>
