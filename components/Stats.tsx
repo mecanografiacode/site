@@ -51,7 +51,7 @@ const Stats: React.FC = () => {
   const stats = [
     {
       icon: <Trophy />,
-      target: 200,
+      target: 1200,
       suffix: "+",
       label: "Alunos Aprovados",
       description: "Nos vestibulares mais concorridos, ENEM e PAS-UnB nos últimos anos."
