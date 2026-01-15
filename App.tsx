@@ -22,14 +22,11 @@ import UnitSelectorModal from './components/UnitSelectorModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import PreLanding2026 from './components/PreLanding2026';
-import AIAssistant from './components/AIAssistant';
-import { Sparkles } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos'>('home');
   const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
   const [showPreLanding, setShowPreLanding] = useState(true);
-  const [isAIAssistantOpen, setIsAIAssistantOpen] = useState(false);
 
   // Scroll to top and SEO Metadata Update
   useEffect(() => {
@@ -171,30 +168,11 @@ const App: React.FC = () => {
       </main>
       <Footer onNavigate={navigateTo} />
       
-      {/* Botão Flutuante para Mila AI */}
-      <div className="fixed bottom-32 right-10 z-[100] group">
-        <div className="absolute right-full mr-4 top-1/2 -translate-y-1/2 bg-white px-4 py-2 rounded-xl shadow-lg border border-slate-100 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-          <p className="text-brand-navy font-bold text-xs">Dúvidas? Fale com a Mila AI</p>
-        </div>
-        <button
-          onClick={() => setIsAIAssistantOpen(true)}
-          className="bg-brand-blue text-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(27,74,154,0.4)] hover:scale-110 active:scale-95 transition-all animate-soft-pulse"
-          aria-label="Abrir Assistente Mila"
-        >
-          <Sparkles size={32} fill="white" />
-        </button>
-      </div>
-
       <FloatingWhatsApp />
       <MusicPlayer />
       <UnitSelectorModal 
         isOpen={isUnitModalOpen} 
         onClose={() => setIsUnitModalOpen(false)} 
-      />
-      
-      <AIAssistant 
-        isOpen={isAIAssistantOpen} 
-        onClose={() => setIsAIAssistantOpen(false)} 
       />
     </div>
   );

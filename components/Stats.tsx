@@ -81,9 +81,10 @@ const Stats: React.FC = () => {
           overflow: hidden;
           white-space: nowrap;
           width: 0;
+          padding-right: 4px; /* Garante que a última letra não seja cortada */
         }
         .reveal.active .typewriter-text {
-          animation: typewriter 1.5s steps(30, end) forwards;
+          animation: typewriter 1.5s steps(40, end) forwards;
           animation-delay: 0.8s;
         }
         .animate-spin-slow {
@@ -96,47 +97,47 @@ const Stats: React.FC = () => {
       `}} />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
           {stats.map((stat, idx) => (
-            <ScrollReveal key={idx} delay={idx * 200} className="group">
-              <div className="relative flex flex-col md:flex-row items-center md:items-stretch gap-8 md:gap-12 p-10 md:p-16 rounded-[4rem] bg-brand-offwhite border border-slate-100 hover:bg-white hover:shadow-[0_40px_100px_-20px_rgba(13,43,82,0.12)] transition-all duration-700 group">
+            <ScrollReveal key={idx} delay={idx * 200} className="group h-full">
+              <div className="relative h-full flex flex-col md:flex-row items-center md:items-start gap-6 md:gap-8 p-8 md:p-12 lg:p-14 rounded-[3.5rem] bg-brand-offwhite border border-slate-100 hover:bg-white hover:shadow-[0_40px_100px_-20px_rgba(13,43,82,0.12)] transition-all duration-700">
                 
                 {/* Ícone Flutuante */}
-                <div className="flex-shrink-0">
-                  <div className="w-20 h-20 md:w-24 md:h-24 bg-white rounded-3xl shadow-sm border border-slate-50 flex items-center justify-center group-hover:bg-brand-navy group-hover:scale-110 transition-all duration-500 transform group-hover:-rotate-6">
+                <div className="flex-shrink-0 mt-2">
+                  <div className="w-16 h-16 md:w-20 md:h-20 bg-white rounded-3xl shadow-sm border border-slate-50 flex items-center justify-center group-hover:bg-brand-navy group-hover:scale-110 transition-all duration-500 transform group-hover:-rotate-6">
                     {React.cloneElement(stat.icon as React.ReactElement<any>, { 
-                      className: "w-10 h-10 md:w-12 md:h-12 text-brand-red group-hover:text-white transition-colors duration-500" 
+                      className: "w-8 h-8 md:w-10 md:h-10 text-brand-red group-hover:text-white transition-colors duration-500" 
                     })}
                   </div>
                 </div>
 
                 <div className="flex flex-col text-center md:text-left">
                   <div className="flex items-baseline justify-center md:justify-start gap-1 mb-2">
-                    <span className="text-7xl md:text-[10rem] font-black text-brand-navy tracking-tighter leading-none">
+                    <span className="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-black text-brand-navy tracking-tight leading-none whitespace-nowrap">
                       <CountUp end={stat.target} suffix={stat.suffix} />
                     </span>
                   </div>
 
                   <div className="relative mb-4">
-                    <h4 className="text-2xl md:text-4xl font-black text-brand-navy tracking-tight typewriter-text">
+                    <h4 className="text-xl md:text-2xl xl:text-4xl font-black text-brand-navy tracking-tight typewriter-text">
                       {stat.label}
                     </h4>
                     <div className="h-1 w-12 bg-brand-red rounded-full mt-1 group-hover:w-24 transition-all duration-500"></div>
                   </div>
 
-                  <p className="text-slate-500 text-lg md:text-2xl font-light leading-relaxed max-w-sm italic font-serif">
+                  <p className="text-slate-500 text-sm md:text-lg xl:text-xl font-light leading-relaxed max-w-sm italic font-serif">
                     {stat.description}
                   </p>
                   
-                  <div className="mt-8 flex items-center justify-center md:justify-start gap-2 text-brand-navy/30 group-hover:text-brand-red transition-colors duration-500 font-bold text-xs uppercase tracking-widest">
+                  <div className="mt-8 flex items-center justify-center md:justify-start gap-2 text-brand-navy/30 group-hover:text-brand-red transition-colors duration-500 font-bold text-[10px] uppercase tracking-widest">
                     <span>Excelência Comprovada</span>
-                    <ArrowUpRight size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    <ArrowUpRight size={14} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                   </div>
                 </div>
 
                 {/* Badge de Destaque */}
-                <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                  <Star className="text-yellow-400 fill-yellow-400 animate-spin-slow" size={24} />
+                <div className="absolute top-8 right-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500 hidden md:block">
+                  <Star className="text-yellow-400 fill-yellow-400 animate-spin-slow" size={20} />
                 </div>
               </div>
             </ScrollReveal>
