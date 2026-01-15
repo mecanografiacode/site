@@ -12,8 +12,8 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
   return (
     <div className="fixed inset-0 z-[200] flex flex-col md:flex-row overflow-y-auto md:overflow-hidden bg-white">
       
-      {/* Lado Esquerdo - Chamada Institucional */}
-      <div className="hidden md:flex md:w-[40%] lg:w-[42%] bg-brand-blue p-6 lg:p-12 xl:p-20 flex-col justify-center relative overflow-hidden min-h-screen shrink-0 border-r-2 border-white/5">
+      {/* Lado Esquerdo - Chamada Institucional - Visível apenas em MD+ */}
+      <div className="hidden md:flex md:w-[40%] lg:w-[42%] bg-brand-blue p-6 lg:p-12 xl:p-16 flex-col justify-center relative overflow-hidden min-h-screen shrink-0 border-r-2 border-white/5">
         {/* Elementos de fundo decorativos */}
         <div className="absolute top-0 right-0 w-full h-full opacity-[0.05] pointer-events-none">
           <div className="absolute top-10 -right-10 rotate-12 scale-75 lg:scale-110 xl:scale-125">
@@ -24,7 +24,9 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
           </div>
         </div>
         
-        <div className="relative z-10 flex flex-col items-start text-left max-w-lg mx-auto md:mx-0 lg:scale-90 xl:scale-100 origin-left">
+        {/* Wrapper com escala para telas curtas */}
+        <div className="relative z-10 flex flex-col items-start text-left max-w-lg mx-auto md:mx-0 
+                      md:scale-[0.8] lg:scale-[0.9] xl:scale-100 origin-left transition-transform">
           <div className="flex gap-2 mb-4 lg:mb-8 animate-bounce-slow">
             <Star size={16} fill="#e63946" className="text-brand-red" />
             <Star size={16} fill="#e63946" className="text-brand-red" />
@@ -61,8 +63,8 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
         </div>
       </div>
 
-      {/* Lado Direito - TELA INICIAL */}
-      <div className="w-full md:w-[60%] lg:w-[58%] bg-[#f0f4f8] p-6 sm:p-10 md:p-4 lg:p-12 xl:p-16 flex flex-col items-center justify-center relative min-h-screen shrink-0 overflow-hidden">
+      {/* Lado Direito - TELA INICIAL (Otimizado para Notebooks e Ultra-Wide) */}
+      <div className="w-full md:w-[60%] lg:w-[58%] bg-[#f0f4f8] p-4 sm:p-10 md:p-4 lg:p-12 xl:p-16 flex flex-col items-center justify-center relative min-h-screen shrink-0 overflow-hidden">
         
         {/* PREMIUM BLUE DESIGNER BACKGROUND */}
         <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
@@ -76,8 +78,11 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
           </svg>
         </div>
         
-        {/* Container Central com Escala Inteligente para Notebooks */}
-        <div className="relative z-10 w-full max-w-2xl flex flex-col items-center md:scale-[0.85] lg:scale-[0.9] xl:scale-100 2xl:scale-110 transition-transform duration-500 origin-center">
+        {/* Container Central com Escala Inteligente baseada na altura da tela (VH) */}
+        {/* MD:Scale reduz o conteúdo se a altura da tela for pequena, comum em laptops 768p */}
+        <div className="relative z-10 w-full max-w-2xl flex flex-col items-center 
+                      scale-[0.9] sm:scale-100 md:scale-[0.75] lg:scale-[0.85] xl:scale-[0.95] 2xl:scale-110
+                      origin-center transition-all duration-700 ease-out">
           
           {/* Stickers Section - Layout Altamente Adaptável */}
           <div className="flex flex-col gap-2 lg:gap-4 mb-8 lg:mb-12 rotate-[-1deg] w-full items-center">
