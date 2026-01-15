@@ -7,7 +7,7 @@ import { PostHogProvider } from 'posthog-js/react';
 
 const options = {
   api_host: "https://us.i.posthog.com",
-  person_profiles: 'identified_only', // Configuração padrão recomendada
+  person_profiles: 'identified_only' as const, 
 };
 
 const rootElement = document.getElementById('root');
