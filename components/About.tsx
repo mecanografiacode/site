@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Target, Eye, ShieldCheck } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
@@ -13,14 +12,19 @@ const About: React.FC = () => {
             <h3 className="text-3xl sm:text-4xl md:text-7xl font-black text-brand-navy mb-8 md:mb-12 leading-[1.2] md:leading-[1.1] tracking-tighter">
               Tradição que se <br className="hidden sm:block" /><span className="text-brand-red">reinventa</span> todo dia.
             </h3>
-            <p className="text-slate-500 text-lg md:text-xl mb-10 md:mb-16 leading-[1.6] md:leading-[1.8] font-light">
-              Desde 1997, o Colégio Reação é protagonista na educação brasiliense, equilibrando o rigor acadêmico com a sensibilidade humana para formar as novas lideranças do país.
-            </p>
+            <div className="space-y-6">
+              <p className="text-slate-500 text-lg md:text-xl leading-[1.6] md:leading-[1.8] font-light">
+                O <strong>Colégio Reação</strong> é um <strong>colégio particular no Recanto das Emas, Brasília – DF</strong>, localizado estrategicamente na Quadra 201, Avenida Buriti. Desde 1997, somos protagonistas na educação brasiliense.
+              </p>
+              <p className="text-slate-500 text-lg md:text-xl leading-[1.6] md:leading-[1.8] font-light">
+                Nossa missão como <strong>escola particular em Brasília</strong> é equilibrar o rigor acadêmico com a sensibilidade humana, formando as novas lideranças do país através de um ensino de alta performance.
+              </p>
+            </div>
             
-            <div className="grid gap-6 md:gap-8">
+            <div className="grid gap-6 md:gap-8 mt-10 md:mt-16">
               {[
-                { icon: <Target className="text-brand-red" size={20} />, title: 'Missão de Impacto', desc: 'Educação de alta performance integrando valores éticos e excelência científica.' },
-                { icon: <Eye className="text-brand-red" size={20} />, title: 'Visão Futurista', desc: 'Ser o epicentro da inovação educacional e formação integral no Centro-Oeste.' },
+                { icon: <Target className="text-brand-red" size={20} />, title: 'Missão de Impacto', desc: 'Educação de alta performance integrando valores éticos e excelência científica no DF.' },
+                { icon: <Eye className="text-brand-red" size={20} />, title: 'Visão Futurista', desc: 'Ser o epicentro da inovação educacional e referência em colégio particular no Recanto das Emas.' },
               ].map((item, i) => (
                 <div key={i} className="flex gap-5 md:gap-8 group">
                   <div className="bg-brand-navy p-4 md:p-5 rounded-2xl md:rounded-3xl h-fit shadow-xl transition-transform group-hover:rotate-6">
@@ -38,8 +42,8 @@ const About: React.FC = () => {
           <ScrollReveal className="lg:w-1/2 relative mt-12 lg:mt-0" delay={200}>
             <div className="relative rounded-[3rem] md:rounded-[4rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(13,43,82,0.2)] border-[10px] md:border-[16px] border-white">
               <img 
-                src="https://i.imgur.com/ynCQi7jh.jpeg" // h suffix = 1024px
-                alt="Estudantes interagindo em ambiente de excelência educacional no Colégio Reação"
+                src="https://i.imgur.com/ynCQi7jh.jpeg" 
+                alt="Infraestrutura do Colégio Reação - Melhor Colégio Particular no Recanto das Emas, Brasília"
                 className="w-full h-full object-cover aspect-[4/5] hover:scale-105 transition-transform duration-1000"
                 width="800"
                 height="1000"

@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Instagram, Facebook, Youtube, ArrowUp } from 'lucide-react';
+import { Instagram, Facebook, Youtube, ArrowUp, MapPin, Phone } from 'lucide-react';
 import { NAV_ITEMS } from '../constants';
 
 interface FooterProps {
@@ -66,13 +65,13 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             >
               <img 
                 src="https://i.imgur.com/LESvkxT.png" 
-                alt="Logotipo detalhado do Colégio Reação no rodapé institucional" 
+                alt="Logotipo Colégio Reação - Escola Particular Recanto das Emas" 
                 className="h-full w-auto object-contain"
                 loading="lazy"
               />
             </button>
             <p className="text-white/50 leading-relaxed text-lg font-light">
-              Desde 1997, transformando potencial em conquistas extraordinárias. A jornada de excelência começa aqui.
+              O Colégio Reação é o principal <strong>colégio particular no Recanto das Emas, Brasília – DF</strong>. Transformando potencial em conquistas extraordinárias desde 1997.
             </p>
             <div className="flex space-x-6">
               {socialLinks.map((link, i) => (
@@ -91,23 +90,31 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-10 text-brand-red">Unidades</h4>
+            <h4 className="text-xl font-bold mb-10 text-brand-red">Nossas Unidades no DF</h4>
             <div className="space-y-8 text-white/60 text-base">
-              <div>
-                <p className="font-bold text-white mb-2 text-lg">Unidade I - Infantil e Fundamental</p>
-                <p>Qd 206 - Recanto das Emas, Brasília - DF</p>
-                <a href="tel:6133331434" className="text-brand-red mt-1 font-semibold hover:underline block">(61) 3333-1434</a>
+              <div className="group">
+                <p className="font-bold text-white mb-2 text-lg flex items-center gap-2">
+                  <MapPin size={18} className="text-brand-red" /> Unidade I - Infantil e Fundamental
+                </p>
+                <p>Quadra 206 - Recanto das Emas, Brasília - DF</p>
+                <a href="tel:6133331434" className="text-brand-red mt-1 font-semibold hover:underline flex items-center gap-2">
+                  <Phone size={14} /> (61) 3333-1434
+                </a>
               </div>
-              <div>
-                <p className="font-bold text-white mb-2 text-lg">Unidade II - Completa</p>
-                <p>Qd 201, Lote 07, Av. Buriti - Recanto das Emas, Brasília - DF</p>
-                <a href="tel:6133333332" className="text-brand-red mt-1 font-semibold hover:underline block">(61) 3333-3332</a>
+              <div className="group">
+                <p className="font-bold text-white mb-2 text-lg flex items-center gap-2">
+                  <MapPin size={18} className="text-brand-red" /> Unidade II - Sede Principal
+                </p>
+                <p>Quadra 201, Lote 07, Av. Buriti - Recanto das Emas, Brasília - DF</p>
+                <a href="tel:6133333332" className="text-brand-red mt-1 font-semibold hover:underline flex items-center gap-2">
+                  <Phone size={14} /> (61) 3333-3332
+                </a>
               </div>
             </div>
           </div>
 
           <div>
-            <h4 className="text-xl font-bold mb-10 text-brand-red">Menu</h4>
+            <h4 className="text-xl font-bold mb-10 text-brand-red">Mapa do Site</h4>
             <nav className="flex flex-col space-y-6">
               {NAV_ITEMS.map((item) => (
                 <a 
@@ -128,7 +135,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center text-white/30 text-sm gap-8">
           <div className="flex flex-col gap-2">
-            <p>© 2026 Colégio Reação. A jornada de excelência começa aqui.</p>
+            <p>© 2026 Colégio Reação. A melhor <strong>escola particular no Recanto das Emas</strong>.</p>
             <p className="text-white/20 text-xs tracking-wider">
               desenvolvido por <a href={devWhatsappLink} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
             </p>

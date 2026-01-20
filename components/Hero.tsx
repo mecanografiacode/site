@@ -1,27 +1,28 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, ArrowRight, Sparkles, Timer } from 'lucide-react';
 
 const slides = [
   {
     tag: "VAGAS LIMITADAS PARA 2026",
-    title: "A excelência que o futuro do seu filho exige",
-    subtitle: "Tradição em aprovações e infraestrutura premium no Recanto das Emas. Onde o potencial se transforma em conquista.",
+    title: "Colégio Particular no Recanto das Emas – DF",
+    displayTitle: "A excelência que o futuro do seu filho exige",
+    subtitle: "O Colégio Reação é referência em aprovações e infraestrutura premium no Recanto das Emas. Onde o potencial se transforma em conquista.",
     cta: "Garantir Matrícula 2026",
     secondaryCta: "Agendar Visita Guiada",
     image: "https://i.imgur.com/faarQOT.png", 
     webp: "https://i.imgur.com/faarQOT.webp",
-    alt: "Estudantes em ambiente moderno, amplo e tecnológico de aprendizado no Colégio Reação"
+    alt: "Estudantes em ambiente moderno e tecnológico de aprendizado no Colégio Reação - Escola Particular no Recanto das Emas"
   },
   {
     tag: "MATRÍCULAS ABERTAS",
-    title: "Ambientes modernos para o aprendizado real",
-    subtitle: "Laboratórios de ponta, espaços integrados e o melhor corpo docente da região. A jornada de sucesso começa aqui.",
+    title: "Melhor Escola Particular em Brasília – Recanto das Emas",
+    displayTitle: "Ambientes modernos para o aprendizado real",
+    subtitle: "Laboratórios de ponta, espaços integrados e o melhor corpo docente da região. A jornada de sucesso no Colégio Reação começa aqui.",
     cta: "Quero matricular agora",
     secondaryCta: "Ver Unidades",
     image: "https://i.imgur.com/jc4po2M.jpeg",
     webp: "https://i.imgur.com/jc4po2M.webp",
-    alt: "Arquitetura imponente e tradicional do Colégio Reação, simbolizando excelência e história"
+    alt: "Arquitetura do Colégio Reação, escola tradicional no Recanto das Emas, DF"
   }
 ];
 
@@ -73,8 +74,10 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
                 {slide.tag}
               </div>
 
+              {/* H1 Otimizado para SEO (O texto visível é displayTitle, mas o H1 contém as keywords) */}
               <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 leading-[1] tracking-tighter transition-all duration-1000 delay-300 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                {slide.title}
+                <span className="sr-only">{slide.title}</span>
+                {slide.displayTitle}
               </h1>
               <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-10 font-light leading-relaxed max-w-2xl transition-all duration-1000 delay-500 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {slide.subtitle}
