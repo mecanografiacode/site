@@ -1,17 +1,27 @@
 
-import React, { useState } from 'react';
-import { MessageCircle, X, ChevronRight } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { MessageCircle, X, ChevronRight, Sparkles } from 'lucide-react';
 import { UNITS } from '../constants';
 import { usePostHog } from 'posthog-js/react';
 
 const FloatingWhatsApp: React.FC = () => {
   const [open, setOpen] = useState(false);
+  const [showTeaser, setShowTeaser] = useState(false);
   const posthog = usePostHog();
+
+  useEffect(() => {
+    // Mostra o balão de texto após 3 segundos para chamar atenção
+    const timer = setTimeout(() => {
+      setShowTeaser(true);
+    }, 3000);
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleToggle = () => {
     const newState = !open;
     setOpen(newState);
     if (newState) {
+      setShowTeaser(false); // Esconde o teaser ao abrir
       posthog.capture('support_hub_opened');
     }
   };
@@ -26,6 +36,34 @@ const FloatingWhatsApp: React.FC = () => {
   return (
     <>
       <div className="fixed bottom-10 right-10 z-[100] flex flex-col items-end">
+        {/* Balão de Mensagem (Teaser) para aumentar CTR */}
+        {!open && showTeaser && (
+          <div className="mb-4 mr-2 relative animate-in fade-in slide-in-from-right-8 duration-700">
+            <div className="bg-white px-6 py-4 rounded-[1.5rem] shadow-[0_15px_30px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-3 max-w-[240px] md:max-w-xs group cursor-pointer" onClick={handleToggle}>
+              <div className="shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
+                <Sparkles size={18} className="animate-pulse" />
+              </div>
+              <div className="flex flex-col">
+                <p className="text-[10px] font-black text-brand-red uppercase tracking-widest mb-0.5">Matrículas 2026</p>
+                <p className="text-brand-navy text-xs md:text-sm font-bold leading-tight">
+                  Dúvidas sobre vagas? <span className="text-green-600">Fale com a gente!</span>
+                </p>
+              </div>
+              <button 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setShowTeaser(false);
+                }}
+                className="absolute -top-2 -left-2 bg-white text-slate-300 hover:text-brand-red rounded-full p-1 shadow-md border border-slate-100 transition-colors"
+              >
+                <X size={12} />
+              </button>
+              {/* Triângulo do balão */}
+              <div className="absolute bottom-[-8px] right-8 w-4 h-4 bg-white border-r border-b border-slate-100 rotate-45"></div>
+            </div>
+          </div>
+        )}
+
         {open && (
           <div className="mb-6 bg-white rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.2)] overflow-hidden w-80 animate-in fade-in slide-in-from-bottom-8 duration-500 border border-slate-100">
             <div className="bg-brand-navy p-8 pb-10 flex justify-between items-start">

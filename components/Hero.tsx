@@ -9,8 +9,7 @@ const slides = [
     subtitle: "O Colégio Reação é referência em aprovações e infraestrutura premium no Recanto das Emas. Onde o potencial se transforma em conquista.",
     cta: "Garantir Matrícula 2026",
     secondaryCta: "Agendar Visita Guiada",
-    image: "https://i.imgur.com/faarQOT.png", 
-    webp: "https://i.imgur.com/faarQOT.webp",
+    image: "https://i.imgur.com/a8KWrIa.jpeg", 
     alt: "Estudantes em ambiente moderno e tecnológico de aprendizado no Colégio Reação - Escola Particular no Recanto das Emas"
   },
   {
@@ -52,7 +51,8 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
           {/* Background Image with Ken Burns Effect */}
           <div className={`w-full h-full transition-transform duration-[10000ms] ease-linear ${index === current ? 'scale-110' : 'scale-100'}`}>
             <picture>
-              <source srcSet={slide.webp} type="image/webp" />
+              {/* @ts-ignore */}
+              {slide.webp && <source srcSet={slide.webp} type="image/webp" />}
               <img 
                 src={slide.image} 
                 className="w-full h-full object-cover" 
