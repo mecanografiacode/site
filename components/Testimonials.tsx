@@ -53,6 +53,7 @@ const Testimonials: React.FC = () => {
           {/* Navigation Controls */}
           <div className="flex justify-center items-center gap-6 md:gap-8 mt-10 md:mt-16">
             <button 
+              id="btn-testimonial-prev"
               onClick={prev}
               className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl border border-slate-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all shadow-sm active:scale-90"
               aria-label="Anterior"
@@ -64,6 +65,7 @@ const Testimonials: React.FC = () => {
               {TESTIMONIALS.map((_, i) => (
                 <button
                   key={i}
+                  id={`btn-testimonial-dot-${i}`}
                   onClick={() => setActive(i)}
                   className={`h-1.5 md:h-2 rounded-full transition-all duration-500 ${i === active ? 'bg-brand-red w-8 md:w-10' : 'bg-slate-200 w-1.5 md:w-2'}`}
                   aria-label={`Ir para depoimento ${i + 1}`}
@@ -72,6 +74,7 @@ const Testimonials: React.FC = () => {
             </div>
 
             <button 
+              id="btn-testimonial-next"
               onClick={next}
               className="w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl border border-slate-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all shadow-sm active:scale-90"
               aria-label="Próximo"

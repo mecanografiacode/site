@@ -51,6 +51,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
         <div className="flex justify-between items-center h-16">
           <div className="flex-shrink-0 flex items-center">
             <button 
+              id="btn-header-logo-home"
               onClick={() => onNavigate?.('home')} 
               className={`block h-12 md:h-16 transition-all duration-500 hover:scale-105 ${!scrolled ? 'bg-white/90 p-2 rounded-xl shadow-lg' : ''}`}
             >
@@ -68,6 +69,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
             {NAV_ITEMS.map((item) => (
               <a
                 key={item.label}
+                id={`nav-desktop-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
                 href={item.href}
                 onClick={(e) => handleNavItemClick(e, item.label, item.href)}
                 target={item.href.startsWith('http') ? "_blank" : undefined}
@@ -98,6 +100,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
 
           <div className="lg:hidden">
             <button
+              id="btn-header-mobile-toggle"
               onClick={() => setIsOpen(!isOpen)}
               className={`p-2 rounded-xl transition-all duration-300 active:scale-90 ${scrolled ? 'text-brand-navy bg-slate-100' : 'text-white bg-white/10'}`}
               aria-label={isOpen ? "Fechar menu" : "Abrir menu"}
@@ -114,6 +117,7 @@ const Header: React.FC<HeaderProps> = ({ onNavigate, currentPage }) => {
           {NAV_ITEMS.map((item, idx) => (
             <a
               key={item.label}
+              id={`nav-mobile-${item.label.toLowerCase().replace(/\s+/g, '-')}`}
               href={item.href}
               onClick={(e) => handleNavItemClick(e, item.label, item.href)}
               target={item.href.startsWith('http') ? "_blank" : undefined}

@@ -48,6 +48,7 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                       <Phone className="w-6 h-6 md:w-7 md:h-7" />
                     </div>
                     <a 
+                      id={`link-unit-phone-${unit.id}`}
                       href={`tel:${unit.phone.replace(/\D/g, '')}`} 
                       className="text-brand-navy text-lg md:text-xl font-bold pt-0.5 hover:text-brand-red transition-all transform hover:translate-x-1"
                     >
@@ -81,6 +82,7 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                   </div>
 
                   <a
+                    id={`btn-unit-visit-whatsapp-${unit.id}`}
                     href={unit.whatsapp}
                     target="_blank"
                     rel="noopener noreferrer"

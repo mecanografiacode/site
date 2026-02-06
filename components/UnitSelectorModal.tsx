@@ -20,6 +20,7 @@ const UnitSelectorModal: React.FC<UnitSelectorModalProps> = ({ isOpen, onClose }
       
       <div className="relative bg-white w-full max-w-2xl rounded-[2rem] md:rounded-[3rem] shadow-3xl overflow-hidden animate-in zoom-in-95 duration-300 max-h-[95vh] flex flex-col">
         <button 
+          id="btn-unit-modal-close"
           onClick={onClose}
           className="absolute top-4 right-4 md:top-6 md:right-6 p-2 md:p-3 bg-slate-100 rounded-xl md:rounded-2xl text-slate-400 hover:text-brand-navy hover:bg-slate-200 transition-all z-10"
         >
@@ -41,6 +42,7 @@ const UnitSelectorModal: React.FC<UnitSelectorModalProps> = ({ isOpen, onClose }
             {UNITS.map((unit) => (
               <a
                 key={unit.id}
+                id={`btn-modal-unit-select-${unit.id}`}
                 href={unit.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"

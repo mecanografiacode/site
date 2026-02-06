@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, ArrowRight, Sparkles, Timer } from 'lucide-react';
 
@@ -86,6 +87,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
               <div className={`flex flex-col sm:flex-row flex-wrap gap-5 transition-all duration-1000 delay-700 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="flex flex-col items-center sm:items-start gap-3">
                   <button
+                    id={`btn-hero-cta-main-slide-${index}`}
                     onClick={onOpenUnitSelector}
                     className="group relative bg-brand-red text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black text-lg md:text-xl shadow-[0_20px_50px_-10px_rgba(230,57,70,0.6)] transition-all hover:scale-105 active:scale-95 btn-shimmer flex items-center justify-center gap-3 animate-soft-pulse"
                   >
@@ -100,6 +102,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
                 </div>
                 
                 <button
+                  id={`btn-hero-cta-secondary-slide-${index}`}
                   onClick={onOpenUnitSelector}
                   className="bg-white/5 backdrop-blur-xl text-white border-2 border-white/20 px-8 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-brand-navy transition-all duration-500 transform hover:scale-105 active:scale-95 text-center h-fit"
                 >
@@ -117,6 +120,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
           {slides.map((_, i) => (
             <button
               key={i}
+              id={`btn-hero-indicator-slide-${i}`}
               onClick={() => setCurrent(i)}
               className={`h-2 rounded-full transition-all duration-700 ${i === current ? 'bg-brand-red w-12' : 'bg-white/20 w-4 hover:bg-white/40'}`}
               aria-label={`Ir para slide ${i + 1}`}

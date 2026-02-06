@@ -9,7 +9,6 @@ const MusicPlayer: React.FC = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
   // Lista de fontes de áudio estáveis (Happy & Kids)
-  // Usando URLs de alta disponibilidade para evitar "No supported source found"
   const audioSources = [
     "https://cdn.pixabay.com/audio/2022/01/18/audio_d0a13f69d2.mp3", // Happy Ukelele
     "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3", // Fallback padrão
@@ -31,7 +30,6 @@ const MusicPlayer: React.FC = () => {
     
     if (currentSourceIndex < audioSources.length - 1) {
       setCurrentSourceIndex(prev => prev + 1);
-      // O useEffect ou a renderização cuidará de atualizar o src
     } else {
       console.error("Todas as fontes de áudio falharam.");
       setIsPlaying(false);
@@ -45,7 +43,6 @@ const MusicPlayer: React.FC = () => {
       audioRef.current.pause();
       setIsPlaying(false);
     } else {
-      // Garantir carregamento
       audioRef.current.load();
       
       const playPromise = audioRef.current.play();
@@ -66,7 +63,6 @@ const MusicPlayer: React.FC = () => {
 
   return (
     <div className="fixed bottom-10 left-10 z-[110] flex items-center gap-4">
-      {/* Elemento de áudio com src dinâmico baseado no índice de sucesso */}
       <audio 
         ref={audioRef} 
         src={audioSources[currentSourceIndex]}
@@ -97,13 +93,13 @@ const MusicPlayer: React.FC = () => {
         )}
 
         <button
+          id="btn-music-toggle-control"
           onClick={toggleMusic}
           className={`group relative p-6 rounded-[2.5rem] shadow-2xl transition-all duration-500 hover:scale-110 active:scale-95 flex items-center justify-center overflow-hidden
             ${isPlaying ? 'bg-brand-red text-white' : 'bg-white text-brand-navy border-2 border-slate-100'}
           `}
           aria-label={isPlaying ? "Desativar música" : "Ativar música"}
         >
-          {/* Efeito de Ondas Sonoras */}
           {isPlaying && (
             <div className="absolute inset-0 flex items-center justify-center">
               <span className="absolute w-full h-full bg-white/30 animate-ping rounded-full"></span>

@@ -69,6 +69,7 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
                   
                   <div className="text-center">
                     <button 
+                      id="btn-enrollment-reserve-now"
                       onClick={onOpenUnitSelector}
                       className="group relative w-full bg-brand-red text-white py-4 md:py-8 rounded-full font-black text-sm md:text-2xl shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] transition-all hover:scale-105 active:scale-95 mb-6 md:mb-8 btn-shimmer flex items-center justify-center gap-2 md:gap-3"
                     >

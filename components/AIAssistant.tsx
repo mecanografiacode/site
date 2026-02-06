@@ -59,10 +59,9 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
     setMessages(prev => [...prev, { role: 'user', text: userMsg }]);
     setIsLoading(true);
 
-    // Track user interaction
     posthog.capture('ai_message_sent', { 
       message_length: userMsg.length,
-      query: userMsg.substring(0, 100) // Rastreia o início da dúvida para análise de temas
+      query: userMsg.substring(0, 100)
     });
 
     try {
@@ -116,7 +115,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
             <p className="text-white/50 text-[10px] uppercase font-bold tracking-widest">Consultora Virtual</p>
           </div>
         </div>
-        <button onClick={onClose} className="text-white/30 hover:text-white transition-colors p-2 bg-white/10 rounded-xl">
+        <button id="btn-ai-chat-close" onClick={onClose} className="text-white/30 hover:text-white transition-colors p-2 bg-white/10 rounded-xl">
           <X size={20} />
         </button>
       </div>
@@ -157,6 +156,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
             className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-4 pl-6 pr-14 text-sm focus:border-brand-red outline-none transition-all placeholder:text-slate-400"
           />
           <button 
+            id="btn-ai-message-send"
             onClick={handleSend}
             disabled={isLoading || !input.trim()}
             className="absolute right-2 p-3 bg-brand-red text-white rounded-xl hover:scale-105 active:scale-95 transition-all disabled:opacity-50 disabled:hover:scale-100"

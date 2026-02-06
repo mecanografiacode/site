@@ -39,7 +39,11 @@ const FloatingWhatsApp: React.FC = () => {
         {/* Balão de Mensagem (Teaser) para aumentar CTR */}
         {!open && showTeaser && (
           <div className="mb-4 mr-2 relative animate-in fade-in slide-in-from-right-8 duration-700">
-            <div className="bg-white px-6 py-4 rounded-[1.5rem] shadow-[0_15px_30px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-3 max-w-[240px] md:max-w-xs group cursor-pointer" onClick={handleToggle}>
+            <div 
+              id="btn-whatsapp-teaser-bubble"
+              className="bg-white px-6 py-4 rounded-[1.5rem] shadow-[0_15px_30px_rgba(0,0,0,0.15)] border border-slate-100 flex items-center gap-3 max-w-[240px] md:max-w-xs group cursor-pointer" 
+              onClick={handleToggle}
+            >
               <div className="shrink-0 w-10 h-10 bg-green-100 rounded-full flex items-center justify-center text-green-600">
                 <Sparkles size={18} className="animate-pulse" />
               </div>
@@ -50,6 +54,7 @@ const FloatingWhatsApp: React.FC = () => {
                 </p>
               </div>
               <button 
+                id="btn-whatsapp-teaser-close"
                 onClick={(e) => {
                   e.stopPropagation();
                   setShowTeaser(false);
@@ -79,7 +84,7 @@ const FloatingWhatsApp: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <button onClick={() => setOpen(false)} className="text-white/30 hover:text-white transition-colors bg-white/10 p-2 rounded-xl">
+              <button id="btn-whatsapp-modal-close" onClick={() => setOpen(false)} className="text-white/30 hover:text-white transition-colors bg-white/10 p-2 rounded-xl">
                 <X size={18} />
               </button>
             </div>
@@ -90,6 +95,7 @@ const FloatingWhatsApp: React.FC = () => {
               {UNITS.map(unit => (
                 <a
                   key={unit.id}
+                  id={`btn-whatsapp-floating-unit-${unit.id}`}
                   href={unit.whatsapp}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -114,6 +120,7 @@ const FloatingWhatsApp: React.FC = () => {
         )}
 
         <button
+          id="btn-whatsapp-main-trigger"
           onClick={handleToggle}
           className={`bg-green-500 text-white p-6 rounded-[2rem] shadow-[0_20px_40px_rgba(34,197,94,0.4)] hover:scale-110 active:scale-95 transition-all group relative overflow-visible ${!open ? 'animate-vibrate' : ''}`}
         >
