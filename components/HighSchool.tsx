@@ -26,7 +26,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
             height="1080"
             loading="eager"
             // @ts-ignore
-            fetchpriority="high"
+            fetchPriority="high"
             decoding="sync"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent"></div>

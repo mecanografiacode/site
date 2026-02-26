@@ -62,7 +62,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
                 height="1080"
                 loading={index === 0 ? "eager" : "lazy"}
                 // @ts-ignore
-                fetchpriority={index === 0 ? "high" : "low"}
+                fetchPriority={index === 0 ? "high" : "low"}
               />
             </picture>
           </div>
