@@ -74,9 +74,9 @@ const APPROVED_IMAGES = [
   },
   {
     id: 11,
-    url: 'https://i.imgur.com/5yN364D.png',
-    name: 'Marina Gonçalves',
-    year: 'Engenharia Civil (UCB)'
+    url: 'https://i.imgur.com/dw6MSLc.png',
+    name: 'Mariana Gonçalves',
+    year: 'Engenharia de Software (UCB)'
   },
   {
     id: 12,
@@ -119,6 +119,12 @@ const APPROVED_IMAGES = [
     url: 'https://instagram.fbsb8-1.fna.fbcdn.net/v/t39.30808-6/640178652_122114584527209225_3910386571409054292_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08_tt6&_nc_cat=104&ig_cache_key=Mzg0MTA1NzczNjI1MjA1ODYzNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=XliZkCFxRiwQ7kNvwHS9mw_&_nc_oc=AdlgjARuqZXFGP42C_Hhv9ba2eQ6VdJOZnljrjRF973TEpDRltzbR4voHxpqrgMEwoo&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-1.fna&_nc_gid=E6daFhSvAK7Xd3Q-Dk9b5g&_nc_ss=8&oh=00_AfzpTy2V_FLwitLUhWPBjGPDTrAmvycbw4l9Jgg-aKk0Yg&oe=69B48032',
     name: 'Jorge Henrique Pereira dos Santos',
     year: 'Ciências Contábeis - UnB'
+  },
+  {
+    id: 19,
+    url: 'https://i.imgur.com/VamOtCP.png',
+    name: 'Pedro Henrique Ferreira da Silva',
+    year: 'Odontologia - UniLS'
   }
 ];
 
