@@ -18,7 +18,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     { 
       id: 'facebook',
       icon: Facebook, 
-      url: 'https://www.facebook.com/colegioreacao/?locale=pt_BR', 
+      url: 'https://web.facebook.com/profile.php?id=61586276754461', 
       name: 'Facebook' 
     },
     { 

@@ -1,8 +1,15 @@
 
-import React from 'react';
-import { motion } from 'motion/react';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
 import { Trophy, Star, ArrowRight, ArrowLeft } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+
+interface Balloon {
+  id: number;
+  x: number;
+  color: string;
+  delay: number;
+}
 
 const APPROVED_IMAGES = [
   {
@@ -117,6 +124,7 @@ const APPROVED_IMAGES = [
 
 const ApprovedStudents: React.FC = () => {
   const scrollRef = React.useRef<HTMLDivElement>(null);
+  const [balloons, setBalloons] = useState<Balloon[]>([]);
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
@@ -126,8 +134,67 @@ const ApprovedStudents: React.FC = () => {
     }
   };
 
+  const handlePhotoClick = (e: React.MouseEvent) => {
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    
+    const colors = ['#E31E24', '#FFFFFF', '#002B5B']; // Red, White, Blue
+    const newBalloons: Balloon[] = [];
+    
+    for (let i = 0; i < 12; i++) {
+      newBalloons.push({
+        id: Date.now() + i,
+        x: centerX + (Math.random() * 100 - 50),
+        color: colors[Math.floor(Math.random() * colors.length)],
+        delay: Math.random() * 0.5
+      });
+    }
+    
+    setBalloons(prev => [...prev, ...newBalloons]);
+    
+    // Cleanup balloons after animation
+    setTimeout(() => {
+      setBalloons(prev => prev.filter(b => !newBalloons.find(nb => nb.id === b.id)));
+    }, 4000);
+  };
+
   return (
     <section className="py-20 bg-brand-offwhite relative overflow-hidden">
+      {/* Balloon Layer */}
+      <div className="fixed inset-0 pointer-events-none z-[9999]">
+        <AnimatePresence>
+          {balloons.map((balloon) => (
+            <motion.div
+              key={balloon.id}
+              initial={{ y: '100vh', x: balloon.x, opacity: 1, scale: 0.8 }}
+              animate={{ 
+                y: '-20vh', 
+                x: balloon.x + (Math.random() * 200 - 100),
+                opacity: 0,
+                rotate: Math.random() * 45 - 22.5,
+                scale: 1.2
+              }}
+              exit={{ opacity: 0 }}
+              transition={{ 
+                duration: 3 + Math.random() * 2, 
+                delay: balloon.delay,
+                ease: "easeOut"
+              }}
+              className="absolute w-12 h-16 rounded-[50%_50%_50%_50%/40%_40%_60%_60%] shadow-lg flex flex-col items-center"
+              style={{ 
+                backgroundColor: balloon.color,
+                border: balloon.color === '#FFFFFF' ? '1px solid #ddd' : 'none'
+              }}
+            >
+              {/* Balloon String */}
+              <div className="absolute top-full w-0.5 h-12 bg-gray-400/30 origin-top"></div>
+              {/* Balloon Knot */}
+              <div className="absolute -bottom-1 w-3 h-2 rounded-full" style={{ backgroundColor: balloon.color }}></div>
+            </motion.div>
+          ))}
+        </AnimatePresence>
+      </div>
+
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-brand-red/5 rounded-full blur-3xl -z-0"></div>
       
@@ -179,7 +246,8 @@ const ApprovedStudents: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="min-w-[280px] md:min-w-[350px] aspect-[4/5] relative rounded-[2.5rem] overflow-hidden snap-start group shadow-xl"
+              onClick={handlePhotoClick}
+              className="min-w-[280px] md:min-w-[350px] aspect-[4/5] relative rounded-[2.5rem] overflow-hidden snap-start group shadow-xl cursor-pointer active:scale-95 transition-transform"
             >
               <img 
                 src={item.url} 
