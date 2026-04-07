@@ -122,7 +122,7 @@ const APPROVED_IMAGES = [
   },
   {
     id: 19,
-    url: 'https://i.imgur.com/VamOtCP.png',
+    url: 'https://i.imgur.com/ZGUfQQg.png',
     name: 'Pedro Henrique Ferreira da Silva',
     year: 'Odontologia - UniLS'
   },
