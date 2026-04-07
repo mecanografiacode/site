@@ -92,31 +92,31 @@ const APPROVED_IMAGES = [
   },
   {
     id: 14,
-    url: 'https://instagram.fbsb8-2.fna.fbcdn.net/v/t39.30808-6/638362806_122114467545209225_4177662968484790646_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzgzNjkxMjA4NDMxNTkwOTkzNw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=oasC8eSJHhEQ7kNvwFJqeD1&_nc_oc=AdlQfxsev72f6HKwnh3VGNNko6fstjk-RvSpEFhKOjEmyRQe3sABC-A3uLkbWM15Q28&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-2.fna&_nc_gid=VHCVaXhin2EpkPYcK4kOdg&_nc_ss=8&oh=00_AfzCwxvGqEUPj-1l9wVKUS6Wef_YommZl_vAfvvHrBeP0g&oe=69B47CFA',
+    url: 'https://i.imgur.com/zaE8TPr.jpeg',
     name: 'Ana Clara Rabelo Goulart',
     year: 'Matemática - UnB'
   },
   {
     id: 15,
-    url: 'https://instagram.fbsb8-2.fna.fbcdn.net/v/t39.30808-6/638320581_122114466387209225_6637488801514322255_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08_tt6&_nc_cat=109&ig_cache_key=MzgzNzY4NDAwOTczNjg0MzI2Mw%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=okrj_uKeHU0Q7kNvwFw-cjP&_nc_oc=Adn9mnTYnp7qvUJXR7hbOlkM1N5R6mugcZ-Y0E98Aysv6_sXFqZEFXbVeoXWL0KKC14&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-2.fna&_nc_gid=VHCVaXhin2EpkPYcK4kOdg&_nc_ss=8&oh=00_Afwb58uuonHYpdvAlXMG_uycXfCHzMMMPJCz5hFZbxoZSA&oe=69B49BEF',
+    url: 'https://i.imgur.com/7RRXh9M.jpeg',
     name: 'Maria Eduarda Ribeiro Pinheiro',
     year: 'Ciências Sociais'
   },
   {
     id: 16,
-    url: 'https://instagram.fbsb8-2.fna.fbcdn.net/v/t39.30808-6/638224036_122114466675209225_471291925872286830_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ig_cache_key=MzgzODQwODgzOTQ2NDU2NzcyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=aVaq9xSFReAQ7kNvwEsRVql&_nc_oc=AdkwknvejvuAOUPBdzQOt01CriMZgK1TONGVy3L5ylp_428WDCpYYTmPJ9M8AGpKDrQ&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-2.fna&_nc_gid=VHCVaXhin2EpkPYcK4kOdg&_nc_ss=8&oh=00_Afy-qazRPTW7Jw75DZxGlUJc9cSIzOgy_GxG-00V6BPVmA&oe=69B476ED',
+    url: 'https://i.imgur.com/HQENdC9.jpeg',
     name: 'Ryan Vieira Costa',
     year: 'Química Tecnológica'
   },
   {
     id: 17,
-    url: 'https://instagram.fbsb8-1.fna.fbcdn.net/v/t39.30808-6/640469079_122114467257209225_7471339298930559577_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=108&ig_cache_key=MzgzOTEzMzYzMTI5MzUzOTQ1NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=eyrqT6I9hT8Q7kNvwHxAwOm&_nc_oc=AdnrLKW-bsd_5xroqzODRtBPqv-ETrS3JL0BQweH2-EwCNIX4WNnuUefIV76nbDdMLs&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-1.fna&_nc_gid=VHCVaXhin2EpkPYcK4kOdg&_nc_ss=8&oh=00_Afw4XE6_xJF-FyFtD-0Q1XUgH3jWMp1vcCetZm3dkvz9Vw&oe=69B496A7',
+    url: 'https://i.imgur.com/kHzjUTu.jpeg',
     name: 'Maria Eduarda Soares dos Santos',
     year: 'Fonoaudiologia'
   },
   {
     id: 18,
-    url: 'https://instagram.fbsb8-1.fna.fbcdn.net/v/t39.30808-6/640178652_122114584527209225_3910386571409054292_n.jpg?stp=dst-jpg_e35_p640x640_sh0.08_tt6&_nc_cat=104&ig_cache_key=Mzg0MTA1NzczNjI1MjA1ODYzNg%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjEwODB4MTM1MC5zZHIuQzMifQ%3D%3D&_nc_ohc=XliZkCFxRiwQ7kNvwHS9mw_&_nc_oc=AdlgjARuqZXFGP42C_Hhv9ba2eQ6VdJOZnljrjRF973TEpDRltzbR4voHxpqrgMEwoo&_nc_ad=z-m&_nc_cid=1138&_nc_zt=23&_nc_ht=instagram.fbsb8-1.fna&_nc_gid=E6daFhSvAK7Xd3Q-Dk9b5g&_nc_ss=8&oh=00_AfzpTy2V_FLwitLUhWPBjGPDTrAmvycbw4l9Jgg-aKk0Yg&oe=69B48032',
+    url: 'https://i.imgur.com/5NAx3SL.jpeg',
     name: 'Jorge Henrique Pereira dos Santos',
     year: 'Ciências Contábeis - UnB'
   },
@@ -125,6 +125,42 @@ const APPROVED_IMAGES = [
     url: 'https://i.imgur.com/VamOtCP.png',
     name: 'Pedro Henrique Ferreira da Silva',
     year: 'Odontologia - UniLS'
+  },
+  {
+    id: 20,
+    url: 'https://i.imgur.com/dtkbvkm.png',
+    name: 'Júlio César Alencar',
+    year: 'Fisioterapia - UCB'
+  },
+  {
+    id: 21,
+    url: 'https://i.imgur.com/9Jml3hF.png',
+    name: 'Rodrigo Silvestre',
+    year: 'Direito - UNICEUB'
+  },
+  {
+    id: 22,
+    url: 'https://i.imgur.com/HHcoCvv.png',
+    name: 'Rikaele Neves',
+    year: 'Educação física - Estácio'
+  },
+  {
+    id: 23,
+    url: 'https://i.imgur.com/1Zy456u.jpeg',
+    name: 'Ryanna Beatriz',
+    year: 'Ciência Sociais (UFG) / RI (UCB)'
+  },
+  {
+    id: 24,
+    url: 'https://i.imgur.com/PpFSO42.jpeg',
+    name: 'Maxwell Ribeiro',
+    year: 'Farmácia - UCB'
+  },
+  {
+    id: 25,
+    url: 'https://i.imgur.com/niBZjOd.png',
+    name: 'Matheus Queiroz',
+    year: 'Fisioterapia - UCB'
   }
 ];
 
