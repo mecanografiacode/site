@@ -161,6 +161,42 @@ const APPROVED_IMAGES = [
     url: 'https://i.imgur.com/niBZjOd.png',
     name: 'Matheus Queiroz',
     year: 'Fisioterapia - UCB'
+  },
+  {
+    id: 26,
+    url: 'https://i.imgur.com/l4tQUZo.png',
+    name: 'Antônia Sergiane Lima',
+    year: 'Direito - Estácio'
+  },
+  {
+    id: 27,
+    url: 'https://i.imgur.com/gTcnPUu.png',
+    name: 'Joara Amorim',
+    year: 'Fonoaudiologia - UnB'
+  },
+  {
+    id: 28,
+    url: 'https://i.imgur.com/YqEWdpC.png',
+    name: 'Victória Emanuelle',
+    year: 'Fonoaudiologia - UnB'
+  },
+  {
+    id: 29,
+    url: 'https://i.imgur.com/BqieqIx.png',
+    name: 'Alexandre Brito',
+    year: 'Engenharia - UNICEPLAC'
+  },
+  {
+    id: 30,
+    url: 'https://i.imgur.com/DQvaR0B.png',
+    name: 'Isac Teixeira',
+    year: 'Farmácia - Cruzeiro do Sul'
+  },
+  {
+    id: 31,
+    url: 'https://i.imgur.com/O9jE8cK.png',
+    name: 'Nicolle Diniz',
+    year: 'Direito - UNICEUB'
   }
 ];
 
