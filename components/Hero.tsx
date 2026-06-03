@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, ArrowRight, Sparkles, Timer } from 'lucide-react';
+import { HangingGarland } from './FestaJuninaDecoration';
 
 const slides = [
   {
@@ -42,6 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
 
   return (
     <section className="relative h-screen min-h-[600px] md:min-h-[700px] overflow-hidden bg-brand-navy">
+      <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -67,29 +69,29 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
             </picture>
           </div>
           
-          <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 sm:px-6 lg:px-32 max-w-7xl mx-auto">
-            <div className="max-w-4xl mt-12 md:mt-0">
+          <div className="absolute inset-0 z-20 flex flex-col items-start justify-center px-4 sm:px-6 lg:px-32 max-w-7xl mx-auto pt-28 sm:pt-32 md:pt-36 pb-8 sm:pb-12">
+            <div className="max-w-4xl mt-4 sm:mt-8 md:mt-10">
               {/* Conversion Badge */}
-              <div className={`inline-flex items-center gap-2 bg-brand-red/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-6 transition-all duration-1000 delay-200 shadow-xl ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+              <div className={`inline-flex items-center gap-2 bg-brand-red/90 backdrop-blur-md text-white px-4 py-2 rounded-full text-[10px] md:text-xs font-black uppercase tracking-widest mb-4 transition-all duration-1000 delay-200 shadow-xl ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
                 <Timer size={14} className="animate-pulse" />
                 {slide.tag}
               </div>
 
               {/* H1 Otimizado para SEO (O texto visível é displayTitle, mas o H1 contém as keywords) */}
-              <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-6 leading-[1] tracking-tighter transition-all duration-1000 delay-300 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <h1 className={`text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black text-white mb-5 leading-[1.05] tracking-tighter transition-all duration-1000 delay-300 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <span className="sr-only">{slide.title}</span>
                 {slide.displayTitle}
               </h1>
-              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-10 font-light leading-relaxed max-w-2xl transition-all duration-1000 delay-500 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <p className={`text-base sm:text-lg md:text-xl lg:text-2xl text-white/70 mb-8 font-light leading-relaxed max-w-2xl transition-all duration-1000 delay-500 text-balance ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 {slide.subtitle}
               </p>
               
-              <div className={`flex flex-col sm:flex-row flex-wrap gap-5 transition-all duration-1000 delay-700 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+              <div className={`flex flex-col sm:flex-row flex-wrap gap-4 transition-all duration-1000 delay-700 ${index === current ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
                 <div className="flex flex-col items-center sm:items-start gap-3">
                   <button
                     id={`btn-hero-cta-main-slide-${index}`}
                     onClick={onOpenUnitSelector}
-                    className="group relative bg-brand-red text-white px-8 md:px-12 py-5 md:py-6 rounded-full font-black text-lg md:text-xl shadow-[0_20px_50px_-10px_rgba(230,57,70,0.6)] transition-all hover:scale-105 active:scale-95 btn-shimmer flex items-center justify-center gap-3 animate-soft-pulse"
+                    className="group relative bg-brand-red text-white px-8 md:px-12 py-4 md:py-5 rounded-full font-black text-base md:text-lg shadow-[0_20px_50px_-10px_rgba(230,57,70,0.6)] transition-all hover:scale-105 active:scale-95 btn-shimmer flex items-center justify-center gap-3 animate-soft-pulse"
                   >
                     <span className="relative z-10 flex items-center gap-3">
                       {slide.cta}
@@ -104,7 +106,7 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
                 <button
                   id={`btn-hero-cta-secondary-slide-${index}`}
                   onClick={onOpenUnitSelector}
-                  className="bg-white/5 backdrop-blur-xl text-white border-2 border-white/20 px-8 md:px-12 py-5 md:py-6 rounded-full font-bold text-lg md:text-xl hover:bg-white hover:text-brand-navy transition-all duration-500 transform hover:scale-105 active:scale-95 text-center h-fit"
+                  className="bg-white/5 backdrop-blur-xl text-white border-2 border-white/20 px-8 md:px-12 py-4 md:py-5 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-brand-navy transition-all duration-500 transform hover:scale-105 active:scale-95 text-center h-fit"
                 >
                   {slide.secondaryCta}
                 </button>

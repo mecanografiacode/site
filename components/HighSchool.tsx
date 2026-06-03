@@ -7,6 +7,7 @@ import {
   Layers, UserCheck, Search, Info
 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { HangingGarland } from './FestaJuninaDecoration';
 
 interface HighSchoolProps {
   onOpenUnitSelector?: () => void;
@@ -17,6 +18,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
     <div className="bg-white">
       {/* Hero Section Ensino Médio */}
       <section className="relative h-[95vh] min-h-[700px] flex items-center overflow-hidden bg-brand-navy">
+        <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.imgur.com/EUksldX.jpeg" 

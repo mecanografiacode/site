@@ -3,6 +3,7 @@ import React from 'react';
 import { Check, ClipboardList, CalendarCheck, Sparkles, ArrowRight } from 'lucide-react';
 import { ENROLLMENT_STEPS, DOCUMENTATION } from '../constants';
 import ScrollReveal from './ScrollReveal';
+import { HangingGarland } from './FestaJuninaDecoration';
 
 interface EnrollmentProps {
   onOpenUnitSelector?: () => void;
@@ -13,6 +14,7 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
     <section id="matriculas" className="py-20 md:py-40 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="bg-brand-navy rounded-[2.5rem] md:rounded-[5rem] p-6 sm:p-12 md:p-32 text-white overflow-hidden relative border-[6px] md:border-[16px] border-brand-offwhite shadow-3xl">
+          <HangingGarland className="absolute top-0 left-0 w-full z-20 opacity-80" flagCount={14} flagSize={24} />
           <div className="absolute top-0 right-0 w-[600px] md:w-[1000px] h-[600px] md:h-[1000px] bg-brand-red/5 rounded-full blur-[150px] md:blur-[200px] -mr-[300px] md:-mr-[500px] -mt-[300px] md:-mt-[500px]"></div>
           
           <div className="relative z-10">

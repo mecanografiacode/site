@@ -3,12 +3,14 @@ import React from 'react';
 import { MessageCircle, ArrowRight, CheckCircle, ClipboardList, Calendar, MapPin, Star, Sparkles } from 'lucide-react';
 import { UNITS, ENROLLMENT_STEPS, DOCUMENTATION } from '../constants';
 import ScrollReveal from './ScrollReveal';
+import { HangingGarland } from './FestaJuninaDecoration';
 
 const SejaReacao2026: React.FC = () => {
   return (
     <div className="bg-white">
       {/* Hero Section - Escala restaurada para Desktop */}
       <section className="relative pt-24 pb-16 md:pt-48 md:pb-40 overflow-hidden bg-brand-navy">
+        <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1523050337458-5bd55f95f938?q=80&w=2000&auto=format&fit=crop" 

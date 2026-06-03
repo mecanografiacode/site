@@ -2,10 +2,13 @@
 import React from 'react';
 import { PILLARS } from '../constants';
 import ScrollReveal from './ScrollReveal';
+import { SidewalkGarland } from './FestaJuninaDecoration';
 
 const Pillars: React.FC = () => {
   return (
     <section className="py-20 md:py-32 bg-white relative">
+      <SidewalkGarland side="left" />
+      <SidewalkGarland side="right" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {PILLARS.map((pillar, idx) => (

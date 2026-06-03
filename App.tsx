@@ -21,6 +21,7 @@ import UnitSelectorModal from './components/UnitSelectorModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import SEOContent from './components/SEOContent';
+import { FestaJuninaGlobalDecorations } from './components/FestaJuninaDecoration';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos' | 'seo-especial'>('home');
@@ -87,7 +88,8 @@ const App: React.FC = () => {
   const openUnitSelector = () => setIsUnitModalOpen(true);
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative overflow-x-hidden">
+      <FestaJuninaGlobalDecorations />
       <Header onNavigate={navigateTo as any} currentPage={currentPage as any} />
       <main>
         {currentPage === 'home' ? (

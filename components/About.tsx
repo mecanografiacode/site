@@ -1,10 +1,13 @@
 import React from 'react';
 import { Target, Eye } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
+import { SidewalkGarland } from './FestaJuninaDecoration';
 
 const About: React.FC = () => {
   return (
-    <section id="sobre" className="py-20 md:py-40 bg-brand-offwhite overflow-hidden" aria-labelledby="sobre-heading">
+    <section id="sobre" className="py-20 md:py-40 bg-brand-offwhite overflow-hidden relative" aria-labelledby="sobre-heading">
+      <SidewalkGarland side="left" />
+      <SidewalkGarland side="right" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="flex flex-col lg:flex-row items-center gap-12 md:gap-24">
           <ScrollReveal className="lg:w-1/2">

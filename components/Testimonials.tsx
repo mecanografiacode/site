@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Quote, ChevronLeft, ChevronRight } from 'lucide-react';
 import { TESTIMONIALS } from '../constants';
 import ScrollReveal from './ScrollReveal';
+import { SidewalkGarland } from './FestaJuninaDecoration';
 
 const Testimonials: React.FC = () => {
   const [active, setActive] = useState(0);
@@ -18,7 +19,9 @@ const Testimonials: React.FC = () => {
   const prev = () => setActive((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
 
   return (
-    <section id="depoimentos" className="py-20 md:py-32 bg-white overflow-hidden">
+    <section id="depoimentos" className="py-20 md:py-32 bg-white overflow-hidden relative">
+      <SidewalkGarland side="left" />
+      <SidewalkGarland side="right" />
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <ScrollReveal className="text-center mb-16 md:mb-24">
           <h2 className="text-brand-red text-xs md:text-sm font-bold tracking-[0.3em] uppercase mb-4 md:mb-6">Depoimentos</h2>

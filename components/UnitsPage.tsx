@@ -3,6 +3,7 @@ import React from 'react';
 import { MapPin, Phone, CheckCircle, ArrowRight, Home, Building2, ShieldCheck, Microscope, Laptop, Users } from 'lucide-react';
 import { UNITS } from '../constants';
 import ScrollReveal from './ScrollReveal';
+import { HangingGarland } from './FestaJuninaDecoration';
 
 interface UnitsPageProps {
   onOpenUnitSelector?: () => void;
@@ -13,6 +14,7 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
     <div className="bg-white">
       {/* Hero Section */}
       <section className="relative h-[60vh] flex items-center overflow-hidden bg-brand-navy">
+        <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1541339907198-e08756ebafe3?q=80&w=2000&auto=format&fit=crop" 
