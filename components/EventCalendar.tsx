@@ -401,53 +401,53 @@ export const EventCalendar: React.FC = () => {
     .sort((a, b) => a.date.getTime() - b.date.getTime())[0];
 
   return (
-    <section id="calendario" className="py-20 md:py-32 bg-gradient-to-b from-brand-offwhite to-white relative overflow-hidden" aria-labelledby="calendar-heading">
+    <section id="calendario" className="py-16 md:py-32 bg-gradient-to-b from-brand-offwhite to-white relative overflow-hidden" aria-labelledby="calendar-heading">
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-sky-200/20 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-brand-red/5 rounded-full blur-[80px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10">
         
         {/* Header section with badge */}
-        <ScrollReveal className="text-center mb-12">
+        <ScrollReveal className="text-center mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 mb-4 bg-brand-red/10 border border-brand-red/20 px-4 py-1.5 rounded-full">
             <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
             <span className="text-brand-red font-bold text-xs uppercase tracking-widest">Ano Letivo 2026</span>
           </div>
-          <h2 id="calendar-heading" className="text-4xl md:text-6xl font-black text-brand-navy tracking-tight leading-[1.1] mb-4">
+          <h2 id="calendar-heading" className="text-3xl md:text-6xl font-black text-brand-navy tracking-tight leading-[1.1] mb-4">
             Calendário de Eventos <span className="text-brand-red">Reação</span>
           </h2>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-slate-600 text-sm md:text-lg max-w-2xl mx-auto font-light leading-relaxed">
             Acompanhe nossas datas acadêmicas, períodos de matrículas, vivências em família e feriados. Atividades escolares integradas em tempo real.
           </p>
         </ScrollReveal>
 
         {/* Real-time Event Countdown Banner */}
         {nextHighlightedEvent && (
-          <ScrollReveal delay={100} className="mb-14">
-            <div className="bg-brand-navy rounded-[2rem] p-6 md:p-8 text-white relative overflow-hidden border-2 border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <ScrollReveal delay={100} className="mb-10 md:mb-14">
+            <div className="bg-brand-navy rounded-[1.5rem] md:rounded-[2rem] p-5 md:p-8 text-white relative overflow-hidden border-2 border-white/10 shadow-2xl flex flex-col md:flex-row items-center justify-between gap-6">
               {/* background overlay */}
               <div className="absolute top-0 right-0 w-80 h-full bg-gradient-to-l from-brand-red/15 to-transparent skew-x-12 pointer-events-none"></div>
               
-              <div className="flex items-center gap-5 relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-brand-red flex items-center justify-center text-white shrink-0 shadow-lg animate-soft-pulse">
-                  <Timer size={28} />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4 md:gap-5 relative z-10 w-full md:w-auto">
+                <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-brand-red flex items-center justify-center text-white shrink-0 shadow-lg animate-soft-pulse">
+                  <Timer size={24} className="md:size-[28px]" />
                 </div>
-                <div>
-                  <div className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-red uppercase tracking-wider mb-1">
+                <div className="min-w-0">
+                  <div className="inline-flex items-center gap-1.5 text-[10px] md:text-xs font-bold text-brand-red uppercase tracking-wider mb-1 justify-center sm:justify-start">
                     Próximo Grande Evento • {formatDateBeautifully(nextHighlightedEvent.date)}
                   </div>
-                  <h3 className="text-xl md:text-2xl font-black">{nextHighlightedEvent.title}</h3>
-                  <p className="text-white/60 text-sm mt-0.5 max-w-lg truncate">{nextHighlightedEvent.description}</p>
+                  <h3 className="text-lg md:text-2xl font-black leading-tight">{nextHighlightedEvent.title}</h3>
+                  <p className="text-white/65 text-xs md:text-sm mt-1 max-w-lg line-clamp-2 md:truncate">{nextHighlightedEvent.description}</p>
                 </div>
               </div>
 
               {/* Live Ticker Clock */}
               <div className="bg-white/5 border border-white/15 px-6 py-4 rounded-xl shrink-0 text-center relative z-10 w-full md:w-auto">
-                <div className="text-xs uppercase tracking-widest text-white/50 mb-1 font-semibold flex items-center justify-center gap-2">
+                <div className="text-[10px] md:text-xs uppercase tracking-widest text-white/50 mb-1 font-semibold flex items-center justify-center gap-2">
                   <span className="w-2 h-2 rounded-full bg-red-400 animate-pulse"></span>
                   Tempo Restante
                 </div>
-                <div className="text-2xl md:text-3xl font-mono font-bold tracking-tight text-brand-red">
+                <div className="text-xl md:text-3xl font-mono font-bold tracking-tight text-brand-red">
                   {countdownString || 'Contando...'}
                 </div>
               </div>
@@ -456,18 +456,21 @@ export const EventCalendar: React.FC = () => {
         )}
 
         {/* Categories Toolbar Filter */}
-        <ScrollReveal delay={150} className="mb-10">
-          <div className="flex flex-wrap items-center justify-center gap-2.5 pb-2 bg-slate-50 p-2 rounded-2xl border border-slate-100 max-w-4xl mx-auto">
+        <ScrollReveal delay={150} className="mb-10 w-full overflow-hidden">
+          <div 
+            className="flex md:flex-wrap items-center md:justify-center gap-2 overflow-x-auto md:overflow-x-visible bg-slate-50 p-2 rounded-2xl border border-slate-100 max-w-4xl mx-auto px-3 md:px-2 scroll-smooth"
+            style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+          >
             <button
               onClick={() => setSelectedCategory('all')}
-              className={`px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold flex items-center gap-2 transition-all ${
+              className={`px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold flex items-center gap-2 shrink-0 transition-all ${
                 selectedCategory === 'all'
                   ? 'bg-brand-navy text-white shadow-md'
                   : 'text-slate-600 hover:bg-slate-150'
               }`}
             >
-              <Filter size={14} className="shrink-0" />
-              Todos os Eventos ({SCHOOL_EVENTS_2026.length})
+              <Filter size={13} className="shrink-0" />
+              Todos ({SCHOOL_EVENTS_2026.length})
             </button>
             {Object.entries(CATEGORY_META).map(([categoryName, meta]) => {
               const count = SCHOOL_EVENTS_2026.filter(e => e.category === categoryName).length;
@@ -475,14 +478,14 @@ export const EventCalendar: React.FC = () => {
                 <button
                   key={categoryName}
                   onClick={() => setSelectedCategory(categoryName)}
-                  className={`px-4 py-2.5 rounded-xl text-xs md:text-sm font-bold flex items-center gap-1.5 transition-all ${
+                  className={`px-3.5 py-2 rounded-xl text-xs md:text-sm font-bold flex items-center gap-1.5 shrink-0 transition-all ${
                     selectedCategory === categoryName
                       ? 'bg-brand-navy text-white shadow-md'
                       : 'text-slate-600 hover:bg-white border border-slate-100 hover:shadow-sm'
                   }`}
                 >
                   <span className={`w-2.5 h-2.5 rounded-full ${meta.dot}`} />
-                  {meta.label} ({count})
+                  <span className="whitespace-nowrap">{meta.label.split(' & ')[0]} ({count})</span>
                 </button>
               );
             })}
@@ -491,7 +494,7 @@ export const EventCalendar: React.FC = () => {
 
         {/* Global Toast Alerts */}
         {alertMessage && (
-          <div className="fixed bottom-6 right-6 max-w-md bg-brand-navy border border-brand-red/30 text-white px-5 py-4 rounded-2xl shadow-2xl z-50 flex items-start gap-3 animate-slide-up">
+          <div className="fixed bottom-6 left-6 right-6 md:left-auto md:right-6 max-w-md bg-brand-navy border border-brand-red/30 text-white px-5 py-4 rounded-2xl shadow-2xl z-50 flex items-start gap-3 animate-slide-up">
             <CheckCircle className="text-emerald-400 shrink-0 mt-0.5" size={20} />
             <div className="text-sm">
               <p className="font-semibold text-white">Calendário Sincronizado</p>
@@ -501,17 +504,17 @@ export const EventCalendar: React.FC = () => {
         )}
 
         {/* Main Grid Layout: Interactive Calendar Left, Details/List Right */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 md:gap-8 items-start">
           
           {/* LEFT: Complete Monthly Calendar Grid */}
-          <ScrollReveal delay={200} className="lg:col-span-7 bg-white p-6 sm:p-8 rounded-[2.5rem] card-elevation border border-slate-100 relative">
-            <div className="flex items-center justify-between mb-8 pb-5 border-b border-slate-100">
-              <div className="flex items-center gap-3">
-                <div className="w-11 h-11 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center">
+          <ScrollReveal delay={200} className="lg:col-span-7 bg-white p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] card-elevation border border-slate-100 relative">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 mb-6 pb-5 border-b border-slate-100 text-center sm:text-left">
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <div className="w-11 h-11 bg-brand-red/10 text-brand-red rounded-xl flex items-center justify-center shrink-0">
                   <CalendarIcon size={22} className="shrink-0" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-extrabold text-brand-navy capitalize tracking-tight">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-brand-navy capitalize tracking-tight">
                     {MONTHS_PT[currentMonth]}, {currentYear}
                   </h3>
                   <p className="text-xs text-slate-500 font-medium">Toque nos dias destacados para ver os detalhes</p>
@@ -522,10 +525,10 @@ export const EventCalendar: React.FC = () => {
               <div className="flex items-center gap-1">
                 <button 
                   onClick={handlePrevMonth}
-                  className="p-2.5 hover:bg-slate-50 text-slate-700 hover:text-brand-red rounded-xl border border-slate-100 active:scale-95 transition-all"
+                  className="p-2 hover:bg-slate-50 text-slate-700 hover:text-brand-red rounded-xl border border-slate-100 active:scale-95 transition-all"
                   aria-label="Mês anterior"
                 >
-                  <ChevronLeft size={18} />
+                  <ChevronLeft size={16} />
                 </button>
                 <button 
                   onClick={() => { setCurrentMonth(5); setCurrentYear(2026); }}
@@ -535,18 +538,18 @@ export const EventCalendar: React.FC = () => {
                 </button>
                 <button 
                   onClick={handleNextMonth}
-                  className="p-2.5 hover:bg-slate-50 text-slate-700 hover:text-brand-red rounded-xl border border-slate-100 active:scale-95 transition-all"
+                  className="p-2 hover:bg-slate-50 text-slate-700 hover:text-brand-red rounded-xl border border-slate-100 active:scale-95 transition-all"
                   aria-label="Próximo mês"
                 >
-                  <ChevronRight size={18} />
+                  <ChevronRight size={16} />
                 </button>
               </div>
             </div>
 
             {/* Weekdays Labels Header */}
-            <div className="grid grid-cols-7 gap-1 md:gap-3 text-center text-slate-400 text-xs md:text-sm font-semibold tracking-wider uppercase mb-3">
+            <div className="grid grid-cols-7 gap-1 md:gap-3 text-center text-slate-400 text-xs font-semibold tracking-wider uppercase mb-3">
               {WEEKDAYS_PT.map(day => (
-                <div key={day} className="py-2">{day}</div>
+                <div key={day} className="py-1">{day}</div>
               ))}
             </div>
 
@@ -558,7 +561,7 @@ export const EventCalendar: React.FC = () => {
                 return (
                   <div 
                     key={`prev-${i}`} 
-                    className="aspect-square flex items-center justify-center text-slate-300 text-sm font-medium rounded-xl select-none"
+                    className="aspect-square flex items-center justify-center text-slate-300 text-xs sm:text-sm font-medium rounded-xl select-none"
                   >
                     {dayNum}
                   </div>
@@ -589,17 +592,13 @@ export const EventCalendar: React.FC = () => {
                   <button
                     key={`day-${day}`}
                     onClick={() => {
-                      if (hasEvents) {
-                        setSelectedDate(dateObj);
-                      } else {
-                        setSelectedDate(dateObj);
-                      }
+                      setSelectedDate(dateObj);
                     }}
-                    className={`aspect-square relative flex flex-col items-center justify-center rounded-xl md:rounded-2xl text-sm font-bold transition-all ${
+                    className={`aspect-square relative w-full flex flex-col items-center justify-center rounded-lg md:rounded-2xl text-xs sm:text-sm font-bold transition-all ${
                       isSelected 
-                        ? 'bg-brand-red text-white shadow-lg shadow-brand-red/30 ring-4 ring-brand-red/10' 
+                        ? 'bg-brand-red text-white shadow-lg shadow-brand-red/30 ring-2 md:ring-4 ring-brand-red/10' 
                         : isAnchorToday
-                          ? 'bg-brand-navy text-white ring-4 ring-brand-navy/15'
+                          ? 'bg-brand-navy text-white ring-2 md:ring-4 ring-brand-navy/15'
                           : hasEvents
                             ? 'bg-brand-red/5 text-brand-navy border border-brand-red/25 hover:bg-brand-red/15'
                             : 'text-slate-700 hover:bg-slate-50 border border-transparent'
@@ -610,12 +609,12 @@ export const EventCalendar: React.FC = () => {
 
                     {/* Has events visual indicator dot */}
                     {hasEvents && !isSelected && (
-                      <span className={`absolute bottom-2 w-2 h-2 rounded-full ${dotColor} animate-pulse`} />
+                      <span className={`absolute bottom-1 md:bottom-2 w-1.5 h-1.5 md:w-2 md:h-2 rounded-full ${dotColor} animate-pulse`} />
                     )}
 
                     {/* Inline countdown flag for Festa Junina or custom visual flair */}
                     {day === 20 && currentMonth === 5 && !isSelected && (
-                      <span className="absolute top-1 right-1 text-[10px]">🌽</span>
+                      <span className="absolute top-0.5 right-0.5 text-[8px] md:text-[10px]">🌽</span>
                     )}
                   </button>
                 );
@@ -623,15 +622,15 @@ export const EventCalendar: React.FC = () => {
             </div>
 
             {/* Quick Helper guidelines footer */}
-            <div className="mt-8 pt-6 border-t border-slate-100 flex flex-wrap gap-4 items-center justify-between text-xs text-slate-500">
-              <div className="flex flex-wrap gap-4">
+            <div className="mt-8 pt-5 border-t border-slate-100 text-[10px] md:text-xs text-slate-500">
+              <div className="grid grid-cols-2 xs:flex xs:flex-wrap gap-2.5 md:gap-4 justify-between">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-navy" />
                   Hoje (12/Jun)
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-red" />
-                  Dia Selecionado
+                  Selecionado
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
@@ -649,11 +648,11 @@ export const EventCalendar: React.FC = () => {
           <div className="lg:col-span-5 flex flex-col gap-6 w-full">
             
             {/* Displaying specifics about active clicked date */}
-            <ScrollReveal delay={250} className="bg-white p-6 sm:p-8 rounded-[2.5rem] card-elevation border border-slate-100">
-              <div className="flex items-center justify-between mb-6">
+            <ScrollReveal delay={250} className="bg-white p-4 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] card-elevation border border-slate-100">
+              <div className="flex items-center justify-between mb-5">
                 <h4 className="text-xs uppercase font-extrabold tracking-widest text-slate-400">Atividades para o dia</h4>
                 {selectedDate && (
-                  <span className="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-bold">
+                  <span className="text-xs bg-slate-100 text-slate-600 px-3 py-1 rounded-full font-bold shrink-0">
                     {selectedDate.getDate()}/{selectedDate.getMonth() + 1}/{selectedDate.getFullYear()}
                   </span>
                 )}
@@ -664,9 +663,9 @@ export const EventCalendar: React.FC = () => {
                   const dayEvents = getDayEvents(selectedDate.getDate());
                   if (dayEvents.length === 0) {
                     return (
-                      <div className="text-center py-8">
-                        <BookmarkCheck size={44} className="mx-auto text-slate-300 mb-3" />
-                        <h5 className="font-bold text-slate-700 text-base">Nenhum evento letivo neste dia</h5>
+                      <div className="text-center py-10">
+                        <BookmarkCheck size={40} className="mx-auto text-slate-300 mb-3" />
+                        <h5 className="font-bold text-slate-700 text-sm">Nenhum evento letivo neste dia</h5>
                         <p className="text-slate-400 text-xs max-w-xs mx-auto mt-1 leading-relaxed">
                           Aproveite para curtir em família ou focar no cronômetro do seu plano de estudos regular!
                         </p>
@@ -681,18 +680,18 @@ export const EventCalendar: React.FC = () => {
                         return (
                           <div 
                             key={event.id}
-                            className="p-5 bg-gradient-to-br from-brand-navy/5 to-white rounded-2xl border border-slate-150 relative overflow-hidden transition-all hover:shadow-md"
+                            className="p-4 sm:p-5 bg-gradient-to-br from-brand-navy/5 to-white rounded-2xl border border-slate-150 relative overflow-hidden transition-all hover:shadow-md"
                           >
                             <span className="absolute top-0 right-0 w-1.5 h-full bg-brand-red" />
                             
                             <div className="flex items-start justify-between gap-2 mb-2.5">
-                              <span className={`text-[10px] uppercase font-extrabold px-2.5 py-0.5 rounded-full border ${meta.bg}`}>
+                              <span className={`text-[9px] sm:text-[10px] uppercase font-extrabold px-2 py-0.5 rounded-full border ${meta.bg}`}>
                                 {meta.label}
                               </span>
                               <span className="text-[10px] text-slate-400 font-semibold">{event.targetAudience}</span>
                             </div>
 
-                            <h5 className="font-black text-brand-navy text-lg leading-snug mb-2">{event.title}</h5>
+                            <h5 className="font-black text-brand-navy text-base sm:text-lg leading-snug mb-2">{event.title}</h5>
                             <p className="text-xs text-slate-500 leading-relaxed mb-4">{event.description}</p>
 
                             <div className="flex flex-col gap-2 border-t border-dashed border-slate-200 pt-3.5 mb-4 text-xs text-slate-600">
@@ -706,17 +705,17 @@ export const EventCalendar: React.FC = () => {
                               </div>
                             </div>
 
-                            <div className="flex items-center gap-2">
+                            <div className="flex flex-col sm:flex-row items-center gap-2">
                               <button
                                 onClick={() => handleCalendarDownload(event)}
-                                className="flex-1 bg-brand-navy text-white hover:bg-brand-red px-3 py-2 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                                className="w-full sm:flex-1 bg-brand-navy text-white hover:bg-brand-red px-3 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
                               >
                                 <Download size={13} />
                                 Agendar
                               </button>
                               <button
                                 onClick={() => handleShare(event)}
-                                className="bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors"
+                                className="w-full sm:w-auto bg-slate-100 hover:bg-slate-200 text-slate-700 px-3.5 py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors shrink-0"
                                 title="Copiar Atalho de Compartilhamento"
                               >
                                 <Share2 size={13} />
@@ -731,40 +730,40 @@ export const EventCalendar: React.FC = () => {
                 })()
               ) : (
                 <div className="text-center py-10">
-                  <CalendarIcon size={44} className="mx-auto text-slate-300 mb-3" />
+                  <CalendarIcon size={40} className="mx-auto text-slate-300 mb-3" />
                   <h5 className="font-bold text-slate-600 text-sm">Selecione uma data para detalhar</h5>
                 </div>
               )}
             </ScrollReveal>
 
             {/* Month's Highlights / Outros Eventos no Mês */}
-            <ScrollReveal delay={300} className="bg-brand-navy p-6 sm:p-8 rounded-[2.5rem] text-white">
-              <h4 className="text-xs uppercase font-extrabold tracking-widest text-white/40 mb-5">
+            <ScrollReveal delay={300} className="bg-brand-navy p-5 sm:p-8 rounded-[1.5rem] sm:rounded-[2.5rem] text-white">
+              <h4 className="text-xs uppercase font-extrabold tracking-widest text-white/40 mb-4">
                 Destaques de {MONTHS_PT[currentMonth]}
               </h4>
 
               {filteredEvents.length === 0 ? (
                 <p className="text-xs text-white/50 italic py-4">Sem eventos adicionais cadastrados para este mês.</p>
               ) : (
-                <div className="flex flex-col gap-4 max-h-[280px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 pr-2">
+                <div className="flex flex-col gap-3.5 max-h-[280px] overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 pr-2">
                   {filteredEvents.map(event => (
                     <div 
                       key={`highlight-${event.id}`}
                       onClick={() => setSelectedDate(event.date)}
-                      className="group flex gap-4 p-3 rounded-xl hover:bg-white/5 transition-all cursor-pointer items-start border border-transparent hover:border-white/5"
+                      className="group flex gap-3.5 p-3 rounded-xl hover:bg-white/5 transition-all cursor-pointer items-start border border-transparent hover:border-white/5"
                     >
                       <div className="w-11 h-11 rounded-lg bg-white/10 shrink-0 flex flex-col items-center justify-center font-bold text-white text-xs leading-none">
-                        <span className="text-brand-red text-[10px] font-black uppercase mb-0.5">
+                        <span className="text-brand-red text-[9px] font-black uppercase mb-0.5">
                           {MONTHS_PT[event.date.getMonth()].slice(0, 3)}
                         </span>
                         <span>{event.date.getDate()}</span>
                       </div>
                       
                       <div className="flex-1 min-w-0">
-                        <h5 className="font-bold text-sm text-white group-hover:text-brand-red transition-colors truncate">
+                        <h5 className="font-bold text-xs sm:text-sm text-white group-hover:text-brand-red transition-colors truncate">
                           {event.title}
                         </h5>
-                        <p className="text-[11px] text-white/50 truncate mt-0.5">{event.time}</p>
+                        <p className="text-[10px] sm:text-[11px] text-white/50 truncate mt-0.5">{event.time}</p>
                       </div>
 
                       <ArrowRight size={13} className="text-white/30 group-hover:text-white shrink-0 self-center transition-colors" />
