@@ -84,7 +84,7 @@ const SCHOOL_EVENTS_2026: SchoolEvent[] = [
     title: 'FESTA FOLCLÓRICA REAÇÃO 🎉🌽',
     description: 'Nossa tradicionalíssima e maravilhosa Festa Folclórica! Danças folclóricas, apresentações culturais espetaculares de todos os segmentos, barraquinhas de iguarias típicas, correio elegante, brincadeiras e momentos incríveis em família.',
     date: new Date(2026, 5, 20), // June 20
-    time: '16:00 às 22:30',
+    time: '09:00 às 19:00',
     location: 'Complexo Esportivo Coberto - Unidade I',
     category: 'festivo',
     targetAudience: 'Alunos, Familiares, Ex-Alunos e Comunidade',
