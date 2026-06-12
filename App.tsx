@@ -4,6 +4,7 @@ import Hero from './components/Hero';
 import Pillars from './components/Pillars';
 import Stats from './components/Stats';
 import ApprovedStudents from './components/ApprovedStudents';
+import { EventCalendar } from './components/EventCalendar';
 import About from './components/About';
 import Differentials from './components/Differentials';
 import Units from './components/Units';
@@ -97,6 +98,7 @@ const App: React.FC = () => {
             <Hero onOpenUnitSelector={openUnitSelector} />
             <Pillars />
             <Stats />
+            <EventCalendar />
             <ApprovedStudents />
             <About />
             <Differentials />
