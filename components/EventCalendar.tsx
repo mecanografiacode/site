@@ -235,13 +235,13 @@ const CATEGORY_META = {
 };
 
 export const EventCalendar: React.FC = () => {
-  // Current local time context is June 2026
-  const anchorDate = new Date(2026, 5, 12); // June 12, 2026 as per local time anchor
+  // Current system date context
+  const anchorDate = new Date();
   
-  const [currentYear, setCurrentYear] = useState(2026);
-  const [currentMonth, setCurrentMonth] = useState(5); // June is index 5
+  const [currentYear, setCurrentYear] = useState(anchorDate.getFullYear());
+  const [currentMonth, setCurrentMonth] = useState(anchorDate.getMonth());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2026, 5, 20)); // Pre-selected Arraiá
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2026, 5, 20)); // Pre-selected Arraiá (Festa Folclórica)
   const [countdownString, setCountdownString] = useState('');
   const [copiedEventId, setCopiedEventId] = useState<string | null>(null);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);
@@ -626,7 +626,7 @@ export const EventCalendar: React.FC = () => {
               <div className="grid grid-cols-2 xs:flex xs:flex-wrap gap-2.5 md:gap-4 justify-between">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-navy" />
-                  Hoje (12/Jun)
+                  Hoje ({anchorDate.getDate()}/{MONTHS_PT[anchorDate.getMonth()].slice(0, 3)})
                 </span>
                 <span className="flex items-center gap-1.5">
                   <span className="w-2.5 h-2.5 rounded-full bg-brand-red" />

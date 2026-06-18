@@ -69,7 +69,7 @@ export const HangingGarland: React.FC<HangingGarlandProps> = ({
   flagSize = 36 
 }) => {
   return (
-    <div className={`relative w-full overflow-hidden pointer-events-none select-none z-30 ${className}`}>
+    <div className={`hidden md:block relative w-full overflow-hidden pointer-events-none select-none z-30 ${className}`}>
       {/* Decorative hanging string */}
       <svg 
         className="absolute top-0 left-0 w-full h-16 text-amber-900/20" 

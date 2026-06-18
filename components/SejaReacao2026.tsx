@@ -20,15 +20,15 @@ const SejaReacao2026: React.FC = () => {
           <div className="absolute inset-0 bg-gradient-to-b from-brand-navy via-brand-navy/60 to-brand-navy"></div>
         </div>
         
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-center">
           <ScrollReveal>
-            <span className="bg-brand-red text-white px-5 md:px-10 py-2 md:py-4 rounded-full text-[8px] md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.6em] inline-block mb-6 md:mb-12 shadow-2xl animate-pulse">
+            <span className="bg-brand-red text-white px-4 md:px-10 py-1.5 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.6em] inline-block mb-6 md:mb-12 shadow-2xl animate-pulse">
               Matrículas Abertas 2026
             </span>
-            <h1 className="text-3xl md:text-8xl xl:text-9xl font-black text-white mb-6 md:mb-10 tracking-tighter leading-tight">
+            <h1 className="text-2xl sm:text-5xl md:text-8xl xl:text-9xl font-black text-white mb-4 sm:mb-6 md:mb-10 tracking-tighter leading-tight">
               Garanta o lugar do <br/><span className="text-brand-red italic font-serif">seu filho no topo.</span>
             </h1>
-            <p className="text-white/60 text-base md:text-2xl xl:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-8 md:mb-16">
+            <p className="text-white/60 text-xs sm:text-lg md:text-2xl xl:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-6 sm:mb-8 md:mb-16">
               O Colégio Reação prepara seu filho para os desafios do futuro com excelência acadêmica e valores sólidos. A jornada de sucesso começa hoje.
             </p>
           </ScrollReveal>

@@ -16,7 +16,7 @@ const Fundamental: React.FC<FundamentalProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section Anos Iniciais e Finais */}
-      <section className="relative h-[90vh] min-h-[650px] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[550px] sm:min-h-[650px] md:h-[90vh] md:min-h-[650px] flex items-center overflow-hidden bg-brand-navy py-12 sm:py-20 md:py-0">
         <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
@@ -27,35 +27,35 @@ const Fundamental: React.FC<FundamentalProps> = ({ onOpenUnitSelector }) => {
           <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/60 to-transparent"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-20 sm:pt-24">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-6 md:mb-8">
-              <span className="bg-brand-blue text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] inline-block shadow-lg">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+              <span className="bg-brand-blue text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] inline-block shadow-lg">
                 1º ao 9º ano
               </span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="text-brand-blue fill-brand-blue" />
+                  <Star key={i} size={12} className="text-brand-blue fill-brand-blue" />
                 ))}
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl lg:text-[6.5rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.9]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[6.5rem] font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter leading-tight md:leading-[0.9]">
               Anos Iniciais <br />
               <span className="text-brand-red">& Finais.</span>
             </h1>
-            <p className="text-white/80 text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-8 md:mb-12 leading-relaxed">
+            <p className="text-white/80 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-6 sm:mb-10 md:mb-12 leading-relaxed">
               Excelência acadêmica, formação humana e suporte pedagógico contínuo para uma base educacional sólida.
             </p>
-            <div className="flex flex-wrap gap-4 md:gap-5">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5">
               <button 
                 onClick={onOpenUnitSelector}
-                className="bg-brand-red text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-black text-base md:text-lg hover:scale-110 transition-all shadow-3xl shadow-brand-red/30 flex items-center gap-3 btn-shimmer"
+                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-sm sm:text-lg hover:scale-110 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
               >
-                Matrículas 2026 <ArrowRight />
+                Matrículas 2026 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={onOpenUnitSelector}
-                className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 md:px-12 py-4 md:py-6 rounded-full font-bold text-base md:text-lg hover:bg-white hover:text-brand-navy transition-all"
+                className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-bold text-sm sm:text-lg hover:bg-white hover:text-brand-navy transition-all text-center justify-center"
               >
                 Conhecer a Jornada
               </button>

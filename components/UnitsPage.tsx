@@ -13,7 +13,7 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-[60vh] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[350px] h-[50vh] md:h-[60vh] flex items-center overflow-hidden bg-brand-navy py-12 md:py-0">
         <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
@@ -23,10 +23,10 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
         </div>
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full pt-20 text-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-16 sm:pt-20 text-center">
           <ScrollReveal>
-            <h1 className="text-5xl md:text-8xl font-black text-white mb-6 tracking-tighter">Nossos <span className="text-brand-red">Campi.</span></h1>
-            <p className="text-white/60 text-xl max-w-3xl mx-auto font-light leading-relaxed">
+            <h1 className="text-4xl sm:text-6xl md:text-8xl font-black text-white mb-4 sm:mb-6 tracking-tighter">Nossos <span className="text-brand-red">Campi.</span></h1>
+            <p className="text-white/60 text-sm sm:text-base md:text-xl max-w-3xl mx-auto font-light leading-relaxed">
               Dois endereços planejados para oferecer segurança, tecnologia e o ambiente perfeito para o florescer de grandes talentos.
             </p>
           </ScrollReveal>

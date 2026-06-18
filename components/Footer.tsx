@@ -53,8 +53,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const devWhatsappMsg = encodeURIComponent("Olá vim pelo site do Colégio Reação e quero mais informações sobre site que converte.");
-  const devWhatsappLink = `https://wa.me/5561981535040?text=${devWhatsappMsg}`;
+  const devWhatsappLink = "https://wa.me/556196507712";
 
   return (
     <footer className="bg-brand-navy text-white pt-32 pb-16 relative overflow-hidden">

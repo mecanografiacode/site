@@ -17,7 +17,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section Ensino Médio */}
-      <section className="relative h-[95vh] min-h-[700px] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[550px] sm:min-h-[650px] md:h-[95vh] md:min-h-[700px] flex items-center overflow-hidden bg-brand-navy py-12 sm:py-20 md:py-0">
         <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
@@ -35,31 +35,31 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full pt-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-20 sm:pt-24">
           <ScrollReveal>
-            <div className="flex items-center gap-3 mb-6 md:mb-8">
-              <span className="bg-brand-red text-white px-6 py-2 rounded-full text-[10px] font-black uppercase tracking-[0.4em] inline-block shadow-lg">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+              <span className="bg-brand-red text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] inline-block shadow-lg">
                 High Performance
               </span>
               <div className="flex gap-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} className="text-brand-red fill-brand-red" />
+                  <Star key={i} size={12} className="text-brand-red fill-brand-red" />
                 ))}
               </div>
             </div>
-            <h1 className="text-5xl md:text-7xl lg:text-[7.5rem] font-black text-white mb-6 md:mb-8 tracking-tighter leading-[0.85]">
+            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[7.5rem] font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter leading-tight md:leading-[0.85]">
               Ensino Médio <br />
               <span className="text-brand-red italic underline decoration-white/10">Formação para o Futuro.</span>
             </h1>
-            <p className="text-white/80 text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-8 md:mb-12 leading-relaxed">
+            <p className="text-white/80 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-6 sm:mb-10 md:mb-12 leading-relaxed">
               Preparação completa para vestibulares, ENEM, PAS e desenvolvimento crítico e intelectual para os desafios do mundo contemporâneo.
             </p>
-            <div className="flex flex-wrap gap-4 md:gap-5">
+            <div className="flex flex-wrap gap-4">
               <button 
                 onClick={onOpenUnitSelector}
-                className="bg-brand-red text-white px-10 md:px-14 py-5 md:py-7 rounded-full font-black text-base md:text-xl hover:scale-110 transition-all shadow-3xl shadow-brand-red/30 flex items-center gap-3 btn-shimmer"
+                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 md:py-6 rounded-full font-black text-sm sm:text-lg md:text-xl hover:scale-115 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
               >
-                Matrículas 2026 <ArrowRight />
+                Matrículas 2026 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </ScrollReveal>
