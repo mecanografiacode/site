@@ -195,7 +195,11 @@ export const FestaJuninaFlag: React.FC<FlagProps> = ({
       <div 
         className={`inline-block select-none origin-center transition-transform hover:scale-115 ${className}`}
         style={{ 
-          animation: `worldcup-sway 4s ease-in-out infinite alternate`,
+          animationName: 'worldcup-sway',
+          animationDuration: '4s',
+          animationTimingFunction: 'ease-in-out',
+          animationIterationCount: 'infinite',
+          animationDirection: 'alternate',
           animationDelay: delay,
           width: `${width}px`,
           height: `${width}px`,
@@ -213,7 +217,11 @@ export const FestaJuninaFlag: React.FC<FlagProps> = ({
       <div 
         className={`inline-block select-none origin-center transition-transform hover:scale-115 ${className}`}
         style={{ 
-          animation: `worldcup-bounce 3.5s ease-in-out infinite alternate`,
+          animationName: 'worldcup-bounce',
+          animationDuration: '3.5s',
+          animationTimingFunction: 'ease-in-out',
+          animationIterationCount: 'infinite',
+          animationDirection: 'alternate',
           animationDelay: delay,
           width: `${width}px`,
           height: `${height}px`,
@@ -230,7 +238,11 @@ export const FestaJuninaFlag: React.FC<FlagProps> = ({
     <div 
       className={`inline-block select-none origin-top transition-transform hover:scale-115 ${className}`}
       style={{ 
-        animation: `worldcup-sway 3s ease-in-out infinite alternate`,
+        animationName: 'worldcup-sway',
+        animationDuration: '3s',
+        animationTimingFunction: 'ease-in-out',
+        animationIterationCount: 'infinite',
+        animationDirection: 'alternate',
         animationDelay: delay,
         width: `${width}px`,
         height: `${height}px`,
@@ -378,7 +390,11 @@ export const DriftingBandeirinha: React.FC<{ top: string; left?: string; right?:
         top,
         left: left ? left : undefined,
         right: right ? right : undefined,
-        animation: `worldcup-drift 9s ease-in-out infinite alternate`,
+        animationName: 'worldcup-drift',
+        animationDuration: '9s',
+        animationTimingFunction: 'ease-in-out',
+        animationIterationCount: 'infinite',
+        animationDirection: 'alternate',
         animationDelay: `${delay}s`,
       }}
     >
