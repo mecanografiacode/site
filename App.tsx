@@ -22,7 +22,7 @@ import UnitSelectorModal from './components/UnitSelectorModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import SEOContent from './components/SEOContent';
-import { FestaJuninaGlobalDecorations } from './components/FestaJuninaDecoration';
+import { FestaJuninaGlobalDecorations, HangingGarland } from './components/FestaJuninaDecoration';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos' | 'seo-especial'>('home');
@@ -96,6 +96,9 @@ const App: React.FC = () => {
         {currentPage === 'home' ? (
           <>
             <Hero onOpenUnitSelector={openUnitSelector} />
+            <div className="relative z-20 bg-brand-navy pb-4">
+              <HangingGarland flagCount={18} flagSize={32} />
+            </div>
             <Pillars />
             <Stats />
             <EventCalendar />

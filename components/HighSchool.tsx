@@ -18,7 +18,6 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
     <div className="bg-white">
       {/* Hero Section Ensino Médio */}
       <section className="relative min-h-[550px] sm:min-h-[650px] md:h-[95vh] md:min-h-[700px] flex items-center overflow-hidden bg-brand-navy py-12 sm:py-20 md:py-0">
-        <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.imgur.com/EUksldX.jpeg" 
@@ -35,7 +34,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-20 sm:pt-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36">
           <ScrollReveal>
             <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
               <span className="bg-brand-red text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] inline-block shadow-lg">
@@ -65,6 +64,11 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
           </ScrollReveal>
         </div>
       </section>
+
+      {/* Hanging Garland placed in the body flow */}
+      <div className="relative z-20 bg-brand-navy pb-6 -mt-1">
+        <HangingGarland flagCount={18} flagSize={32} />
+      </div>
 
       {/* Introdução Textual */}
       <section className="py-24 md:py-32 bg-white relative">

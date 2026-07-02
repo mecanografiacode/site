@@ -43,7 +43,6 @@ const Hero: React.FC<HeroProps> = ({ onOpenUnitSelector }) => {
 
   return (
     <section className="relative h-[100dvh] md:h-screen min-h-[580px] md:min-h-[700px] overflow-hidden bg-brand-navy">
-      <HangingGarland className="absolute top-20 sm:top-24 left-0 w-full z-40 opacity-95" flagCount={16} flagSize={28} />
       {slides.map((slide, index) => (
         <div
           key={index}
