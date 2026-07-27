@@ -1,7 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, X, Bot, User, Loader2, MessageSquare, Sparkles } from 'lucide-react';
-import { GoogleGenAI } from "@google/genai";
 import { UNITS, ENROLLMENT_STEPS, DOCUMENTATION } from '../constants';
 import { usePostHog } from 'posthog-js/react';
 
@@ -65,25 +64,17 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
     });
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || "" });
-      const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
-        contents: [
-          { role: 'user', parts: [{ text: schoolContext }] },
-          ...messages.map(m => ({
-            role: m.role,
-            parts: [{ text: m.text }]
-          })),
-          { role: 'user', parts: [{ text: userMsg }] }
-        ],
-        config: {
-          temperature: 0.7,
-          topP: 0.8,
-          maxOutputTokens: 500,
-        }
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          messages,
+          userMsg,
+          schoolContext
+        })
       });
-
-      const aiText = response.text || "Desculpe, tive um problema ao processar sua resposta. Pode repetir?";
+      const data = await res.json();
+      const aiText = data.text || "Desculpe, tive um problema ao processar sua resposta. Pode repetir?";
       setMessages(prev => [...prev, { role: 'model', text: aiText }]);
       
       posthog.capture('ai_response_received', { status: 'success' });
