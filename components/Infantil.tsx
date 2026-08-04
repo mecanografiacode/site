@@ -7,7 +7,6 @@ import {
   Gamepad2, Rocket, Zap
 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import { HangingGarland } from './FestaJuninaDecoration';
 
 interface InfantilProps {
   onOpenUnitSelector?: () => void;
@@ -66,11 +65,6 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Hanging Garland placed in the body flow */}
-      <div className="relative z-20 bg-brand-navy pb-6 -mt-1">
-        <HangingGarland flagCount={18} flagSize={32} />
-      </div>
 
       {/* Introdução Textual - Cores vibrantes nos detalhes */}
       <section className="py-24 bg-white relative">

@@ -1,7 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronRight, ChevronLeft, ArrowRight, Sparkles, Timer } from 'lucide-react';
-import { HangingGarland } from './FestaJuninaDecoration';
 
 const slides = [
   {

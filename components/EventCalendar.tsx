@@ -34,7 +34,7 @@ export interface SchoolEvent {
 // 2026 events database tailored to Colégio Reação
 const SCHOOL_EVENTS_2026: SchoolEvent[] = [
   {
-    id: 'ev-simulado-ftd',
+    id: 'ev-simulado-ftd-junho',
     title: 'Simulados 1ª e 2ª série - FTD 📚',
     description: 'Avaliação diagnóstica intensiva do sistema de ensino FTD para consolidação das habilidades escolares e preparação técnica continuada.',
     date: new Date(2026, 5, 2), // June 2
@@ -46,163 +46,14 @@ const SCHOOL_EVENTS_2026: SchoolEvent[] = [
     isCrucial: false
   },
   {
-    id: 'ev-corpus-christi',
-    title: 'Feriado & Recesso de Corpus Christi 🕊️',
-    description: 'Feriado nacional de Corpus Christi e recesso acadêmico institucional. Não haverá expediente letivo ou administrativo.',
-    date: new Date(2026, 5, 4), // June 4
-    endDate: new Date(2026, 5, 6), // June 6
-    time: 'Integral',
-    location: 'Todas as Unidades',
-    category: 'feriado',
-    targetAudience: 'Todos os Alunos, Professores e Funcionários',
-    isCrucial: false
-  },
-  {
-    id: 'ev-encerra-esportivas',
-    title: 'Encerramento das Modalidades Esportivas ⚽🩰',
-    description: 'Último dia de treinos e atividades das escolinhas esportivas regulares do Colégio Reação neste primeiro semestre.',
-    date: new Date(2026, 5, 5), // June 5
-    time: 'Horários dos treinos regulares',
-    location: 'Quadra Poliesportiva Coberta',
-    category: 'academico',
-    targetAudience: 'Alunos matriculados em escolinhas esportivas',
-    isCrucial: false
-  },
-  {
-    id: 'ev-prepara-festa',
-    title: 'Preparativos da Festa Folclórica (Saída Especial) ⚠️',
-    description: 'Atenção pais e responsáveis: devido aos últimos ensaios e montagem física de toda a estrutura para a nossa grande festa de amanhã, os estudantes do Turno Vespertino serão dispensados mais cedo, às 16:00.',
-    date: new Date(2026, 5, 19), // June 19
-    time: 'Dispensa às 16:00 (Turno Vespertino)',
-    location: 'Todas as Unidades',
-    category: 'comunidade',
-    targetAudience: 'Estudantes do Turno Vespertino',
-    isCrucial: false
-  },
-  {
     id: 'ev-festa-folclorica',
     title: 'FESTA FOLCLÓRICA REAÇÃO 🎉🌽',
-    description: 'Nossa tradicionalíssima e maravilhosa Festa Folclórica! Danças folclóricas, apresentações culturais espetaculares de todos os segmentos, barraquinhas de iguarias típicas, correio elegante, brincadeiras e momentos incríveis em família.',
+    description: 'Nossa tradicionalíssima e maravilhosa Festa Folclórica! Danças folclóricas, apresentações culturais espetaculares de todos os segmentos, barraquinhas de iguarias típicas, correio elegante e brincadeiras.',
     date: new Date(2026, 5, 20), // June 20
     time: '09:00 às 19:00',
     location: 'Complexo Esportivo Coberto - Unidade I',
     category: 'festivo',
     targetAudience: 'Alunos, Familiares, Ex-Alunos e Comunidade',
-    isCrucial: true
-  },
-  {
-    id: 'ev-simulado-fund2',
-    title: 'Simulado Geral (6° ao 9° ano) 📝',
-    description: 'Aplicação das avaliações simuladas para mensuração de metas e verificação de conteúdos consolidados do bimestre letivo.',
-    date: new Date(2026, 5, 22), // June 22
-    time: '07:30 - 12:00',
-    location: 'Salas de Aula',
-    category: 'academico',
-    targetAudience: 'Ensino Fundamental Anos Finais (6° ao 9° ano)',
-    isCrucial: false
-  },
-  {
-    id: 'ev-resultado-quadrilhas',
-    title: 'Resultado do 12° Concurso de Quadrilhas 🏆',
-    description: 'Divulgação oficial e premiação da turma vencedora do 12º Concurso Integredado de Quadrilhas Juninas de nosso Ensino Médio!',
-    date: new Date(2026, 5, 24), // June 24
-    time: 'Durante o recreio regular',
-    location: 'Pátio Central',
-    category: 'festivo',
-    targetAudience: 'Alunos do Ensino Médio',
-    isCrucial: false
-  },
-  {
-    id: 'ev-semana-avaliacoes',
-    title: 'Semana de Avaliações Bimestrais 📝',
-    description: 'Período oficial de provas escritas e avaliações diagnósticas integradas relativas ao fechamento do 2° bimestre letivo.',
-    date: new Date(2026, 5, 25), // June 25
-    endDate: new Date(2026, 6, 2), // July 2
-    time: 'Horário Regular de Aula',
-    location: 'Salas de Aula - Todas as Unidades',
-    category: 'academico',
-    targetAudience: 'Alunos do Ensino Fundamental ao Ensino Médio',
-    isCrucial: true
-  },
-  {
-    id: 'ev-conselho-classe',
-    title: 'Conselho de Classe (Saída Antecipada) 👩‍🏫',
-    description: 'Alinhamento acadêmico e reunião deliberativa do corpo docente. Atenção aos horários especiais de dispensa das turmas de Anos Finais e Ensino Médio: às 10:00 (matutino) e às 16:00 (vespertino).',
-    date: new Date(2026, 6, 3), // July 3
-    time: 'Saída às 10h (Matutino) e às 16h (Vespertino)',
-    location: 'Salas Específicas de Conselho',
-    category: 'comunidade',
-    targetAudience: 'Alunos dos Anos Finais e Ensino Médio',
-    isCrucial: false
-  },
-  {
-    id: 'ev-reuniao-pais',
-    title: 'Reunião de Pais e Mestres Semestral 🤝',
-    description: 'Encontro oficial presencial para compartilhamento de resultados, entrega de boletins do 2° Bimestre e alinhamento individual com professores. Horários divididos:\n- Matutino (Anos Iniciais ao Ensino Médio): 8h às 9h30\n- Vespertino (Educação Infantil aos Anos Finais): 14h às 15h30',
-    date: new Date(2026, 6, 7), // July 7
-    time: 'Matutino: 08:00 - 09:30 | Vespertino: 14:00 - 15:30',
-    location: 'Salas de Aula de Referência',
-    category: 'comunidade',
-    targetAudience: 'Pais e Responsáveis',
-    isCrucial: true
-  },
-  {
-    id: 'ev-recuperacao-semestral',
-    title: 'Semana de Recuperação Semestral 📑',
-    description: 'Período destinado às aulas especiais de nivelamento pedagógico, reforço prático e avaliações substitutivas da média semestral. Divulgação do resultado oficial programada para a primeira semana de agosto.',
-    date: new Date(2026, 6, 8), // July 8
-    endDate: new Date(2026, 6, 14), // July 14
-    time: 'Atividades e provas agendadas por turma',
-    location: 'Blocos de Apoio Pedagógico',
-    category: 'academico',
-    targetAudience: 'Estudantes convocados para recuperação semestral',
-    isCrucial: false
-  },
-  {
-    id: 'ev-recesso-aprovados',
-    title: 'Recesso Escolar (Estudantes Aprovados) 🏖️',
-    description: 'Férias de inverno merecidas para os estudantes que atingiram média de aprovação direta no encerramento das bimestrais do primeiro semestre letivo!',
-    date: new Date(2026, 6, 8), // July 8
-    endDate: new Date(2026, 6, 28), // July 28
-    time: 'Integral',
-    location: 'Férias Letivas',
-    category: 'feriado',
-    targetAudience: 'Estudantes Aprovados Diretos',
-    isCrucial: false
-  },
-  {
-    id: 'ev-recesso-contraturno',
-    title: 'Recesso Escolar do Contraturno/Integral 🧸',
-    description: 'Início oficial do período de férias das oficinas, treinos e monitorias do contraturno integral do colégio.',
-    date: new Date(2026, 6, 15), // July 15
-    endDate: new Date(2026, 6, 28), // July 28
-    time: 'Integral',
-    location: 'Atividades Externas',
-    category: 'feriado',
-    targetAudience: 'Estudantes do Período Integral e Contraturno',
-    isCrucial: false
-  },
-  {
-    id: 'ev-jornada-pedagogica',
-    title: 'Jornada Pedagógica do 2º Semestre 📝',
-    description: 'Período com palestras formativas, planejamento estratégico das aulas de alta performance, revisão de metas e workshops metodológicos dedicados a todo o corpo docente.',
-    date: new Date(2026, 6, 22), // July 22
-    endDate: new Date(2026, 6, 28), // July 28
-    time: 'Horário Comercial Docente',
-    location: 'Auditório e Espaços Maker',
-    category: 'comunidade',
-    targetAudience: 'Docentes, Orientadores e Coordenação',
-    isCrucial: false
-  },
-  {
-    id: 'ev-aniversario-recanto',
-    title: 'Feriado Local: Aniversário do Recanto das Emas 🎂🎉',
-    description: 'Festa municipal em celebração aos anos de história, cultura e bravura de nossa amada cidade administrativa de Recanto das Emas. Não haverá expediente curricular ou administrativo.',
-    date: new Date(2026, 6, 28), // July 28
-    time: 'Feriado Comunitário',
-    location: 'Recanto das Emas - DF',
-    category: 'feriado',
-    targetAudience: 'Comunidade Geral',
     isCrucial: false
   },
   {
@@ -214,6 +65,142 @@ const SCHOOL_EVENTS_2026: SchoolEvent[] = [
     location: 'Todas as Unidades',
     category: 'academico',
     targetAudience: 'Todos os Alunos do Colégio',
+    isCrucial: false
+  },
+  // --- AGOSTO 2026 ---
+  {
+    id: 'ev-abertura-jogos-olimpicos-u1',
+    title: 'Abertura dos Jogos Olímpicos - Unidade 1 🏆🔥',
+    description: 'Cerimônia oficial de abertura dos Jogos Olímpicos do Colégio Reação na Unidade 1. Desfile de delegações e espírito esportivo!',
+    date: new Date(2026, 7, 4), // Aug 4
+    time: 'Turno Regular',
+    location: 'Unidade I',
+    category: 'festivo',
+    targetAudience: 'Estudantes e Comunidade da Unidade I',
+    isCrucial: true
+  },
+  {
+    id: 'ev-dia-dos-pais-apresentacao',
+    title: 'Apresentação do Dia dos Pais (Infantil ao 5° ano) 👨‍👧‍👦❤️',
+    description: 'Emoção e carinho! Apresentações especiais em homenagem ao Dia dos Pais preparadas com dedicação pelos alunos da Educação Infantil ao 5º ano.',
+    date: new Date(2026, 7, 7), // Aug 7 (Sexta-feira)
+    time: 'Conforme cronograma por turma',
+    location: 'Pátio / Auditório Principal',
+    category: 'comunidade',
+    targetAudience: 'Alunos da Educação Infantil ao 5º ano e Pais',
+    isCrucial: true
+  },
+  {
+    id: 'ev-dia-dos-pais-data',
+    title: 'Dia dos Pais 👨‍👧‍👦💙',
+    description: 'Homenagem especial a todos os pais e figuras paternas da família Colégio Reação. Parabéns pelo carinho e dedicação!',
+    date: new Date(2026, 7, 9), // Aug 9
+    time: 'Dia Inteiro',
+    location: 'Comunidade Reação',
+    category: 'festivo',
+    targetAudience: 'Todos os Pais e Famílias',
+    isCrucial: false
+  },
+  {
+    id: 'ev-simulado-ftd-agosto',
+    title: 'Simulado FTD (1ª e 2ª série do Ensino Médio) 📝',
+    description: 'Aplicação do Simulado FTD para estudantes da 1ª e 2ª série do Ensino Médio, com foco na avaliação de conteúdos e preparação contínua.',
+    date: new Date(2026, 7, 10), // Aug 10
+    endDate: new Date(2026, 7, 11), // Aug 11
+    time: 'Turno Regular',
+    location: 'Salas do Ensino Médio',
+    category: 'academico',
+    targetAudience: '1ª e 2ª série do Ensino Médio',
+    isCrucial: false
+  },
+  {
+    id: 'ev-dia-do-estudante',
+    title: 'Dia do Estudante 🎓⭐',
+    description: 'Celebração e homenagens a todos os nossos alunos que constroem o futuro com dedicação, curiosidade e conhecimento!',
+    date: new Date(2026, 7, 11), // Aug 11
+    time: 'Horário Regular de Aula',
+    location: 'Todas as Unidades',
+    category: 'comunidade',
+    targetAudience: 'Todos os Estudantes',
+    isCrucial: false
+  },
+  {
+    id: 'ev-jocre-2026',
+    title: 'JOCRE - Jogos Olímpicos do Colégio Reação 🏅⚽',
+    description: 'Dia de grandes competições esportivas do JOCRE (6º ano ao Ensino Médio) na Associação Portuguesa de Brasília. Trabalho em equipe, energia e esporte!',
+    date: new Date(2026, 7, 13), // Aug 13
+    time: 'Horário Integral das Atividades',
+    location: 'Associação Portuguesa de Brasília',
+    category: 'festivo',
+    targetAudience: '6º ano ao Ensino Médio',
+    isCrucial: true
+  },
+  {
+    id: 'ev-inicio-esportivas',
+    title: 'Início das Modalidades Esportivas ⚽🏀🩰',
+    description: 'Retorno das escolinhas esportivas e treinamentos de modalidades para alunos inscritos.',
+    date: new Date(2026, 7, 14), // Aug 14
+    time: 'Horários dos treinos regulares',
+    location: 'Quadra Poliesportiva / Espaços Esportivos',
+    category: 'academico',
+    targetAudience: 'Alunos inscritos nas escolinhas',
+    isCrucial: false
+  },
+  {
+    id: 'ev-oficina-redacao',
+    title: 'Início da Oficina de Redação ✍️📄',
+    description: 'Início dos treinos e técnicas avançadas da Oficina de Redação para aprimoramento da escrita acadêmica (PAS, ENEM e vestibulares).',
+    date: new Date(2026, 7, 17), // Aug 17
+    time: 'Horários do Contraturno',
+    location: 'Salas de Apoio Pedagógico',
+    category: 'academico',
+    targetAudience: 'Estudantes do Ensino Fundamental II e Ensino Médio',
+    isCrucial: false
+  },
+  {
+    id: 'ev-semana-provas-etapa1',
+    title: 'Semana de Provas - Etapa I 📝💯',
+    description: 'Período oficial de verificações e avaliações diagnósticas escritas relativas à Etapa I do 2º semestre letivo.',
+    date: new Date(2026, 7, 20), // Aug 20
+    endDate: new Date(2026, 7, 27), // Aug 27
+    time: 'Horário de Provas Regular',
+    location: 'Salas de Aula - Todas as Unidades',
+    category: 'academico',
+    targetAudience: 'Alunos do Ensino Fundamental e Ensino Médio',
+    isCrucial: true
+  },
+  {
+    id: 'ev-dia-do-folclore',
+    title: 'Dia do Folclore Brasileiro 🪕🎭',
+    description: 'Atividades pedagógicas e culturais resgatando mitos, lendas, cantigas e tradições da cultura popular brasileira.',
+    date: new Date(2026, 7, 22), // Aug 22
+    time: 'Turno Regular',
+    location: 'Todas as Unidades',
+    category: 'festivo',
+    targetAudience: 'Educação Infantil e Ensino Fundamental',
+    isCrucial: false
+  },
+  {
+    id: 'ev-dia-do-soldado',
+    title: 'Dia do Soldado 🪖🇧🇷',
+    description: 'Momentos cívicos em homenagem ao Dia do Soldado, valorizando a cidadania e o respeito à pátria.',
+    date: new Date(2026, 7, 25), // Aug 25
+    time: 'Turno Regular',
+    location: 'Todas as Unidades',
+    category: 'comunidade',
+    targetAudience: 'Comunidade Escolar',
+    isCrucial: false
+  },
+  // --- SETEMBRO 2026 ---
+  {
+    id: 'ev-feccor-2026',
+    title: 'FECCOR - Feira de Conhecimento do Colégio Reação 🔬🎨💡',
+    description: 'Evento Extraordinário! Apresentação dos trabalhos de inovação, ciência, tecnologia e projetos interdisciplinares desenvolvidos por nossos estudantes.',
+    date: new Date(2026, 8, 12), // Sept 12
+    time: '08:00 às 14:00',
+    location: 'Todas as Unidades',
+    category: 'academico',
+    targetAudience: 'Alunos, Pais e Comunidade de Brasília',
     isCrucial: true
   }
 ];
@@ -241,7 +228,7 @@ export const EventCalendar: React.FC = () => {
   const [currentYear, setCurrentYear] = useState(anchorDate.getFullYear());
   const [currentMonth, setCurrentMonth] = useState(anchorDate.getMonth());
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
-  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2026, 5, 20)); // Pre-selected Arraiá (Festa Folclórica)
+  const [selectedDate, setSelectedDate] = useState<Date | null>(new Date(2026, 7, 4)); // Pre-selected Abertura dos Jogos Olímpicos
   const [countdownString, setCountdownString] = useState('');
   const [copiedEventId, setCopiedEventId] = useState<string | null>(null);
   const [alertMessage, setAlertMessage] = useState<string | null>(null);

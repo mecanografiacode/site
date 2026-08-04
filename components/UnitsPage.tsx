@@ -3,7 +3,6 @@ import React from 'react';
 import { MapPin, Phone, CheckCircle, ArrowRight, Home, Building2, ShieldCheck, Microscope, Laptop, Users } from 'lucide-react';
 import { UNITS } from '../constants';
 import ScrollReveal from './ScrollReveal';
-import { HangingGarland } from './FestaJuninaDecoration';
 
 interface UnitsPageProps {
   onOpenUnitSelector?: () => void;
@@ -31,11 +30,6 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Hanging Garland placed in the body flow */}
-      <div className="relative z-20 bg-brand-navy pb-6 -mt-1">
-        <HangingGarland flagCount={18} flagSize={32} />
-      </div>
 
       {/* Detailed Units List */}
       <section className="py-32 bg-brand-offwhite">

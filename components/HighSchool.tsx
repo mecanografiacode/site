@@ -7,7 +7,6 @@ import {
   Layers, UserCheck, Search, Info
 } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
-import { HangingGarland } from './FestaJuninaDecoration';
 
 interface HighSchoolProps {
   onOpenUnitSelector?: () => void;
@@ -64,11 +63,6 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
           </ScrollReveal>
         </div>
       </section>
-
-      {/* Hanging Garland placed in the body flow */}
-      <div className="relative z-20 bg-brand-navy pb-6 -mt-1">
-        <HangingGarland flagCount={18} flagSize={32} />
-      </div>
 
       {/* Introdução Textual */}
       <section className="py-24 md:py-32 bg-white relative">
