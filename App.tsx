@@ -18,14 +18,74 @@ import Fundamental from './components/Fundamental';
 import HighSchool from './components/HighSchool';
 import UnitsPage from './components/UnitsPage';
 import SejaReacao2026 from './components/SejaReacao2026';
+import PreLanding from './components/PreLanding';
 import UnitSelectorModal from './components/UnitSelectorModal';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfUse from './components/TermsOfUse';
 import SEOContent from './components/SEOContent';
 
+export type AppPage = 'entrada' | 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos' | 'seo-especial';
+
+const getInitialPage = (): AppPage => {
+  if (typeof window === 'undefined') return 'entrada';
+  const path = window.location.pathname.toLowerCase();
+  const hash = window.location.hash.toLowerCase();
+
+  // If visitor arrives with a direct hash on root, direct to home section
+  if (hash && (path === '/' || path === '')) {
+    return 'home';
+  }
+
+  if (path === '/entrada' || path === '/inicio' || path === '/' || path === '') {
+    return 'entrada';
+  }
+  if (path === '/home' || path === '/principal') {
+    return 'home';
+  }
+  if (path === '/infantil' || path.startsWith('/infantil')) {
+    return 'infantil';
+  }
+  if (path === '/fundamental' || path.startsWith('/fundamental')) {
+    return 'fundamental';
+  }
+  if (path === '/highschool' || path === '/ensino-medio' || path.startsWith('/highschool')) {
+    return 'highschool';
+  }
+  if (path === '/unidades' || path.startsWith('/unidades')) {
+    return 'unidades';
+  }
+  if (path === '/seja-reacao' || path === '/matriculas' || path === '/matriculas-2027') {
+    return 'seja-reacao';
+  }
+  if (path === '/privacidade') {
+    return 'privacidade';
+  }
+  if (path === '/termos') {
+    return 'termos';
+  }
+  if (path === '/seo-especial') {
+    return 'seo-especial';
+  }
+  return 'entrada';
+};
+
 const App: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState<'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos' | 'seo-especial'>('home');
+  const [currentPage, setCurrentPage] = useState<AppPage>(getInitialPage);
   const [isUnitModalOpen, setIsUnitModalOpen] = useState(false);
+
+  // Sync with browser history back/forward buttons without creating loops
+  useEffect(() => {
+    const handlePopState = (event: PopStateEvent) => {
+      if (event.state && event.state.page) {
+        setCurrentPage(event.state.page);
+      } else {
+        setCurrentPage(getInitialPage());
+      }
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   // Scroll to top and SEO Metadata Update
   useEffect(() => {
@@ -35,30 +95,34 @@ const App: React.FC = () => {
     const baseTitle = "Colégio Reação";
     const metaDescription = document.querySelector('meta[name="description"]');
     
-    const pageMetadata: Record<string, { title: string, desc: string }> = {
+    const pageMetadata: Record<AppPage, { title: string, desc: string }> = {
+      entrada: {
+        title: "Colégio Reação | Matrículas 2027 – Recanto das Emas DF",
+        desc: "Uma grande jornada começa com a escola certa. Conheça a proposta pedagógica do Colégio Reação para 2027 ou fale diretamente com nossas unidades no Recanto das Emas."
+      },
       home: { 
         title: `Colégio Reação | Melhor Colégio Particular no Recanto das Emas – DF`, 
-        desc: "O Colégio Reação é a melhor escola particular no Recanto das Emas, Brasília - DF. Localizado na Quadra 201, oferece ensino de alta performance, foco em PAS e ENEM. Matrículas 2026 abertas." 
+        desc: "O Colégio Reação é a melhor escola particular no Recanto das Emas, Brasília - DF. Localizado na Quadra 201 e 206, oferece ensino de alta performance, foco em PAS e ENEM. Matrículas 2027 abertas. Agende sua visita." 
       },
       infantil: { 
-        title: `Educação Infantil no Recanto das Emas | Colégio Reação Kids`, 
-        desc: "A melhor Educação Infantil em colégio particular no Recanto das Emas. Ambiente seguro, afetivo e pedagógico focado no desenvolvimento integral. Conheça o Reação Kids." 
+        title: `Educação Infantil no Recanto das Emas | Colégio Reação Kids 2027`, 
+        desc: "A melhor Educação Infantil em colégio particular no Recanto das Emas. Ambiente seguro, afetivo e pedagógico focado no desenvolvimento integral. Matrículas 2027 abertas." 
       },
       fundamental: { 
-        title: `Ensino Fundamental I e II no Recanto das Emas | Colégio Reação`, 
-        desc: "Ensino Fundamental de excelência em Brasília – DF. O Colégio Reação oferece base acadêmica sólida e formação de valores para o futuro do seu filho no Recanto das Emas." 
+        title: `Ensino Fundamental I e II no Recanto das Emas | Colégio Reação 2027`, 
+        desc: "Ensino Fundamental de excelência em Brasília – DF. O Colégio Reação oferece base acadêmica sólida e formação de valores para o futuro do seu filho no Recanto das Emas. Matrículas 2027." 
       },
       highschool: { 
-        title: `Ensino Médio de Alta Performance no Recanto das Emas | Reação`, 
-        desc: "Preparação intensiva para ENEM, PAS e vestibulares no Recanto das Emas, DF. O melhor Ensino Médio particular com tradição em aprovações e suporte pedagógico." 
+        title: `Ensino Médio de Alta Performance no Recanto das Emas | Reação 2027`, 
+        desc: "Preparação intensiva para ENEM, PAS e vestibulares no Recanto das Emas, DF. O melhor Ensino Médio particular com tradição em aprovações. Matrículas 2027 abertas." 
       },
       unidades: { 
         title: `Nossas Unidades no Recanto das Emas DF | Colégio Reação`, 
         desc: "Conheça as unidades I e II do Colégio Reação no Recanto das Emas. Infraestrutura premium, laboratórios modernos e segurança total na Quadra 201 e 206." 
       },
       'seja-reacao': { 
-        title: `Matrículas 2026 Abertas | Colégio Particular Recanto das Emas`, 
-        desc: "Garanta a vaga do seu filho no Colégio Reação para 2026. Processo de matrícula aberto para todos os segmentos no Recanto das Emas. Excelência que transforma." 
+        title: `Matrículas 2027 Abertas | Colégio Particular Recanto das Emas`, 
+        desc: "Garanta a vaga do seu filho no Colégio Reação para 2027. Agende sua visita guiada e conheça nossa proposta pedagógica de excelência no Recanto das Emas." 
       },
       'seo-especial': {
         title: `Escola Particular em Brasília - Recanto das Emas | Colégio Reação`,
@@ -81,11 +145,22 @@ const App: React.FC = () => {
     }
   }, [currentPage]);
 
-  const navigateTo = (page: 'home' | 'infantil' | 'fundamental' | 'highschool' | 'unidades' | 'seja-reacao' | 'privacidade' | 'termos' | 'seo-especial') => {
+  const navigateTo = (page: AppPage, updateHistory = true) => {
     setCurrentPage(page);
+    if (updateHistory && typeof window !== 'undefined') {
+      const targetPath = page === 'entrada' ? '/entrada' : page === 'home' ? '/home' : `/${page}`;
+      window.history.pushState({ page }, '', targetPath);
+    }
   };
 
   const openUnitSelector = () => setIsUnitModalOpen(true);
+
+  // If user is on the digital reception / Pre-Landing page
+  if (currentPage === 'entrada') {
+    return (
+      <PreLanding onExploreSite={() => navigateTo('home')} />
+    );
+  }
 
   return (
     <div className="min-h-screen relative overflow-x-hidden">

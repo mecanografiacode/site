@@ -29,7 +29,7 @@ const UnitSelectorModal: React.FC<UnitSelectorModalProps> = ({ isOpen, onClose }
 
         <div className="p-6 md:p-16 text-center overflow-y-auto">
           <span className="inline-block bg-brand-red/10 text-brand-red px-4 md:px-6 py-1.5 md:py-2 rounded-full text-[9px] md:text-[10px] font-black uppercase tracking-[0.3em] mb-4 md:mb-6">
-            Agendamento 2026
+            Agendamento de Visita 2027
           </span>
           <h2 className="text-2xl md:text-4xl font-black text-brand-navy mb-2 md:mb-4 tracking-tighter">
             Escolha sua unidade

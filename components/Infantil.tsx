@@ -53,7 +53,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
                 onClick={onOpenUnitSelector}
                 className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-sm sm:text-lg hover:scale-110 transition-all shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] flex items-center justify-center gap-3 btn-shimmer"
               >
-                Matricular Agora <ArrowRight className="w-5 h-5" />
+                AGENDAR VISITA 2027 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={onOpenUnitSelector}
@@ -210,7 +210,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
                     onClick={onOpenUnitSelector}
                     className="bg-white text-brand-red px-12 py-8 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-3xl flex items-center justify-center gap-4 btn-shimmer"
                   >
-                    Matricular Agora <ArrowRight />
+                    AGENDAR VISITA 2027 <ArrowRight />
                   </button>
                 </div>
                 <p className="mt-12 text-white/50 uppercase text-[10px] font-black tracking-[0.4em]">

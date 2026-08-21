@@ -17,7 +17,7 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
           
           <div className="relative z-10">
             <ScrollReveal className="text-center mb-16 md:mb-32">
-              <span className="text-brand-red text-[10px] md:text-xs font-black tracking-[0.4em] md:tracking-[0.5em] uppercase mb-6 md:mb-8 block">Processo Seletivo 2026</span>
+              <span className="text-brand-red text-[10px] md:text-xs font-black tracking-[0.4em] md:tracking-[0.5em] uppercase mb-6 md:mb-8 block">Processo de Admissão 2027</span>
               <h2 className="text-2xl sm:text-4xl md:text-[5rem] font-black mb-6 md:mb-10 tracking-tighter leading-tight md:leading-none break-words text-balance">
                 A jornada de excelência começa aqui.
               </h2>
@@ -73,11 +73,11 @@ const Enrollment: React.FC<EnrollmentProps> = ({ onOpenUnitSelector }) => {
                       onClick={onOpenUnitSelector}
                       className="group relative w-full bg-brand-red text-white py-4 md:py-8 rounded-full font-black text-sm md:text-2xl shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] transition-all hover:scale-105 active:scale-95 mb-6 md:mb-8 btn-shimmer flex items-center justify-center gap-2 md:gap-3"
                     >
-                      RESERVAR MATRÍCULA
+                      AGENDAR VISITA 2027
                       <ArrowRight className="w-5 h-5 md:w-8 md:h-8 group-hover:translate-x-2 transition-transform" />
                     </button>
-                    <p className="text-white/20 text-[8px] md:text-[10px] uppercase font-black tracking-[0.3em] md:tracking-[0.4em] animate-pulse">
-                      Atendimento exclusivo sob agendamento
+                    <p className="text-white/40 text-[9px] md:text-xs uppercase font-bold tracking-[0.2em]">
+                      Atendimento exclusivo e vagas limitadas por turma
                     </p>
                   </div>
                 </div>

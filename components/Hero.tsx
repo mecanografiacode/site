@@ -4,22 +4,22 @@ import { ChevronRight, ChevronLeft, ArrowRight, Sparkles, Timer } from 'lucide-r
 
 const slides = [
   {
-    tag: "VAGAS LIMITADAS PARA 2026",
+    tag: "MATRÍCULAS 2027 ABERTAS",
     title: "Colégio Particular no Recanto das Emas – DF",
     displayTitle: "A excelência que o futuro do seu filho exige",
     subtitle: "O Colégio Reação é referência em aprovações e infraestrutura premium no Recanto das Emas. Onde o potencial se transforma em conquista.",
-    cta: "Garantir Matrícula 2026",
-    secondaryCta: "Agendar Visita Guiada",
+    cta: "AGENDAR VISITA 2027",
+    secondaryCta: "Conhecer Unidades",
     image: "https://i.imgur.com/a8KWrIa.jpeg", 
     alt: "Estudantes em ambiente moderno e tecnológico de aprendizado no Colégio Reação - Escola Particular no Recanto das Emas"
   },
   {
-    tag: "MATRÍCULAS ABERTAS",
+    tag: "VAGAS 2027 DISPONÍVEIS",
     title: "Melhor Escola Particular em Brasília – Recanto das Emas",
     displayTitle: "Ambientes modernos para o aprendizado real",
     subtitle: "Laboratórios de ponta, espaços integrados e o melhor corpo docente da região. A jornada de sucesso no Colégio Reação começa aqui.",
-    cta: "Quero matricular agora",
-    secondaryCta: "Ver Unidades",
+    cta: "AGENDAR VISITA 2027",
+    secondaryCta: "Conhecer Metodologia",
     image: "https://i.imgur.com/jc4po2M.jpeg",
     webp: "https://i.imgur.com/jc4po2M.webp",
     alt: "Arquitetura do Colégio Reação, escola tradicional no Recanto das Emas, DF"

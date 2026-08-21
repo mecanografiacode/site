@@ -31,7 +31,7 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
             </p>
             <div className="flex items-center gap-2 text-white/60 font-black text-[9px] uppercase tracking-[0.2em]">
               <CheckCircle2 size={14} className="text-brand-red" />
-              Matrículas 2026 Abertas
+              Matrículas 2027 Abertas
             </div>
           </div>
 
@@ -41,7 +41,7 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
               onClick={onOpenEnrollment}
               className="group relative w-full bg-brand-red text-white py-4 sm:py-5 rounded-2xl font-black text-lg sm:text-xl shadow-[0_15px_30px_rgba(230,57,70,0.4)] active:scale-95 transition-all flex items-center justify-center gap-3 btn-shimmer overflow-hidden"
             >
-              GARANTIR VAGA
+              AGENDAR VISITA 2027
               <ArrowRight size={20} />
             </button>
 
@@ -94,7 +94,7 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
             </p>
             <div className="flex items-center justify-center md:justify-start gap-3 text-white/60 font-black text-[10px] xl:text-sm uppercase tracking-[0.2em] lg:tracking-[0.4em]">
               <CheckCircle2 size={16} className="text-brand-red shrink-0" />
-              Matrículas 2026 Abertas
+              Matrículas 2027 Abertas
             </div>
           </div>
 
@@ -104,7 +104,7 @@ const PreLanding2026: React.FC<PreLanding2026Props> = ({ onEnterSite, onOpenEnro
               className="group relative w-full bg-brand-red text-white px-6 lg:px-10 py-5 lg:py-6 rounded-2xl lg:rounded-[1.5rem] font-black text-xl lg:text-2xl xl:text-3xl shadow-[0_20px_40px_rgba(230,57,70,0.4)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-4 btn-shimmer overflow-hidden"
             >
               <span className="relative z-10 flex items-center gap-3 lg:gap-4 uppercase tracking-tighter">
-                Garantir Vaga
+                AGENDAR VISITA 2027
                 <ArrowRight size={24} className="lg:w-8 lg:h-8 group-hover:translate-x-2 transition-transform" />
               </span>
             </button>

@@ -21,13 +21,13 @@ const SejaReacao2026: React.FC = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 text-center">
           <ScrollReveal>
             <span className="bg-brand-red text-white px-4 md:px-10 py-1.5 md:py-4 rounded-full text-[10px] sm:text-xs md:text-sm font-black uppercase tracking-[0.3em] md:tracking-[0.6em] inline-block mb-6 md:mb-12 shadow-2xl animate-pulse">
-              Matrículas Abertas 2026
+              Matrículas Abertas 2027
             </span>
             <h1 className="text-2xl sm:text-5xl md:text-8xl xl:text-9xl font-black text-white mb-4 sm:mb-6 md:mb-10 tracking-tighter leading-tight">
               Garanta o lugar do <br/><span className="text-brand-red italic font-serif">seu filho no topo.</span>
             </h1>
             <p className="text-white/60 text-xs sm:text-lg md:text-2xl xl:text-3xl max-w-4xl mx-auto font-light leading-relaxed mb-6 sm:mb-8 md:mb-16">
-              O Colégio Reação prepara seu filho para os desafios do futuro com excelência acadêmica e valores sólidos. A jornada de sucesso começa hoje.
+              O Colégio Reação prepara seu filho para os desafios do futuro com excelência acadêmica e valores sólidos. Agende sua visita e conheça nossa estrutura.
             </p>
           </ScrollReveal>
         </div>
@@ -71,7 +71,7 @@ const SejaReacao2026: React.FC = () => {
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-4 bg-green-500 text-white py-4 md:py-10 rounded-xl md:rounded-[3rem] font-black text-sm md:text-3xl hover:bg-green-600 hover:scale-[1.03] transition-all shadow-xl shadow-green-500/20 btn-shimmer w-full uppercase tracking-tight"
                   >
-                    INICIAR CONVERSA <ArrowRight size={18} className="md:w-10 md:h-10" />
+                    AGENDAR VISITA 2027 <ArrowRight size={18} className="md:w-10 md:h-10" />
                   </a>
                 </div>
               </ScrollReveal>
@@ -87,7 +87,7 @@ const SejaReacao2026: React.FC = () => {
             <div className="lg:w-1/2">
               <ScrollReveal>
                 <h2 className="text-brand-red text-[8px] md:text-sm font-black tracking-[0.4em] md:tracking-[0.6em] uppercase mb-4 md:mb-10">Agendamento</h2>
-                <h3 className="text-2xl md:text-7xl font-black text-brand-navy mb-6 md:mb-16 tracking-tighter leading-none">Como ingressar <br/>em 2026?</h3>
+                <h3 className="text-2xl md:text-7xl font-black text-brand-navy mb-6 md:mb-16 tracking-tighter leading-none">Como ingressar <br/>em 2027?</h3>
                 <p className="text-slate-500 text-sm md:text-2xl font-light leading-relaxed mb-8 md:mb-16">
                   Nosso processo de admissão é criterioso e focado em alinhar os valores da sua família com a nossa proposta pedagógica de excelência.
                 </p>
@@ -105,7 +105,7 @@ const SejaReacao2026: React.FC = () => {
                     </div>
                   </div>
                   <button onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})} className="w-full bg-white text-brand-navy py-4 md:py-8 rounded-xl md:rounded-[2rem] font-black text-sm md:text-xl hover:bg-brand-red hover:text-white transition-all shadow-xl">
-                    SELECIONAR UNIDADE NO TOPO
+                    AGENDAR VISITA 2027
                   </button>
                 </div>
               </ScrollReveal>
@@ -170,7 +170,7 @@ const SejaReacao2026: React.FC = () => {
               </a>
             </div>
             <p className="mt-12 md:mt-24 text-slate-300 font-black text-[10px] md:text-sm uppercase tracking-[0.5em]">
-              Vagas limitadas • Início das aulas: 29/Janeiro/2026
+              Vagas limitadas • Ano Letivo 2027
             </p>
           </ScrollReveal>
         </div>

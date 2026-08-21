@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       onNavigate('highschool');
     } else if (label === 'Unidades' && onNavigate) {
       onNavigate('unidades');
-    } else if (label === 'Matrículas 2026' && onNavigate) {
+    } else if ((label === 'Matrículas 2027' || label === 'Matrículas 2026') && onNavigate) {
       onNavigate('seja-reacao');
     } else if (onNavigate) {
       onNavigate('home');
@@ -141,7 +141,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         <div className="pt-16 border-t border-white/5 flex flex-col lg:flex-row justify-between items-center text-white/30 text-sm gap-8">
           <div className="flex flex-col gap-2">
-            <p>© 2026 Colégio Reação. A melhor <strong>escola particular no Recanto das Emas</strong>.</p>
+            <p>© 2027 Colégio Reação. A melhor <strong>escola particular no Recanto das Emas</strong>.</p>
             <p className="text-white/20 text-xs tracking-wider">
               desenvolvido por <a id="link-footer-developer" href={devWhatsappLink} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-brand-red transition-colors font-bold decoration-brand-red/30 underline-offset-4 hover:underline">Weskley Gomes</a>
             </p>

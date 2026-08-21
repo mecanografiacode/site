@@ -49,7 +49,7 @@ const Fundamental: React.FC<FundamentalProps> = ({ onOpenUnitSelector }) => {
                 onClick={onOpenUnitSelector}
                 className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-sm sm:text-lg hover:scale-110 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
               >
-                Matrículas 2026 <ArrowRight className="w-5 h-5" />
+                AGENDAR VISITA 2027 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={onOpenUnitSelector}
@@ -258,11 +258,11 @@ const Fundamental: React.FC<FundamentalProps> = ({ onOpenUnitSelector }) => {
                 onClick={onOpenUnitSelector}
                 className="bg-brand-red text-white px-12 py-8 rounded-full font-black text-2xl hover:scale-105 transition-all shadow-3xl shadow-brand-red/40 flex items-center justify-center gap-4 btn-shimmer"
               >
-                Solicitar Matrícula <ArrowRight />
+                AGENDAR VISITA 2027 <ArrowRight />
               </button>
             </div>
             <p className="mt-12 text-white/30 uppercase text-[10px] font-black tracking-[0.4em]">
-              Vagas limitadas para o ano letivo de 2026
+              Vagas limitadas para o ano letivo de 2027
             </p>
           </ScrollReveal>
         </div>

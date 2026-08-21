@@ -16,7 +16,7 @@ interface AIAssistantProps {
 
 const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: 'Olá! Sou a Mila, assistente virtual do Colégio Reação. Como posso ajudar você hoje com informações sobre nossas unidades ou matrículas para 2026?' }
+    { role: 'model', text: 'Olá! Sou a Mila, assistente virtual do Colégio Reação. Como posso ajudar você hoje com informações sobre nossas unidades ou agendamento de visitas para matrículas 2027?' }
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
@@ -40,13 +40,13 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
     Informações principais:
     - Unidade I: Quadra 206 (Infantil e Fundamental I e II).
     - Unidade II: Quadra 201 (Infantil, Fundamental e Ensino Médio).
-    - Matrículas 2026: Abertas e com foco em excelência.
+    - Matrículas 2027: Abertas e com foco em excelência e agendamento de visitas presenciais.
     - Metodologia: Foco em resultados (ENEM, PAS, UnB) e formação humana integral.
     - Passos para matrícula: ${ENROLLMENT_STEPS.map(s => s.title).join(', ')}.
     - Documentos necessários: ${DOCUMENTATION.join(', ')}.
     - Atendimento: Segunda a sexta, das 07:30 às 18:00.
     
-    Seu tom de voz: Profissional, acolhedor, prestativo e focado em convidar os pais para uma visita presencial. 
+    Seu tom de voz: Profissional, acolhedor, prestativo e focado em convidar os pais para agendar uma visita presencial para 2027. 
     Se não souber algo, peça para falarem com a secretaria pelo WhatsApp.
   `;
 
@@ -143,7 +143,7 @@ const AIAssistant: React.FC<AIAssistantProps> = ({ isOpen, onClose }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyPress={(e) => e.key === 'Enter' && handleSend()}
-            placeholder="Pergunte sobre as unidades ou 2026..."
+            placeholder="Pergunte sobre as unidades ou matrículas 2027..."
             className="w-full bg-slate-50 border-2 border-slate-100 rounded-2xl py-4 pl-6 pr-14 text-sm focus:border-brand-red outline-none transition-all placeholder:text-slate-400"
           />
           <button 

@@ -371,7 +371,7 @@ export const EventCalendar: React.FC = () => {
 
   // Copy school event sharing info
   const handleShare = (event: SchoolEvent) => {
-    const shareText = `📅 *${event.title}* no Colégio Reação 2026!\n📍 Local: ${event.location}\n⏰ Horário: ${event.time}\n💬 ${event.description}\nSaiba mais no site institucional!`;
+    const shareText = `📅 *${event.title}* no Colégio Reação!\n📍 Local: ${event.location}\n⏰ Horário: ${event.time}\n💬 ${event.description}\nSaiba mais no site institucional!`;
     navigator.clipboard.writeText(shareText);
     setCopiedEventId(event.id);
     setTimeout(() => setCopiedEventId(null), 3000);
@@ -398,7 +398,7 @@ export const EventCalendar: React.FC = () => {
         <ScrollReveal className="text-center mb-10 md:mb-14">
           <div className="inline-flex items-center gap-2 mb-4 bg-brand-red/10 border border-brand-red/20 px-4 py-1.5 rounded-full">
             <span className="w-2 h-2 rounded-full bg-brand-red animate-ping" />
-            <span className="text-brand-red font-bold text-xs uppercase tracking-widest">Ano Letivo 2026</span>
+            <span className="text-brand-red font-bold text-xs uppercase tracking-widest">Ano Letivo 2027</span>
           </div>
           <h2 id="calendar-heading" className="text-3xl md:text-6xl font-black text-brand-navy tracking-tight leading-[1.1] mb-4">
             Calendário de Eventos <span className="text-brand-red">Reação</span>

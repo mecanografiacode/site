@@ -48,7 +48,7 @@ const FloatingWhatsApp: React.FC = () => {
                 <Sparkles size={18} className="animate-pulse" />
               </div>
               <div className="flex flex-col">
-                <p className="text-[10px] font-black text-brand-red uppercase tracking-widest mb-0.5">Matrículas 2026</p>
+                <p className="text-[10px] font-black text-brand-red uppercase tracking-widest mb-0.5">Matrículas 2027</p>
                 <p className="text-brand-navy text-xs md:text-sm font-bold leading-tight">
                   Dúvidas sobre vagas? <span className="text-green-600">Fale com a gente!</span>
                 </p>
@@ -114,7 +114,7 @@ const FloatingWhatsApp: React.FC = () => {
             </div>
             
             <div className="bg-slate-50 p-6 text-center border-t border-slate-100">
-              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Matrículas 2026 Abertas</p>
+              <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Matrículas 2027 Abertas</p>
             </div>
           </div>
         )}

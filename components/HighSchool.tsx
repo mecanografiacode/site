@@ -57,7 +57,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
                 onClick={onOpenUnitSelector}
                 className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 md:py-6 rounded-full font-black text-sm sm:text-lg md:text-xl hover:scale-115 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
               >
-                Matrículas 2026 <ArrowRight className="w-5 h-5" />
+                AGENDAR VISITA 2027 <ArrowRight className="w-5 h-5" />
               </button>
             </div>
           </ScrollReveal>
@@ -334,14 +334,14 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
                   Sua aprovação <br/><span className="text-brand-red">começa aqui</span>.
                 </h2>
                 <p className="text-white/40 text-xl md:text-2xl mb-16 max-w-2xl mx-auto font-light leading-relaxed">
-                  Junte-se ao colégio que é referência em resultados no Recanto das Emas. Venha ser Reação em 2026.
+                  Junte-se ao colégio que é referência em resultados no Recanto das Emas. Venha ser Reação em 2027.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-6">
                   <button 
                     onClick={onOpenUnitSelector}
                     className="bg-brand-red text-white px-14 py-8 rounded-full font-black text-xl md:text-2xl hover:scale-110 transition-all shadow-3xl shadow-brand-red/30 btn-shimmer flex items-center justify-center gap-4"
                   >
-                    MATRICULAR AGORA <ArrowRight size={28} />
+                    AGENDAR VISITA 2027 <ArrowRight size={28} />
                   </button>
                 </div>
               </div>

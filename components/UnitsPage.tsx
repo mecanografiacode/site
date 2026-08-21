@@ -123,7 +123,7 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-4 bg-brand-navy text-white px-12 py-6 rounded-full font-black text-xl hover:bg-brand-red hover:scale-105 transition-all shadow-xl btn-shimmer"
                     >
-                      Agendar Visita Guiada <ArrowRight />
+                      AGENDAR VISITA 2027 <ArrowRight />
                     </a>
                   </div>
                 </div>
@@ -142,13 +142,13 @@ const UnitsPage: React.FC<UnitsPageProps> = ({ onOpenUnitSelector }) => {
               <div className="relative z-10">
                 <h2 className="text-4xl md:text-6xl font-black mb-10 tracking-tighter leading-none">Venha sentir <br/>a <span className="text-brand-red">experiência</span>.</h2>
                 <p className="text-white/40 text-lg mb-12 max-w-xl mx-auto font-light leading-relaxed">
-                  Nada substitui a presença. Conheça de perto o lugar onde o futuro do seu filho será construído com excelência.
+                  Nada substitui a presença. Conheça de perto o lugar onde o futuro do seu filho será construído com excelência para 2027.
                 </p>
                 <button 
                   onClick={onOpenUnitSelector}
                   className="bg-brand-red text-white px-12 py-6 rounded-full font-black text-xl hover:scale-110 transition-all shadow-3xl shadow-brand-red/20 btn-shimmer"
                 >
-                  CONHECER CAMPUS 2026
+                  AGENDAR VISITA 2027
                 </button>
               </div>
             </div>

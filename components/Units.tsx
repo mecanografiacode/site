@@ -96,7 +96,7 @@ const Units: React.FC<UnitsProps> = ({ onOpenUnitSelector }) => {
                     aria-label={`Agendar visita via WhatsApp para ${unit.name}`}
                   >
                     <span className="relative z-10 flex items-center gap-2 md:gap-3">
-                      Agendar Visita 2026 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true" />
+                      Agendar Visita 2027 <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform duration-300" aria-hidden="true" />
                     </span>
                   </a>
                 </div>
