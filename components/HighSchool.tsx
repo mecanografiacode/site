@@ -16,7 +16,7 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section Ensino Médio */}
-      <section className="relative min-h-[550px] sm:min-h-[650px] md:h-[95vh] md:min-h-[700px] flex items-center overflow-hidden bg-brand-navy py-12 sm:py-20 md:py-0">
+      <section className="relative min-h-[600px] md:min-h-[680px] lg:min-h-[740px] flex items-center overflow-hidden bg-brand-navy py-20 sm:py-24 md:py-28 lg:py-32">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.imgur.com/EUksldX.jpeg" 
@@ -33,9 +33,9 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
           <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-brand-red/10 rounded-full blur-3xl animate-pulse"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20">
           <ScrollReveal>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-5 md:mb-6">
               <span className="bg-brand-red text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] inline-block shadow-lg">
                 High Performance
               </span>
@@ -45,17 +45,17 @@ const HighSchool: React.FC<HighSchoolProps> = ({ onOpenUnitSelector }) => {
                 ))}
               </div>
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[7.5rem] font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter leading-tight md:leading-[0.85]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 sm:mb-5 md:mb-6 tracking-tighter leading-tight md:leading-[0.95]">
               Ensino Médio <br />
               <span className="text-brand-red italic underline decoration-white/10">Formação para o Futuro.</span>
             </h1>
-            <p className="text-white/80 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-6 sm:mb-10 md:mb-12 leading-relaxed">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl font-light mb-6 sm:mb-8 md:mb-10 leading-relaxed">
               Preparação completa para vestibulares, ENEM, PAS e desenvolvimento crítico e intelectual para os desafios do mundo contemporâneo.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 sm:gap-5">
               <button 
                 onClick={onOpenUnitSelector}
-                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 md:py-6 rounded-full font-black text-sm sm:text-lg md:text-xl hover:scale-115 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
+                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-10 py-3.5 sm:py-4.5 rounded-full font-black text-xs sm:text-base hover:scale-105 transition-all shadow-3xl shadow-brand-red/30 flex items-center justify-center gap-3 btn-shimmer"
               >
                 AGENDAR VISITA 2027 <ArrowRight className="w-5 h-5" />
               </button>

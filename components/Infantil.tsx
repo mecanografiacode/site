@@ -16,7 +16,7 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
   return (
     <div className="bg-white">
       {/* Hero Section Infantil - Mais colorido com gradiente lúdico */}
-      <section className="relative min-h-[550px] sm:min-h-[650px] md:h-[95vh] md:min-h-[650px] flex items-center overflow-hidden bg-brand-navy py-12 sm:py-20 md:py-0">
+      <section className="relative min-h-[600px] md:min-h-[680px] lg:min-h-[740px] flex items-center overflow-hidden bg-brand-navy py-20 sm:py-24 md:py-28 lg:py-32">
         <div className="absolute inset-0 z-0">
           <img 
             src="https://i.imgur.com/bNLzGFF.jpeg" 
@@ -29,9 +29,9 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
           <div className="absolute bottom-40 left-10 w-48 h-48 bg-brand-red/20 rounded-full blur-3xl animate-bounce-slow"></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-24 sm:pt-28 md:pt-32 lg:pt-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 relative z-10 w-full pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20">
           <ScrollReveal>
-            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-4 sm:mb-6 md:mb-8">
+            <div className="flex flex-wrap items-center gap-2 sm:gap-3 mb-3 sm:mb-5 md:mb-6">
               <span className="bg-yellow-400 text-brand-navy px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-[9px] sm:text-[10px] font-black uppercase tracking-[0.3em] sm:tracking-[0.4em] inline-block shadow-lg">
                 Reação Kids
               </span>
@@ -41,23 +41,23 @@ const Infantil: React.FC<InfantilProps> = ({ onOpenUnitSelector }) => {
                 <Star size={12} className="text-purple-400 fill-purple-400" />
               </div>
             </div>
-            <h1 className="text-3xl sm:text-5xl md:text-7xl lg:text-[7rem] font-black text-white mb-4 sm:mb-6 md:mb-8 tracking-tighter leading-tight md:leading-[0.9]">
+            <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-3 sm:mb-5 md:mb-6 tracking-tighter leading-tight md:leading-[0.95]">
               O início de uma <br />
               <span className="text-yellow-400 italic underline decoration-white/10">grande jornada.</span>
             </h1>
-            <p className="text-white/80 text-sm sm:text-lg md:text-xl lg:text-2xl max-w-2xl font-light mb-6 sm:mb-10 md:mb-12 leading-relaxed">
+            <p className="text-white/80 text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl font-light mb-6 sm:mb-8 md:mb-10 leading-relaxed">
               Cuidamos com carinho e profissionalismo dos primeiros anos de aprendizado, respeitando a individualidade e estimulando o desenvolvimento integral.
             </p>
             <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-5">
               <button 
                 onClick={onOpenUnitSelector}
-                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-black text-sm sm:text-lg hover:scale-110 transition-all shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] flex items-center justify-center gap-3 btn-shimmer"
+                className="w-full sm:w-auto bg-brand-red text-white px-6 sm:px-10 py-3.5 sm:py-4.5 rounded-full font-black text-xs sm:text-base hover:scale-105 transition-all shadow-[0_20px_40px_-10px_rgba(230,57,70,0.5)] flex items-center justify-center gap-3 btn-shimmer"
               >
                 AGENDAR VISITA 2027 <ArrowRight className="w-5 h-5" />
               </button>
               <button 
                 onClick={onOpenUnitSelector}
-                className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-12 py-3.5 sm:py-5 rounded-full font-bold text-sm sm:text-lg hover:bg-white hover:text-brand-navy transition-all text-center justify-center"
+                className="w-full sm:w-auto bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 sm:px-10 py-3.5 sm:py-4.5 rounded-full font-bold text-xs sm:text-base hover:bg-white hover:text-brand-navy transition-all text-center justify-center"
               >
                 Conhecer Unidades
               </button>

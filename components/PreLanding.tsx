@@ -81,7 +81,7 @@ const PreLanding: React.FC<PreLandingProps> = ({ onExploreSite }) => {
   const unit2Message = encodeURIComponent("Olá! Quero conhecer o Colégio Reação e receber informações sobre as Matrículas 2027. Tenho interesse na Unidade II.");
 
   const unit1Url = `https://wa.me/5561996410987?text=${unit1Message}`;
-  const unit2Url = `https://wa.me/5561999498886?text=${unit2Message}`;
+  const unit2Url = `https://wa.me/5561999970428?text=${unit2Message}`;
 
   return (
     <div className="min-h-screen bg-brand-navy text-white relative flex flex-col justify-between overflow-x-hidden selection:bg-brand-red selection:text-white">
